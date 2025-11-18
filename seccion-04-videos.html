@@ -1,0 +1,81 @@
+<!-- ===== SECCIÓN 4: VIDEOS ===== -->
+<!-- Configuración de Sección en Elementor:
+- Fondo: Blanco
+- Padding: 80px arriba/abajo, 20px izquierda/derecha
+- Estructura: Título + 2 columnas (50/50)
+-->
+
+<!-- TÍTULO (Widget Título) -->
+<!-- Texto: "Conoce Más Sobre Nuestras Jornadas"
+     Etiqueta: H3
+     Clase CSS: anpr-section-title
+     Tamaño: 2.5rem -->
+
+<!-- VIDEO 1: HERMOSILLO (Widget HTML) -->
+<div class="anpr-video-card" onclick="window.open('[INSERTAR_URL_VIDEO_HERMOSILLO]', '_blank')">
+    <div class="anpr-video-thumbnail">
+        <iframe src="[INSERTAR_EMBED_URL_HERMOSILLO]" 
+                allowfullscreen></iframe>
+        <div class="anpr-video-overlay">
+            <div class="anpr-play-button">
+                <svg class="anpr-play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="5,3 19,12 5,21" fill="#012787"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="anpr-video-info">
+        <h4 class="anpr-video-title">
+            Jornada ANPR México - Hermosillo
+        </h4>
+        <p class="anpr-video-description">
+            Revive los mejores momentos de nuestra jornada en Hermosillo
+        </p>
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #9ca3af; margin-top: 1rem;">
+            <span>18 visualizaciones</span>
+            <span>hace 6 días</span>
+        </div>
+    </div>
+</div>
+
+<!-- VIDEO 2: QUERÉTARO (Widget HTML) -->
+<div class="anpr-video-card" onclick="window.open('[INSERTAR_URL_VIDEO_QUERETARO]', '_blank')">
+    <div class="anpr-video-thumbnail">
+        <iframe src="[INSERTAR_EMBED_URL_QUERETARO]" 
+                allowfullscreen></iframe>
+        <div class="anpr-video-overlay">
+            <div class="anpr-play-button">
+                <svg class="anpr-play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="5,3 19,12 5,21" fill="#012787"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="anpr-video-info">
+        <h4 class="anpr-video-title">
+            Jornada ANPR México - Querétaro
+        </h4>
+        <p class="anpr-video-description">
+            Experiencias y aprendizajes de nuestra jornada en Querétaro
+        </p>
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #9ca3af; margin-top: 1rem;">
+            <span>111 visualizaciones</span>
+            <span>hace 3 meses</span>
+        </div>
+    </div>
+</div>
+
+<!-- CTA PARA MÁS VIDEOS (Widget HTML - Columna completa) -->
+<div style="text-align: center; margin-top: 3rem;">
+    <a href="[INSERTAR_URL_CANAL_YOUTUBE]" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       style="display: inline-flex; align-items: center; gap: 0.5rem; background: #012787; color: white; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(1,39,135,0.3);"
+       onmouseover="this.style.background='#d2dd0a'; this.style.color='#012787'; this.style.transform='scale(1.05)'"
+       onmouseout="this.style.background='#012787'; this.style.color='white'; this.style.transform='scale(1)'">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        Ver Más Videos en YouTube
+    </a>
+</div>

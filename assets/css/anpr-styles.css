@@ -1,0 +1,79 @@
+/* ===== ANPR LANDING PAGE STYLES ===== */
+/* Archivo CSS separado para fácil mantenimiento */
+
+/* RESET Y BASE */
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.anpr-landing {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  line-height: 1.6 !important;
+  color: #374151 !important;
+  background: #ffffff !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* VARIABLES CSS PARA FÁCIL PERSONALIZACIÓN */
+:root {
+  --anpr-blue: #012787;
+  --anpr-accent: #d2dd0a;
+  --anpr-gray: #f9fafb;
+  --anpr-text: #374151;
+  --anpr-text-light: #6b7280;
+  --anpr-white: #ffffff;
+  --anpr-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --anpr-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --anpr-border-radius: 10px;
+  --anpr-transition: all 0.3s ease;
+}
+
+/* HERO SECTION */
+.anpr-hero {
+  position: relative !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: var(--anpr-white) !important;
+  padding: 2rem 1rem !important;
+  overflow: hidden !important;
+  background-image: url("../images/hero-background.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+.anpr-hero::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 1 !important;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .anpr-hero {
+        min-height: 80vh !important;
+        background-attachment: scroll !important;
+        padding: 1rem !important;
+    }
+    
+    .anpr-section {
+        padding: 3rem 1rem !important;
+    }
+    
+    .anpr-experts-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }

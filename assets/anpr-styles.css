@@ -1,0 +1,485 @@
+/* ===== ANPR LANDING PAGE - PLUGIN STYLES ===== */
+
+/* FUENTES GOOGLE */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* VARIABLES CSS */
+:root {
+  --anpr-blue: #012787;
+  --anpr-accent: #d2dd0a;
+  --anpr-gray: #f9fafb;
+  --anpr-text: #374151;
+  --anpr-white: #ffffff;
+  --anpr-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --anpr-shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* RESET ESPECÍFICO PARA LA LANDING */
+.anpr-landing-page,
+.anpr-landing-page *,
+.anpr-landing-container,
+.anpr-landing-container * {
+  box-sizing: border-box !important;
+}
+
+.anpr-landing-page {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  line-height: 1.6 !important;
+  color: var(--anpr-text) !important;
+  background: var(--anpr-white) !important;
+}
+
+.anpr-landing-container {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+}
+
+/* OVERRIDE COMPLETO DE WORDPRESS */
+.anpr-landing-page #wpadminbar,
+.anpr-landing-page .site-header,
+.anpr-landing-page .site-footer,
+.anpr-landing-page .site-navigation,
+.anpr-landing-page .breadcrumbs {
+  display: none !important;
+}
+
+/* ===== HERO SECTION ===== */
+.anpr-hero-section {
+  position: relative !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: var(--anpr-white) !important;
+  padding: 2rem 1rem !important;
+  overflow: hidden !important;
+  background-image: url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Foto%201%20copia.jpg-QOgckoacDmghIK2oKC0IAXouaj1X7h.jpeg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  margin: 0 !important;
+}
+
+.anpr-hero-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 1 !important;
+}
+
+.anpr-hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+  width: 100% !important;
+}
+
+.anpr-hero-title {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: clamp(2.5rem, 6vw, 5rem) !important;
+  line-height: 1.2 !important;
+  color: var(--anpr-white) !important;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8) !important;
+  text-align: center !important;
+  margin: 0 auto 2rem auto !important;
+  max-width: 1000px !important;
+}
+
+.anpr-event-badge {
+  display: inline-block !important;
+  background: rgba(15, 33, 97, 0.4) !important;
+  border: 2px solid var(--anpr-white) !important;
+  color: var(--anpr-accent) !important;
+  font-weight: 700 !important;
+  font-size: clamp(1.1rem, 3vw, 1.8rem) !important;
+  padding: 1.2rem 2.5rem !important;
+  border-radius: 50px !important;
+  backdrop-filter: blur(10px) !important;
+  text-align: center !important;
+  margin: 0 auto 2rem auto !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  max-width: 90% !important;
+}
+
+.anpr-event-badge .city-name {
+  color: var(--anpr-white) !important;
+  font-weight: 800 !important;
+}
+
+.anpr-hero-description {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem) !important;
+  color: var(--anpr-white) !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+  text-align: center !important;
+  line-height: 1.6 !important;
+  margin: 0 auto 3rem auto !important;
+  max-width: 900px !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.anpr-cta-button {
+  display: inline-block !important;
+  background: var(--anpr-blue) !important;
+  color: var(--anpr-white) !important;
+  font-weight: 700 !important;
+  font-size: 1.4rem !important;
+  padding: 1.5rem 3.5rem !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.4s ease !important;
+  border: 2px solid transparent !important;
+  text-align: center !important;
+  font-family: "Inter", sans-serif !important;
+  margin: 0 auto 3rem auto !important;
+}
+
+.anpr-cta-button:hover {
+  background: var(--anpr-accent) !important;
+  color: var(--anpr-blue) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+  border-color: var(--anpr-blue) !important;
+  text-decoration: none !important;
+}
+
+.anpr-cta-white {
+  background: var(--anpr-white) !important;
+  color: var(--anpr-blue) !important;
+}
+
+.anpr-cta-white:hover {
+  background: var(--anpr-accent) !important;
+  color: var(--anpr-blue) !important;
+}
+
+.anpr-hero-info-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin: 4rem auto 0 auto !important;
+  max-width: 900px !important;
+}
+
+.anpr-hero-info-card {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(15px) !important;
+  border-radius: 15px !important;
+  padding: 1.5rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  text-align: center !important;
+  color: var(--anpr-white) !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+}
+
+.anpr-hero-info-card:hover {
+  transform: translateY(-3px) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.anpr-hero-info-card svg {
+  flex-shrink: 0 !important;
+}
+
+/* ===== SECCIONES GENERALES ===== */
+.anpr-section {
+  padding: 5rem 1rem !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.anpr-details-section {
+  background: var(--anpr-gray) !important;
+}
+
+.anpr-register-section {
+  background: var(--anpr-blue) !important;
+  color: var(--anpr-white) !important;
+}
+
+.anpr-contact-section {
+  background: var(--anpr-gray) !important;
+}
+
+.anpr-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+  width: 100% !important;
+}
+
+.anpr-section-title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  color: var(--anpr-blue) !important;
+  text-align: center !important;
+  margin: 0 auto 3rem auto !important;
+  line-height: 1.3 !important;
+}
+
+.anpr-register-section .anpr-section-title {
+  color: var(--anpr-white) !important;
+}
+
+.anpr-section-subtitle {
+  font-size: 1.3rem !important;
+  color: #6b7280 !important;
+  text-align: center !important;
+  margin: 0 auto 3rem auto !important;
+  max-width: 800px !important;
+  line-height: 1.6 !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.anpr-register-section .anpr-section-subtitle {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ===== DETALLES DEL EVENTO ===== */
+.anpr-details-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+}
+
+.anpr-detail-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.anpr-detail-icon {
+  width: 48px !important;
+  height: 48px !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.anpr-detail-content {
+  flex: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.anpr-detail-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--anpr-blue) !important;
+  margin: 0 0 0.5rem 0 !important;
+  padding: 0 !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.anpr-detail-description {
+  color: #6b7280 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1rem !important;
+}
+
+/* ===== CONTACTO ===== */
+.anpr-contact-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 2rem !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+.anpr-contact-card {
+  background: var(--anpr-white) !important;
+  border-radius: 15px !important;
+  padding: 2.5rem !important;
+  text-align: center !important;
+  box-shadow: var(--anpr-shadow) !important;
+  transition: all 0.4s ease !important;
+  border: 1px solid #e5e7eb !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.anpr-contact-card:hover {
+  transform: scale(1.05) !important;
+  box-shadow: var(--anpr-shadow-hover) !important;
+}
+
+.anpr-contact-icon {
+  width: 80px !important;
+  height: 80px !important;
+  background: linear-gradient(135deg, #e0f2fe, #b3e5fc) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 1.5rem auto !important;
+  box-shadow: 0 4px 15px rgba(1, 39, 135, 0.2) !important;
+}
+
+.anpr-contact-card h3 {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: #374151 !important;
+  margin: 0 auto 1rem auto !important;
+  text-align: center !important;
+}
+
+.anpr-contact-card a {
+  color: var(--anpr-blue) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+  transition: color 0.3s ease !important;
+}
+
+.anpr-contact-card a:hover {
+  color: var(--anpr-accent) !important;
+  text-decoration: none !important;
+}
+
+/* ===== CTA CONTAINER ===== */
+.anpr-cta-container {
+  text-align: center !important;
+  margin: 2rem 0 !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .anpr-hero-section {
+    min-height: 80vh !important;
+    background-attachment: scroll !important;
+    padding: 1rem !important;
+  }
+
+  .anpr-section {
+    padding: 3rem 1rem !important;
+  }
+
+  .anpr-hero-info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .anpr-details-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .anpr-contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .anpr-hero-title {
+    font-size: 2rem !important;
+  }
+
+  .anpr-event-badge {
+    font-size: 0.9rem !important;
+    padding: 0.8rem 1.2rem !important;
+  }
+
+  .anpr-cta-button {
+    font-size: 1.1rem !important;
+    padding: 1rem 2rem !important;
+  }
+
+  .anpr-section-title {
+    font-size: 2rem !important;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.anpr-text-center {
+  text-align: center !important;
+}
+
+.anpr-mb-2 {
+  margin-bottom: 1rem !important;
+}
+
+.anpr-mb-4 {
+  margin-bottom: 2rem !important;
+}
+
+.anpr-text-blue {
+  color: var(--anpr-blue) !important;
+}
+
+.anpr-text-gray {
+  color: #6b7280 !important;
+}
+
+.anpr-font-bold {
+  font-weight: 700 !important;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anpr-animate {
+  animation: fadeInUp 0.8s ease-out !important;
+}
+
+/* ===== WORDPRESS OVERRIDES ===== */
+.anpr-landing-page .entry-content,
+.anpr-landing-page .entry-header,
+.anpr-landing-page .entry-footer,
+.anpr-landing-page .post-navigation,
+.anpr-landing-page .comments-area {
+  display: none !important;
+}
+
+.anpr-landing-page .site-main {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.anpr-landing-page .content-area {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

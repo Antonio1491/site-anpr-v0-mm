@@ -1,0 +1,385 @@
+/* ===== ANPR LANDING - CSS PARA ELEMENTOR ===== */
+/* Pegar en: Elementor → Configuración del sitio → CSS personalizado */
+
+/* FUENTES GOOGLE */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* VARIABLES CSS */
+:root {
+  --anpr-blue: #012787;
+  --anpr-accent: #d2dd0a;
+  --anpr-gray: #f9fafb;
+  --anpr-text: #374151;
+  --anpr-white: #ffffff;
+}
+
+/* RESET GENERAL */
+* {
+  box-sizing: border-box;
+}
+
+/* ===== HERO SECTION ===== */
+.anpr-hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Foto%201%20copia.jpg-QOgckoacDmghIK2oKC0IAXouaj1X7h.jpeg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white !important;
+  text-align: center !important;
+  padding: 2rem 1rem !important;
+}
+
+.anpr-hero-title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: clamp(2.5rem, 6vw, 5rem) !important;
+  font-weight: 700 !important;
+  color: white !important;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8) !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.2 !important;
+}
+
+.anpr-hero-title span {
+  color: var(--anpr-accent) !important;
+}
+
+.anpr-event-badge {
+  background: rgba(1, 39, 135, 0.8) !important;
+  color: var(--anpr-accent) !important;
+  padding: 1.2rem 2.5rem !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  font-size: clamp(1rem, 3vw, 1.5rem) !important;
+  margin: 2rem 0 !important;
+  display: inline-block !important;
+  backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.anpr-hero-description {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem) !important;
+  color: white !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+  margin: 2rem auto !important;
+  max-width: 800px !important;
+  line-height: 1.6 !important;
+}
+
+.anpr-cta-button {
+  display: inline-block !important;
+  background: var(--anpr-blue) !important;
+  color: white !important;
+  padding: 1.5rem 3rem !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+  margin: 2rem 0 !important;
+  transition: all 0.4s ease !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3) !important;
+  border: 2px solid transparent !important;
+}
+
+.anpr-cta-button:hover {
+  background: var(--anpr-accent) !important;
+  color: var(--anpr-blue) !important;
+  transform: translateY(-5px) !important;
+  text-decoration: none !important;
+  border-color: var(--anpr-blue) !important;
+}
+
+.anpr-hero-info-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin-top: 3rem !important;
+  max-width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.anpr-hero-info-card {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(15px) !important;
+  border-radius: 15px !important;
+  padding: 1.5rem !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.anpr-hero-info-card:hover {
+  transform: translateY(-3px) !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ===== SECCIONES GENERALES ===== */
+.anpr-section {
+  padding: 80px 20px !important;
+}
+
+.anpr-section-title {
+  font-family: "Montserrat", sans-serif !important;
+  font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+  font-weight: 700 !important;
+  color: var(--anpr-blue) !important;
+  text-align: center !important;
+  margin-bottom: 3rem !important;
+  line-height: 1.3 !important;
+}
+
+.anpr-section-subtitle {
+  font-size: 1.3rem !important;
+  color: #6b7280 !important;
+  text-align: center !important;
+  margin: 0 auto 3rem auto !important;
+  max-width: 800px !important;
+  line-height: 1.6 !important;
+}
+
+/* ===== CARDS GENERALES ===== */
+.anpr-card {
+  background: white !important;
+  border-radius: 15px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.4s ease !important;
+  border: 1px solid #e5e7eb !important;
+  text-align: center !important;
+  height: 100% !important;
+}
+
+.anpr-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.anpr-card-title {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: var(--anpr-blue) !important;
+  margin: 1rem 0 !important;
+}
+
+.anpr-card-description {
+  color: #6b7280 !important;
+  line-height: 1.6 !important;
+}
+
+/* ===== EXPERT CARDS ===== */
+.anpr-expert-card {
+  background: white !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  text-align: center !important;
+  transition: all 0.4s ease !important;
+  height: 100% !important;
+}
+
+.anpr-expert-card:hover {
+  transform: translateY(-10px) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+.anpr-expert-image {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  margin: 0 auto 1.5rem auto !important;
+  background: linear-gradient(135deg, var(--anpr-blue), #0a4fb5) !important;
+  color: white !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 25px rgba(1, 39, 135, 0.3) !important;
+}
+
+.anpr-expert-name {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: var(--anpr-blue) !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.anpr-expert-role {
+  font-weight: 600 !important;
+  color: #4b5563 !important;
+  margin: 0 0 0.3rem 0 !important;
+}
+
+.anpr-expert-company {
+  color: #6b7280 !important;
+  font-size: 0.9rem !important;
+}
+
+/* ===== DETALLES DEL EVENTO ===== */
+.anpr-details-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+}
+
+.anpr-detail-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+  padding: 2rem !important;
+  background: white !important;
+  border-radius: 15px !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease !important;
+}
+
+.anpr-detail-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.anpr-detail-icon {
+  width: 60px !important;
+  height: 60px !important;
+  background: var(--anpr-blue) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  font-size: 1.5rem !important;
+}
+
+.anpr-detail-title {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: var(--anpr-blue) !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.anpr-detail-description {
+  color: #6b7280 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* ===== TIMELINE ===== */
+.anpr-timeline {
+  position: relative !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+}
+
+.anpr-timeline-item {
+  position: relative !important;
+  padding: 0 0 2rem 4rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.anpr-timeline-item::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 1.5rem !important;
+  top: 3rem !important;
+  width: 3px !important;
+  height: calc(100% + 1rem) !important;
+  background: linear-gradient(to bottom, var(--anpr-blue), var(--anpr-accent)) !important;
+}
+
+.anpr-timeline-item:last-child::before {
+  display: none !important;
+}
+
+.anpr-timeline-icon {
+  position: absolute !important;
+  left: 0.5rem !important;
+  top: 1rem !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  background: var(--anpr-blue) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.2rem !important;
+  z-index: 2 !important;
+}
+
+.anpr-timeline-content {
+  background: white !important;
+  padding: 1.5rem !important;
+  border-radius: 10px !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.anpr-timeline-content:hover {
+  transform: translateX(5px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.anpr-timeline-time {
+  font-weight: 700 !important;
+  color: var(--anpr-blue) !important;
+  margin-right: 1rem !important;
+}
+
+.anpr-timeline-title {
+  color: #374151 !important;
+  font-weight: 600 !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .anpr-hero-section {
+    padding: 1rem !important;
+    background-attachment: scroll !important;
+  }
+
+  .anpr-hero-info-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .anpr-details-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .anpr-timeline-item {
+    padding-left: 3rem !important;
+  }
+
+  .anpr-timeline-icon {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  .anpr-timeline-item::before {
+    left: 1.25rem !important;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.anpr-text-center {
+  text-align: center !important;
+}
+.anpr-mb-2 {
+  margin-bottom: 1rem !important;
+}
+.anpr-mb-4 {
+  margin-bottom: 2rem !important;
+}
+.anpr-text-blue {
+  color: var(--anpr-blue) !important;
+}
+.anpr-font-bold {
+  font-weight: 700 !important;
+}
