@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import { Award, Globe, BookOpen, Download, FileText, CheckCircle, Info, MapPin, ChevronDown } from 'lucide-react'
+import { Award, Globe, BookOpen, Download, FileText, CheckCircle, Info, MapPin, ChevronDown } from "lucide-react"
 
 export default function PremiosANPR() {
   const [countdown, setCountdown] = useState({
@@ -64,8 +64,7 @@ export default function PremiosANPR() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Premios%20ANPR%202025-02-XKbIbBAVumE5CF3oy8TiBw3kz3ysza.jpg')",
+              backgroundImage: "url('/images/premios-20anpr-202025-02.jpg')",
             }}
           />
 
@@ -168,7 +167,7 @@ export default function PremiosANPR() {
               {/* Image Section */}
               <div className="flex-shrink-0 w-full flex justify-center">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Premio%20ANPR-hqTofgVr0COYL2cJnPvSA24CxGumih.png"
+                  src="/images/premio-20anpr.png"
                   alt="Premio ANPR"
                   className="w-80 md:w-96 lg:w-[28rem] h-auto drop-shadow-2xl"
                 />
@@ -498,7 +497,7 @@ export default function PremiosANPR() {
               {/* Right column - Image */}
               <div className="flex items-center justify-center lg:justify-end">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Recurso%202-jeAH9LchoLY0gHyxXw1WIQ4zqhyPp0.png"
+                  src="/images/recurso-202.png"
                   alt="Premios ANPR - Ilustración de ganador"
                   className="w-full max-w-md lg:max-w-lg h-auto object-contain"
                 />
@@ -523,8 +522,7 @@ export default function PremiosANPR() {
             <div className="mt-16 grid gap-8 md:grid-cols-2">
               {[
                 {
-                  image:
-                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Activacio%CC%81n%20Social%2C%20Educativa%20y%20Cultural-obLDsyO0ct9Ge2hIdGXCRUGChM4BQv.png",
+                  image: "/images/activacio-cc-81n-20social-2c-20educativa-20y-20cultural.png",
                   title: "Activación Social, Educativa y Cultural",
                   description:
                     "Reconoce proyectos que promueven la participación social y comunitaria a través de la educación, la cultura y la recreación.",
@@ -537,8 +535,7 @@ export default function PremiosANPR() {
                   ],
                 },
                 {
-                  image:
-                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Medio%20Ambiente%20y%20Resiliencia%20Urbana-isflAJFPGFnTzrNl4MNuFsiaJfYcXY.png",
+                  image: "/images/medio-20ambiente-20y-20resiliencia-20urbana.png",
                   title: "Medio Ambiente y Resiliencia Urbana",
                   description:
                     "Reconoce iniciativas que fortalecen la relación entre parques y entorno natural, promoviendo la sostenibilidad y resiliencia.",
@@ -551,8 +548,7 @@ export default function PremiosANPR() {
                   ],
                 },
                 {
-                  image:
-                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/isen%CC%83o%20de%20Espacios%20Pu%CC%81blicos%20y%20Playgrounds-UGHwgYZuseqTys5YAhPminrhD673Lm.png",
+                  image: "/images/isen-cc-83o-20de-20espacios-20pu-cc-81blicos-20y-20playgrounds.png",
                   title: "Diseño de Espacios Públicos y Playgrounds",
                   description:
                     "Distingue proyectos de planeación, diseño y construcción que transforman parques en espacios funcionales, accesibles y atractivos.",
@@ -565,8 +561,7 @@ export default function PremiosANPR() {
                   ],
                 },
                 {
-                  image:
-                    "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Innovacio%CC%81n%20y%20Tecnologi%CC%81a%20para%20Parques-OvEbnvikgE2T4ZqY1S1K8p3TreJrBP.png",
+                  image: "/images/innovacio-cc-81n-20y-20tecnologi-cc-81a-20para-20parques.png",
                   title: "Innovación y Tecnología para Parques",
                   description:
                     "Premia iniciativas que incorporan nuevas tecnologías, materiales y procesos innovadores en la gestión y disfrute de los parques.",
@@ -656,11 +651,7 @@ export default function PremiosANPR() {
                     </span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Premio%20Semilla-VcK29R8NCLkjiu6kIRMgJ2mba2p8Kx.png"
-                      alt="Premio Semilla"
-                      className="w-24 h-24 object-contain"
-                    />
+                    <img src="/images/premio-20semilla.png" alt="Premio Semilla" className="w-24 h-24 object-contain" />
                   </div>
                   <h3 className="mt-6 text-2xl font-bold font-montserrat" style={{ color: "#efd175" }}>
                     Semilla
@@ -683,7 +674,7 @@ export default function PremiosANPR() {
                   </div>
                   <div className="flex items-center justify-center">
                     <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Premio%20Li%CC%81der-Jeeq91J3U9IlUR8tMlFy4HDRCpfbh8.png"
+                      src="/images/premio-20li-cc-81der.png"
                       alt="Premio Líder"
                       className="w-24 h-24 object-contain"
                     />
@@ -764,7 +755,7 @@ export default function PremiosANPR() {
                   </div>
                   <div className="flex items-center justify-center">
                     <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Premio%20Fundador%20y%20Lealtad%20ANPR-8yWOdQny3gj9cdT6ogdklwKgv9DHak.png"
+                      src="/images/premio-20fundador-20y-20lealtad-20anpr.png"
                       alt="Premio Lealtad ANPR"
                       className="w-24 h-24 object-contain"
                     />
@@ -790,7 +781,7 @@ export default function PremiosANPR() {
                   </div>
                   <div className="flex items-center justify-center">
                     <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Trayectoria%20ANPR-PEz08NA7166arDlKz8mvQmyNv1L3Qr.png"
+                      src="/images/trayectoria-20anpr.png"
                       alt="Premio Trayectoria ANPR"
                       className="w-24 h-24 object-contain"
                     />
@@ -817,7 +808,7 @@ export default function PremiosANPR() {
                   </div>
                   <div className="flex items-center justify-center">
                     <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Legado%20ANPR-UWvdZIDWpxlXhzLHKAxtp6yDbHOYmv.png"
+                      src="/images/legado-20anpr.png"
                       alt="Premio Legado ANPR"
                       className="w-24 h-24 object-contain"
                     />
@@ -884,11 +875,6 @@ export default function PremiosANPR() {
                   </div>
                 </div>
               ))}
-            </div>
-            <div className="mt-12 text-center">
-              <a href="#" className="text-lg font-medium text-[#012787] hover:underline">
-                Ver todos los ganadores de años anteriores →
-              </a>
             </div>
           </div>
         </section>
