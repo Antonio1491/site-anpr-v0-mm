@@ -1,7 +1,22 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { CalendarDays, Clock, MapPin, Users, Ticket, ClipboardList, Sprout, Handshake, Lightbulb, Globe, Heart, Cog, Mail, MessageCircle } from 'lucide-react'
+import {
+  CalendarDays,
+  Clock,
+  MapPin,
+  Users,
+  Ticket,
+  ClipboardList,
+  Sprout,
+  Handshake,
+  Lightbulb,
+  Globe,
+  Heart,
+  Cog,
+  Mail,
+  MessageCircle,
+} from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
@@ -66,18 +81,41 @@ export default function LandingPageV0() {
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Foto%201%20copia.jpg-QOgckoacDmghIK2oKC0IAXouaj1X7h.jpeg')`,
+            backgroundImage: `url('/images/foto-201-20copia.jpeg')`,
             transform: `translateY(${scrollY * 0.5}px)`,
             willChange: "transform",
           }}
         />
-        
+
         {/* Decorative elements */}
-        <img src="/images/decorations/hoja-turquesa.png" alt="" className="absolute top-10 left-4 md:left-8 w-12 md:w-20 opacity-30 z-10 animate-float" style={{animationDelay: '0s'}} />
-        <img src="/images/decorations/hoja-amarilla.png" alt="" className="absolute top-12 right-4 md:right-8 w-14 md:w-24 opacity-25 z-10 animate-float transform rotate-45" style={{animationDelay: '1s'}} />
-        <img src="/images/decorations/hoja-verde.png" alt="" className="absolute bottom-24 left-4 md:left-12 w-12 md:w-18 opacity-30 z-10 animate-float" style={{animationDelay: '2s'}} />
-        <img src="/images/decorations/linea1.png" alt="" className="absolute top-1/4 right-0 w-24 md:w-40 opacity-20 z-10" />
-        <img src="/images/decorations/linea2.png" alt="" className="absolute bottom-1/3 left-0 w-20 md:w-32 opacity-20 z-10 transform rotate-180" />
+        <img
+          src="/images/decorations/hoja-turquesa.png"
+          alt=""
+          className="absolute top-10 left-4 md:left-8 w-12 md:w-20 opacity-30 z-10 animate-float"
+          style={{ animationDelay: "0s" }}
+        />
+        <img
+          src="/images/decorations/hoja-amarilla.png"
+          alt=""
+          className="absolute top-12 right-4 md:right-8 w-14 md:w-24 opacity-25 z-10 animate-float transform rotate-45"
+          style={{ animationDelay: "1s" }}
+        />
+        <img
+          src="/images/decorations/hoja-verde.png"
+          alt=""
+          className="absolute bottom-24 left-4 md:left-12 w-12 md:w-18 opacity-30 z-10 animate-float"
+          style={{ animationDelay: "2s" }}
+        />
+        <img
+          src="/images/decorations/linea1.png"
+          alt=""
+          className="absolute top-1/4 right-0 w-24 md:w-40 opacity-20 z-10"
+        />
+        <img
+          src="/images/decorations/linea2.png"
+          alt=""
+          className="absolute bottom-1/3 left-0 w-20 md:w-32 opacity-20 z-10 transform rotate-180"
+        />
         <div className="relative z-20 w-full max-w-6xl mx-auto px-4">
           {/* Logo Section */}
           <div className="mb-8 animate-fade-in-up animation-delay-200"></div>
@@ -163,13 +201,31 @@ export default function LandingPageV0() {
 
       <main>
         {/* SECCIÓN DE DETALLES DEL EVENTO */}
-        <section className="py-20 px-4 relative overflow-hidden" style={{backgroundColor: '#00338d'}}>
+        <section className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: "#00338d" }}>
           {/* Decorative elements */}
-          <img src="/images/decorations/hoja-amarilla.png" alt="" className="absolute top-10 right-10 w-20 md:w-32 opacity-30 animate-float" style={{animationDelay: '0.5s'}} />
-          <img src="/images/decorations/hoja-verde.png" alt="" className="absolute bottom-10 left-10 w-16 md:w-24 opacity-30 animate-float transform -scale-x-100" style={{animationDelay: '1.5s'}} />
-          <img src="/images/decorations/linea3.png" alt="" className="absolute top-1/2 left-0 w-24 md:w-40 opacity-20 transform -translate-y-1/2" />
-          <img src="/images/decorations/linea1.png" alt="" className="absolute bottom-20 right-0 w-32 md:w-48 opacity-20 transform rotate-45" />
-          
+          <img
+            src="/images/decorations/hoja-amarilla.png"
+            alt=""
+            className="absolute top-10 right-10 w-20 md:w-32 opacity-30 animate-float"
+            style={{ animationDelay: "0.5s" }}
+          />
+          <img
+            src="/images/decorations/hoja-verde.png"
+            alt=""
+            className="absolute bottom-10 left-10 w-16 md:w-24 opacity-30 animate-float transform -scale-x-100"
+            style={{ animationDelay: "1.5s" }}
+          />
+          <img
+            src="/images/decorations/linea3.png"
+            alt=""
+            className="absolute top-1/2 left-0 w-24 md:w-40 opacity-20 transform -translate-y-1/2"
+          />
+          <img
+            src="/images/decorations/linea1.png"
+            alt=""
+            className="absolute bottom-20 right-0 w-32 md:w-48 opacity-20 transform rotate-45"
+          />
+
           <div className="max-w-6xl mx-auto relative z-10">
             <h2
               data-animate
@@ -189,10 +245,10 @@ export default function LandingPageV0() {
                   delay: "100",
                   iconColor: "#d5df00",
                 },
-                { 
-                  icon: Users, 
-                  title: "Aforo", 
-                  content: "50 personas ¡Cupo limitado!", 
+                {
+                  icon: Users,
+                  title: "Aforo",
+                  content: "50 personas ¡Cupo limitado!",
                   delay: "200",
                   iconColor: "#57d476",
                 },
@@ -213,7 +269,7 @@ export default function LandingPageV0() {
                   }`}
                   style={{ transitionDelay: `${Number.parseInt(item.delay)}ms` }}
                 >
-                  <item.icon className="w-8 h-8 flex-shrink-0 mt-1" style={{color: item.iconColor}} />
+                  <item.icon className="w-8 h-8 flex-shrink-0 mt-1" style={{ color: item.iconColor }} />
                   <div>
                     <h3 className="text-xl font-bold text-white">{item.title}</h3>
                     <p className="text-white" style={{ whiteSpace: "pre-line" }}>
@@ -273,7 +329,7 @@ export default function LandingPageV0() {
         </section>
 
         {/* SECCIÓN ¿QUÉ PUEDES ESPERAR? */}
-        <section className="py-20 px-4" style={{backgroundColor: '#f3f8ff'}}>
+        <section className="py-20 px-4" style={{ backgroundColor: "#f3f8ff" }}>
           <div className="max-w-6xl mx-auto">
             <div className="text-center">
               <p
@@ -333,7 +389,9 @@ export default function LandingPageV0() {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-[#012787] mb-3 font-['Montserrat',sans-serif]">{item.title}</h3>
+                    <h3 className="text-xl font-bold text-[#012787] mb-3 font-['Montserrat',sans-serif]">
+                      {item.title}
+                    </h3>
                     <p className="text-gray-600 leading-relaxed">{item.content}</p>
                   </div>
                 ))}
@@ -456,14 +514,33 @@ export default function LandingPageV0() {
         </section>
 
         {/* SECCIÓN PONENTES */}
-        <section className="py-20 px-4 relative overflow-hidden" style={{backgroundColor: '#012787'}}>
+        <section className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: "#012787" }}>
           {/* Decorative elements */}
-          <img src="/images/decorations/hoja-turquesa.png" alt="" className="absolute top-16 left-8 w-16 md:w-28 opacity-40 animate-float" style={{animationDelay: '0s'}} />
-          <img src="/images/decorations/hoja-verde.png" alt="" className="absolute top-1/3 right-12 w-20 md:w-32 opacity-35 animate-float transform rotate-12" style={{animationDelay: '1s'}} />
-          <img src="/images/decorations/hoja-amarilla.png" alt="" className="absolute bottom-20 left-16 w-18 md:w-28 opacity-35 animate-float transform -rotate-45" style={{animationDelay: '2s'}} />
+          <img
+            src="/images/decorations/hoja-turquesa.png"
+            alt=""
+            className="absolute top-16 left-8 w-16 md:w-28 opacity-40 animate-float"
+            style={{ animationDelay: "0s" }}
+          />
+          <img
+            src="/images/decorations/hoja-verde.png"
+            alt=""
+            className="absolute top-1/3 right-12 w-20 md:w-32 opacity-35 animate-float transform rotate-12"
+            style={{ animationDelay: "1s" }}
+          />
+          <img
+            src="/images/decorations/hoja-amarilla.png"
+            alt=""
+            className="absolute bottom-20 left-16 w-18 md:w-28 opacity-35 animate-float transform -rotate-45"
+            style={{ animationDelay: "2s" }}
+          />
           <img src="/images/decorations/linea2.png" alt="" className="absolute top-0 right-0 w-28 md:w-44 opacity-25" />
-          <img src="/images/decorations/linea3.png" alt="" className="absolute bottom-0 left-0 w-24 md:w-40 opacity-25 transform rotate-180" />
-          
+          <img
+            src="/images/decorations/linea3.png"
+            alt=""
+            className="absolute bottom-0 left-0 w-24 md:w-40 opacity-25 transform rotate-180"
+          />
+
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <h2
               data-animate
@@ -474,7 +551,7 @@ export default function LandingPageV0() {
             >
               Conoce a los Expertos
             </h2>
-            
+
             {/* Primera fila - 3 expertos */}
             <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto mb-8">
               {[
@@ -555,6 +632,12 @@ export default function LandingPageV0() {
                   name: "Israel Ortega González",
                   role: "Titular",
                   company: "Fideicomiso Complejo Tres Centurias (Ficotrece)",
+                },
+                {
+                  image: "/images/experts/jose-roberto-barretero.png",
+                  name: "José Roberto Barretero Muñoz",
+                  role: "Jefe de Departamento de Planeación y Diseño Urbano",
+                  company: "Instituto Municipal de Planeación y Evaluación de Aguascalientes",
                 },
               ].map((expert, index) => (
                 <div
@@ -829,7 +912,7 @@ export default function LandingPageV0() {
         </section>
 
         {/* SECCIÓN EJES TEMÁTICOS */}
-        <section className="py-20 px-4" style={{backgroundColor: '#f3f8ff'}}>
+        <section className="py-20 px-4" style={{ backgroundColor: "#f3f8ff" }}>
           <div className="max-w-5xl mx-auto text-center">
             <h2
               data-animate
@@ -863,7 +946,9 @@ export default function LandingPageV0() {
                   >
                     <theme.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#012787] mb-2 font-['Montserrat',sans-serif]">{theme.title}</h3>
+                  <h3 className="text-xl font-bold text-[#012787] mb-2 font-['Montserrat',sans-serif]">
+                    {theme.title}
+                  </h3>
                   <p className="text-gray-600"></p>
                 </div>
               ))}
@@ -913,7 +998,7 @@ export default function LandingPageV0() {
                 >
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 mx-auto max-w-sm">
                     <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ANPR-Prb0Ys6jjwaIfhzTH5KqkoaBvrYIJb.png"
+                      src="/images/anpr.png"
                       alt="ANPR México - Asociación Nacional de Parques y Recreación de México"
                       className="w-full h-auto object-contain max-h-24"
                     />
@@ -939,7 +1024,7 @@ export default function LandingPageV0() {
                 >
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 mx-auto max-w-sm">
                     <img
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BUGY-VCXJBLWvSI51Y2j6HjjJUX4qcDyQis.png"
+                      src="/images/bugy.png"
                       alt="Grupo BUGY - Proyectos Recreativos"
                       className="w-full h-auto object-contain max-h-24"
                     />
@@ -973,18 +1058,35 @@ export default function LandingPageV0() {
                 </div>
               </a>
             </div>
-
           </div>
         </section>
 
         {/* SECCIÓN REGISTRO FINAL */}
         <section id="registro" className="px-4 bg-[#012787] text-white text-center py-20 relative overflow-hidden">
           {/* Decorative elements */}
-          <img src="/images/decorations/hoja-turquesa.png" alt="" className="absolute top-10 right-16 w-20 md:w-32 opacity-35 animate-float" style={{animationDelay: '0.5s'}} />
-          <img src="/images/decorations/hoja-amarilla.png" alt="" className="absolute bottom-16 left-12 w-24 md:w-36 opacity-30 animate-float transform rotate-90" style={{animationDelay: '1.5s'}} />
-          <img src="/images/decorations/linea1.png" alt="" className="absolute top-1/3 left-0 w-28 md:w-44 opacity-20 transform -rotate-45" />
-          <img src="/images/decorations/linea2.png" alt="" className="absolute bottom-1/4 right-0 w-32 md:w-48 opacity-20" />
-          
+          <img
+            src="/images/decorations/hoja-turquesa.png"
+            alt=""
+            className="absolute top-10 right-16 w-20 md:w-32 opacity-35 animate-float"
+            style={{ animationDelay: "0.5s" }}
+          />
+          <img
+            src="/images/decorations/hoja-amarilla.png"
+            alt=""
+            className="absolute bottom-16 left-12 w-24 md:w-36 opacity-30 animate-float transform rotate-90"
+            style={{ animationDelay: "1.5s" }}
+          />
+          <img
+            src="/images/decorations/linea1.png"
+            alt=""
+            className="absolute top-1/3 left-0 w-28 md:w-44 opacity-20 transform -rotate-45"
+          />
+          <img
+            src="/images/decorations/linea2.png"
+            alt=""
+            className="absolute bottom-1/4 right-0 w-32 md:w-48 opacity-20"
+          />
+
           <div className="max-w-2xl mx-auto relative z-10">
             <h2
               data-animate
@@ -1027,7 +1129,7 @@ export default function LandingPageV0() {
         </section>
 
         {/* SECCIÓN MÁS INFORMACIÓN */}
-        <section className="py-16 px-4" style={{backgroundColor: '#f3f8ff'}}>
+        <section className="py-16 px-4" style={{ backgroundColor: "#f3f8ff" }}>
           <div className="max-w-2xl mx-auto text-center">
             <h2
               data-animate

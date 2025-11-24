@@ -1,6 +1,5 @@
 # 4.ª Jornada - ANPR México Event Landing Page
 
-
 ## Overview
 This is a Next.js landing page for the 4th ANPR México Training Journey event in Aguascalientes. Originally built with v0.dev, this project showcases event details, speakers, and registration information for a parks and public spaces management conference.
 
