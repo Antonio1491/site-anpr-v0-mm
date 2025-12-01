@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'KomiKa Display';
-  src: url('/fonts/komika-display.ttf') format('truetype');
+  font-family: "KomiKa Display";
+  src: url("/fonts/komika-display.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -261,7 +261,8 @@ button:disabled:hover {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -271,4 +272,21 @@ button:disabled:hover {
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Adding pulse-glow animation for popup */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(0, 223, 191, 0.5), 0 0 40px rgba(0, 223, 191, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 223, 191, 0.8), 0 0 60px rgba(0, 223, 191, 0.5), 0 0 80px rgba(212, 222, 0, 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
