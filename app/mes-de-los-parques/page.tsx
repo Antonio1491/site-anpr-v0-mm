@@ -99,16 +99,16 @@ export default function MesDeLosParques() {
       <Header />
 
       {showPopup && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-          <div className="relative max-w-md w-full bg-white rounded-2xl shadow-2xl overflow-hidden animate-pulse-glow">
+        <div className="!fixed !inset-0 !z-[9999] !flex !items-center !justify-center !bg-black/70 !backdrop-blur-sm !p-4">
+          <div className="!relative !max-w-md !w-full !bg-white !rounded-2xl !shadow-2xl !overflow-hidden animate-pulse-glow">
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+              className="!absolute !top-4 !right-4 !z-10 !w-10 !h-10 !flex !items-center !justify-center !bg-white !rounded-full !shadow-lg hover:!bg-gray-100 !transition-all !duration-300 hover:!scale-110"
               aria-label="Cerrar"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-700"
+                className="!h-6 !w-6 !text-gray-700"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -119,7 +119,8 @@ export default function MesDeLosParques() {
             <img
               src="https://anpr.org.mx/wp-content/uploads/2025/12/Imagen-de-WhatsApp-2025-12-01-a-las-12.01.06_5957210f.jpg"
               alt="Anuncio Mes de los Parques"
-              className="w-full h-auto"
+              className="!w-full !h-auto !block !max-w-full"
+              style={{ maxWidth: "100%", height: "auto" }}
             />
           </div>
         </div>
