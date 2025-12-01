@@ -99,16 +99,22 @@ export default function MesDeLosParques() {
       <Header />
 
       {showPopup && (
-        <div className="!fixed !inset-0 !z-[9999] !flex !items-center !justify-center !bg-black/70 !backdrop-blur-sm !p-4">
-          <div className="!relative !w-auto !max-w-[90vw] !max-h-[90vh] !bg-transparent !rounded-2xl !shadow-2xl !overflow-visible animate-pulse-glow">
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
+        >
+          <div
+            className="relative bg-white rounded-2xl shadow-2xl overflow-hidden animate-pulse-glow"
+            style={{ maxWidth: "650px", width: "90vw", maxHeight: "90vh" }}
+          >
             <button
               onClick={() => setShowPopup(false)}
-              className="!absolute !-top-2 !-right-2 !z-10 !w-10 !h-10 !flex !items-center !justify-center !bg-white !rounded-full !shadow-lg hover:!bg-gray-100 !transition-all !duration-300 hover:!scale-110"
+              className="absolute top-3 right-3 z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 hover:scale-110"
               aria-label="Cerrar"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="!h-6 !w-6 !text-gray-700"
+                className="h-6 w-6 text-gray-700"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -119,13 +125,11 @@ export default function MesDeLosParques() {
             <img
               src="https://anpr.org.mx/wp-content/uploads/2025/12/Imagen-de-WhatsApp-2025-12-01-a-las-12.01.06_5957210f.jpg"
               alt="Mes de los Parques - Estadísticas"
-              className="!w-auto !h-auto !max-w-full !max-h-[90vh] !object-contain !rounded-2xl !shadow-2xl"
+              className="w-full h-auto object-contain"
               style={{
-                display: "block !important",
-                width: "auto !important",
-                height: "auto !important",
-                maxWidth: "600px !important",
-                imageRendering: "auto",
+                display: "block",
+                maxHeight: "85vh",
+                margin: "0 auto",
               }}
             />
           </div>
