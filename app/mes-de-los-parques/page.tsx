@@ -100,16 +100,31 @@ export default function MesDeLosParques() {
 
       {showPopup && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
-          style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
+          className="fixed inset-0 flex items-center justify-center p-4"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 9999,
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            backdropFilter: "blur(4px)",
+          }}
         >
           <div
             className="relative bg-white rounded-2xl shadow-2xl overflow-hidden animate-pulse-glow"
-            style={{ maxWidth: "650px", width: "90vw", maxHeight: "90vh" }}
+            style={{
+              maxWidth: "650px",
+              width: "90vw",
+              maxHeight: "90vh",
+              zIndex: 10000,
+            }}
           >
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute top-3 right-3 z-10 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+              className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 hover:scale-110"
+              style={{ zIndex: 10001 }}
               aria-label="Cerrar"
             >
               <svg
