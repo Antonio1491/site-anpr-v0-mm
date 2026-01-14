@@ -323,7 +323,7 @@ export default function LandingPageV0() {
                 <img
                   src="/images/anpr-logo.png"
                   alt="5.ª Jornada de Capacitación ANPR México - Guadalajara, Jalisco 2026"
-                  className="w-full max-w-md h-auto object-contain"
+                  className="w-full max-w-xs h-auto object-contain"
                 />
               </div>
 
