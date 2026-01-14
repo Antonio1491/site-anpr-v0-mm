@@ -58,9 +58,9 @@ export default function LandingPageV0() {
   }, [])
 
   useEffect(() => {
-    // Load Montserrat font
+    // Load Montserrat font with Black weight (900)
     const link = document.createElement("link")
-    link.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+    link.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap"
     link.rel = "stylesheet"
     document.head.appendChild(link)
 
@@ -77,7 +77,7 @@ export default function LandingPageV0() {
 
       {/* SECCIÓN PRINCIPAL (HÉROE) */}
       <header className="relative min-h-screen flex items-center justify-center text-center text-white px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+        {/* Background image */}
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
@@ -86,6 +86,18 @@ export default function LandingPageV0() {
             willChange: "transform",
           }}
         />
+        {/* Halftone overlay effect */}
+        <div 
+          className="absolute inset-0 z-[5]"
+          style={{
+            background: `radial-gradient(circle, #0040af 1px, transparent 1px)`,
+            backgroundSize: '6px 6px',
+            opacity: 0.4,
+            mixBlendMode: 'multiply',
+          }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-[#0040af] opacity-40 z-[6]"></div>
 
         {/* Decorative elements */}
         <img
@@ -120,16 +132,25 @@ export default function LandingPageV0() {
           {/* Logo Section */}
           <div className="mb-8 animate-fade-in-up animation-delay-200"></div>
 
-          {/* Main Title */}
-          <div className="mb-8 animate-fade-in-up animation-delay-400">
-            <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight max-w-5xl mx-auto font-['Montserrat',sans-serif]"
-              style={{ textShadow: "3px 3px 6px rgba(0,0,0,0.8)", color: "#57d476" }}
-            >
-              5ª Jornada
-            </h1>
+          {/* Main Title with Hojas Image */}
+          <div className="mb-8 animate-fade-in-up animation-delay-400 relative">
+            {/* Hojas image positioned over the text */}
+            <div className="relative inline-block">
+              <img
+                src="/images/hojas.png"
+                alt=""
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] sm:w-[240px] md:w-[320px] lg:w-[400px] xl:w-[480px] h-auto object-contain pointer-events-none"
+                style={{ opacity: 0.85 }}
+              />
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight max-w-5xl mx-auto font-['Montserrat',sans-serif] relative z-10"
+                style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#57d476", fontWeight: 900 }}
+              >
+                5ª Jornada
+              </h1>
+            </div>
             <p
-              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide mt-4 text-white font-['Montserrat',sans-serif]"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide mt-4 text-white font-['Montserrat',sans-serif] relative z-20"
               style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
             >
               DE CAPACITACIÓN ANPR MÉXICO
