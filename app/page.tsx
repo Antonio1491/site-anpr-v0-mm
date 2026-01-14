@@ -1123,27 +1123,57 @@ export default function LandingPageV0() {
               {/* Presenta */}
               <div
                 data-animate
-                id="org-bugy"
+                id="org-presenta"
                 className={`text-center transition-all duration-700 ${
-                  isVisible("org-bugy") ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+                  isVisible("org-presenta") ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
                 <h3 className="text-xl font-bold text-[#012787] mb-6 font-['Montserrat',sans-serif]">Presenta:</h3>
-                <a
-                  href="https://bugy.mx/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-transform transform hover:scale-105"
-                >
-                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 mx-auto max-w-sm">
-                    <img
-                      src="/images/bugy.png"
-                      alt="Grupo BUGY - Proyectos Recreativos"
-                      className="w-full h-auto object-contain max-h-24"
-                    />
-                  </div>
-                </a>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <a
+                    href="https://bugy.mx/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block transition-transform transform hover:scale-105"
+                  >
+                    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
+                      <img
+                        src="/images/bugy.png"
+                        alt="Grupo BUGY - Proyectos Recreativos"
+                        className="w-auto h-auto object-contain max-h-20"
+                      />
+                    </div>
+                  </a>
+                  <a
+                    href="https://parquesdemexico.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block transition-transform transform hover:scale-105"
+                  >
+                    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
+                      <img
+                        src="/images/logos/parques-mexico.png"
+                        alt="Parques de México"
+                        className="w-auto h-auto object-contain max-h-20"
+                      />
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.hunterirrigation.com/es"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block transition-transform transform hover:scale-105"
+                  >
+                    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
+                      <img
+                        src="/images/logos/hunter.png"
+                        alt="Hunter Industries"
+                        className="w-auto h-auto object-contain max-h-20"
+                      />
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -1158,15 +1188,15 @@ export default function LandingPageV0() {
             >
               <h3 className="text-xl font-bold text-[#012787] mb-6 font-['Montserrat',sans-serif]">Con el apoyo de:</h3>
               <a
-                href="https://www.facebook.com/FideicomisoCTC"
+                href="https://bosquesurbanos.mx/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block transition-transform transform hover:scale-105"
               >
                 <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 mx-auto max-w-sm">
                   <img
-                    src="/images/logo-tres-centurias.png"
-                    alt="Fideicomiso Complejo Tres Centurias"
+                    src="/images/logos/ambu.png"
+                    alt="AMBU - Asociación Mexicana de Bosques Urbanos"
                     className="w-full h-auto object-contain max-h-24"
                   />
                 </div>
