@@ -476,12 +476,13 @@ export default function LandingPageV0() {
                     duration: "3 meses",
                   },
                 ];
-                const visibleVideos = showAllVideos ? allVideos : allVideos.slice(0, 2);
+                const recentVideos = allVideos.slice(0, 2);
+                const olderVideos = allVideos.slice(2);
                 
                 return (
                   <>
                     <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                      {visibleVideos.map((video, index) => (
+                      {recentVideos.map((video, index) => (
                         <div
                           key={video.videoId}
                           data-animate
@@ -490,6 +491,66 @@ export default function LandingPageV0() {
                             isVisible(`video-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                           }`}
                           style={{ transitionDelay: `${index * 200}ms` }}
+                        >
+                          <div className="relative">
+                            <div className="relative w-full h-48 bg-black">
+                              <iframe
+                                src={`https://www.youtube.com/embed/${video.videoId}?controls=0&showinfo=0&rel=0&autoplay=0&mute=1&loop=1&playlist=${video.videoId}&start=10&end=30`}
+                                title={video.title}
+                                className="w-full h-full object-cover"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              />
+
+                              <div
+                                className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center cursor-pointer"
+                                onClick={() => window.open(video.videoUrl, "_blank")}
+                              >
+                                <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                  <svg className="w-6 h-6 text-[#012787] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded flex items-center gap-1 z-10">
+                              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                              </svg>
+                              YouTube
+                            </div>
+
+                            <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Ver video completo
+                            </div>
+                          </div>
+
+                          <div className="p-6">
+                            <h4 className="text-lg font-bold text-[#012787] mb-2 group-hover:text-[#d2dd0a] transition-colors duration-300 font-['Montserrat',sans-serif]">
+                              {video.title}
+                            </h4>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-3">{video.description}</p>
+                            <div className="flex items-center justify-between text-xs text-gray-500">
+                              <span>{video.views}</span>
+                              <span>hace {video.duration}</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Accordion for older videos */}
+                    <div 
+                      className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto overflow-hidden transition-all duration-500 ease-in-out ${
+                        showAllVideos ? "max-h-[2000px] opacity-100 mt-8" : "max-h-0 opacity-0 mt-0"
+                      }`}
+                    >
+                      {olderVideos.map((video, index) => (
+                        <div
+                          key={video.videoId}
+                          className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 group opacity-100"
                         >
                           <div className="relative">
                             <div className="relative w-full h-48 bg-black">
