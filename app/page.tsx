@@ -816,8 +816,8 @@ export default function LandingPageV0() {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               {/* Header */}
               <div className="bg-[#012787] text-white p-6 text-center">
-                <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">26 de noviembre, 2025</h3>
-                <p className="text-[#d2dd0a] font-semibold">Complejo Turístico Tres Centurias, Aguascalientes</p>
+                <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">25 de febrero, 2026</h3>
+                <p className="text-[#d2dd0a] font-semibold">Jardín de Eventos del Bosque Los Colomos, Guadalajara, Jalisco</p>
               </div>
 
               {/* Schedule Items */}
