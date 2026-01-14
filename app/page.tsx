@@ -90,14 +90,14 @@ export default function LandingPageV0() {
         <div 
           className="absolute inset-0 z-[5]"
           style={{
-            background: `radial-gradient(circle, #0040af 1px, transparent 1px)`,
-            backgroundSize: '6px 6px',
-            opacity: 0.4,
+            background: `radial-gradient(circle, #0040af 1.5px, transparent 1.5px)`,
+            backgroundSize: '5px 5px',
+            opacity: 0.55,
             mixBlendMode: 'multiply',
           }}
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-[#0040af] opacity-40 z-[6]"></div>
+        <div className="absolute inset-0 bg-[#0040af] opacity-50 z-[6]"></div>
 
         {/* Decorative elements */}
         <img
@@ -139,7 +139,7 @@ export default function LandingPageV0() {
               <img
                 src="/images/hojas.png"
                 alt=""
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] sm:w-[240px] md:w-[320px] lg:w-[400px] xl:w-[480px] h-auto object-contain pointer-events-none"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] w-[150px] sm:w-[200px] md:w-[270px] lg:w-[340px] xl:w-[400px] h-auto object-contain pointer-events-none"
                 style={{ opacity: 0.85 }}
               />
               <h1
@@ -166,9 +166,9 @@ export default function LandingPageV0() {
 
           {/* Description */}
           <div className="mb-12 animate-fade-in-up animation-delay-700">
-            <p className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light opacity-95 drop-shadow-lg">
+            <p className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium drop-shadow-lg" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}>
               Evento gratuito con conferencias impartidas por{" "}
-              <span className="font-semibold text-white">expertos líderes del sector</span> y espacios de networking
+              <span className="font-bold text-white">expertos líderes del sector</span> y espacios de networking
               para impulsar la transformación de nuestros parques.
             </p>
           </div>
