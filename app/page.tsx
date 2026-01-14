@@ -1120,60 +1120,61 @@ export default function LandingPageV0() {
                 </a>
               </div>
 
-              {/* Presenta */}
-              <div
-                data-animate
-                id="org-presenta"
-                className={`text-center transition-all duration-700 ${
-                  isVisible("org-presenta") ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
-                }`}
-                style={{ transitionDelay: "200ms" }}
-              >
-                <h3 className="text-xl font-bold text-[#012787] mb-6 font-['Montserrat',sans-serif]">Presenta:</h3>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <a
-                    href="https://bugy.mx/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block transition-transform transform hover:scale-105"
-                  >
-                    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                      <img
-                        src="/images/bugy.png"
-                        alt="Grupo BUGY - Proyectos Recreativos"
-                        className="w-auto h-auto object-contain max-h-20"
-                      />
-                    </div>
-                  </a>
-                  <a
-                    href="https://parquesdemexico.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block transition-transform transform hover:scale-105"
-                  >
-                    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                      <img
-                        src="/images/logos/parques-mexico.png"
-                        alt="Parques de México"
-                        className="w-auto h-auto object-contain max-h-20"
-                      />
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.hunterirrigation.com/es"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block transition-transform transform hover:scale-105"
-                  >
-                    <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6">
-                      <img
-                        src="/images/logos/hunter.png"
-                        alt="Hunter Industries"
-                        className="w-auto h-auto object-contain max-h-20"
-                      />
-                    </div>
-                  </a>
-                </div>
+            </div>
+
+            {/* Presenta - Fila independiente */}
+            <div
+              data-animate
+              id="org-presenta"
+              className={`text-center transition-all duration-700 mt-12 ${
+                isVisible("org-presenta") ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+              }`}
+              style={{ transitionDelay: "200ms" }}
+            >
+              <h3 className="text-xl font-bold text-[#012787] mb-6 font-['Montserrat',sans-serif]">Presenta:</h3>
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                <a
+                  href="https://bugy.mx/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-transform transform hover:scale-105"
+                >
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+                    <img
+                      src="/images/bugy.png"
+                      alt="Grupo BUGY - Proyectos Recreativos"
+                      className="h-16 md:h-20 w-auto object-contain"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://parquesdemexico.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-transform transform hover:scale-105"
+                >
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+                    <img
+                      src="/images/logos/parques-mexico.png"
+                      alt="Parques de México"
+                      className="h-16 md:h-20 w-auto object-contain"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://www.hunterirrigation.com/es"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-transform transform hover:scale-105"
+                >
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+                    <img
+                      src="/images/logos/hunter.png"
+                      alt="Hunter Industries"
+                      className="h-16 md:h-20 w-auto object-contain"
+                    />
+                  </div>
+                </a>
               </div>
             </div>
 
