@@ -123,18 +123,23 @@ export default function LandingPageV0() {
           {/* Main Title */}
           <div className="mb-8 animate-fade-in-up animation-delay-400">
             <h1
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-5xl mx-auto font-['Montserrat',sans-serif]"
-              style={{ textShadow: "3px 3px 6px rgba(0,0,0,0.8)" }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight max-w-5xl mx-auto font-['Montserrat',sans-serif]"
+              style={{ textShadow: "3px 3px 6px rgba(0,0,0,0.8)", color: "#57d476" }}
             >
-              Fortaleciendo la Gestión de <span className="text-white">Parques y Espacios Públicos</span>
+              5ª Jornada
             </h1>
+            <p
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide mt-4 text-white font-['Montserrat',sans-serif]"
+              style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
+            >
+              DE CAPACITACIÓN ANPR MÉXICO
+            </p>
           </div>
 
           {/* Event Badge */}
           <div className="mb-8 animate-fade-in-up animation-delay-600">
-            <div className="inline-block bg-[#0f2161]/40 border-2 border-white text-[#d2dd0a] font-bold text-lg sm:text-xl md:text-2xl py-4 px-8 rounded-full drop-shadow-2xl backdrop-blur-sm max-w-4xl">
-              <span className="block sm:inline">4.ª Jornada de Capacitación ANPR México -</span>{" "}
-              <span className="text-white font-extrabold">Aguascalientes</span>
+            <div className="inline-block bg-[#0f2161]/40 border-2 border-white text-white font-bold text-lg sm:text-xl md:text-2xl py-4 px-8 rounded-full drop-shadow-2xl backdrop-blur-sm max-w-4xl">
+              <span className="font-extrabold">Guadalajara, Jalisco, 2026</span>
             </div>
           </div>
 
@@ -153,10 +158,10 @@ export default function LandingPageV0() {
               href="https://anpr.org.mx/event/cuarta-jornada-de-capacitacion-anpr-mexico/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-[#d2dd0a] hover:bg-[#b8c409] text-[#012787] font-bold text-xl py-5 px-12 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
+              className="inline-block bg-[#57d476] hover:bg-[#45c264] text-white font-bold text-xl py-5 px-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(87,212,118,0.5)] focus:outline-none focus:ring-4 focus:ring-[#57d476]/50"
             >
               <span className="flex items-center gap-3">
-                Regístrate Gratis Aquí
+                Regístrate Gratis
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -169,13 +174,13 @@ export default function LandingPageV0() {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
               <div className="flex items-center justify-center gap-2 text-white">
                 <CalendarDays className="w-5 h-5 text-[#d2dd0a]" />
-                <span className="font-semibold">26 de noviembre</span>
+                <span className="font-semibold">Miércoles, 25 de febrero</span>
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
               <div className="flex items-center justify-center gap-2 text-white">
                 <Clock className="w-5 h-5 text-[#d2dd0a]" />
-                <span className="font-semibold">9:00 a.m. – 3:00 p.m.</span>
+                <span className="font-semibold">09:00 a 15:00</span>
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
@@ -241,7 +246,7 @@ export default function LandingPageV0() {
                 {
                   icon: MapPin,
                   title: "Ubicación",
-                  content: "Complejo Turístico Tres Centurias,\nAguascalientes",
+                  content: "Jardín de Eventos del Bosque Los Colomos,\nGuadalajara, Jalisco",
                   delay: "100",
                   iconColor: "#d5df00",
                 },
@@ -255,7 +260,7 @@ export default function LandingPageV0() {
                 {
                   icon: ClipboardList,
                   title: "Incluye",
-                  content: "Ponencias y recorrido en el Complejo Turístico Tres Centurias",
+                  content: "Ponencias y recorrido en el Jardín de Eventos del Bosque Los Colomos",
                   delay: "300",
                   iconColor: "#00dfbf",
                 },
@@ -296,7 +301,7 @@ export default function LandingPageV0() {
               >
                 <img
                   src="/images/anpr-logo.png"
-                  alt="4.ª Jornada de Capacitación ANPR México - Aguascalientes 2025"
+                  alt="5.ª Jornada de Capacitación ANPR México - Guadalajara, Jalisco 2026"
                   className="w-full max-w-md h-auto object-contain"
                 />
               </div>
@@ -310,7 +315,7 @@ export default function LandingPageV0() {
                 }`}
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-[#012787] mb-7 font-['Montserrat',sans-serif]">
-                  ¡La ANPR México llegará a Aguascalientes!
+                  ¡La ANPR México llegará a Guadalajara, Jalisco!
                 </h2>
 
                 <div className="border-l-4 border-[#012787] text-gray-700 p-6 rounded-r-lg text-left shadow-sm mb-16 bg-transparent">
