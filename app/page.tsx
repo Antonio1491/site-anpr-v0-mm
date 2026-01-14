@@ -1093,33 +1093,29 @@ export default function LandingPageV0() {
               nuestra misión de mejorar los espacios públicos en México y América Latina.
             </p>
 
-            {/* Organizadores principales - en la misma línea */}
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              {/* Organiza */}
-              <div
-                data-animate
-                id="org-anpr"
-                className={`text-center transition-all duration-700 ${
-                  isVisible("org-anpr") ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
-                }`}
+            {/* Organiza */}
+            <div
+              data-animate
+              id="org-anpr"
+              className={`text-center transition-all duration-700 ${
+                isVisible("org-anpr") ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+              }`}
+            >
+              <h3 className="text-xl font-bold text-[#012787] mb-6 font-['Montserrat',sans-serif]">Organiza:</h3>
+              <a
+                href="https://anpr.org.mx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block transition-transform transform hover:scale-105"
               >
-                <h3 className="text-xl font-bold text-[#012787] mb-6 font-['Montserrat',sans-serif]">Organiza:</h3>
-                <a
-                  href="https://anpr.org.mx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-transform transform hover:scale-105"
-                >
-                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 mx-auto max-w-sm">
-                    <img
-                      src="/images/anpr.png"
-                      alt="ANPR México - Asociación Nacional de Parques y Recreación de México"
-                      className="w-full h-auto object-contain max-h-24"
-                    />
-                  </div>
-                </a>
-              </div>
-
+                <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+                  <img
+                    src="/images/anpr.png"
+                    alt="ANPR México - Asociación Nacional de Parques y Recreación de México"
+                    className="h-16 md:h-20 w-auto object-contain"
+                  />
+                </div>
+              </a>
             </div>
 
             {/* Presenta - Fila independiente */}
