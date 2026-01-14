@@ -26,6 +26,7 @@ const montserratFont = "font-['Montserrat',sans-serif]"
 export default function LandingPageV0() {
   const [scrollY, setScrollY] = useState(0)
   const [visibleElements, setVisibleElements] = useState(new Set())
+  const [showAllVideos, setShowAllVideos] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -440,10 +441,26 @@ export default function LandingPageV0() {
                 Conoce Más Sobre Nuestras Jornadas
               </h3>
 
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {[
+              {(() => {
+                const allVideos = [
                   {
-                    title: "Jornada ANPR México - Hermosillo",
+                    title: "Aguascalientes",
+                    videoId: "YT5dFUaeTA4",
+                    videoUrl: "https://youtu.be/YT5dFUaeTA4",
+                    description: "Revive los mejores momentos de nuestra jornada en Aguascalientes",
+                    views: "Nuevo",
+                    duration: "1 semana",
+                  },
+                  {
+                    title: "Chihuahua",
+                    videoId: "_5ESDNQRfZ0",
+                    videoUrl: "https://youtu.be/_5ESDNQRfZ0",
+                    description: "Revive los mejores momentos de nuestra jornada en Chihuahua",
+                    views: "Nuevo",
+                    duration: "2 semanas",
+                  },
+                  {
+                    title: "Hermosillo",
                     videoId: "-U6Ml-xubRo",
                     videoUrl: "https://youtu.be/-U6Ml-xubRo",
                     description: "Revive los mejores momentos de nuestra jornada en Hermosillo",
@@ -451,90 +468,100 @@ export default function LandingPageV0() {
                     duration: "6 días",
                   },
                   {
-                    title: "Jornada ANPR México - Querétaro",
+                    title: "Querétaro",
                     videoId: "OHaeknz0Ei4",
                     videoUrl: "https://youtu.be/OHaeknz0Ei4",
                     description: "Experiencias y aprendizajes de nuestra jornada en Querétaro",
                     views: "111 visualizaciones",
                     duration: "3 meses",
                   },
-                ].map((video, index) => (
-                  <div
-                    key={index}
-                    data-animate
-                    id={`video-${index}`}
-                    className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 group ${
-                      isVisible(`video-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                    }`}
-                    style={{ transitionDelay: `${index * 200}ms` }}
-                  >
-                    <div className="relative">
-                      {/* YouTube Embed Preview */}
-                      <div className="relative w-full h-48 bg-black">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${video.videoId}?controls=0&showinfo=0&rel=0&autoplay=0&mute=1&loop=1&playlist=${video.videoId}&start=10&end=30`}
-                          title={video.title}
-                          className="w-full h-full object-cover"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-
-                        {/* Overlay for click interaction */}
+                ];
+                const visibleVideos = showAllVideos ? allVideos : allVideos.slice(0, 2);
+                
+                return (
+                  <>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                      {visibleVideos.map((video, index) => (
                         <div
-                          className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center cursor-pointer"
-                          onClick={() => window.open(video.videoUrl, "_blank")}
+                          key={video.videoId}
+                          data-animate
+                          id={`video-${index}`}
+                          className={`bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-500 group ${
+                            isVisible(`video-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                          }`}
+                          style={{ transitionDelay: `${index * 200}ms` }}
                         >
-                          <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <svg className="w-6 h-6 text-[#012787] ml-1" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
+                          <div className="relative">
+                            <div className="relative w-full h-48 bg-black">
+                              <iframe
+                                src={`https://www.youtube.com/embed/${video.videoId}?controls=0&showinfo=0&rel=0&autoplay=0&mute=1&loop=1&playlist=${video.videoId}&start=10&end=30`}
+                                title={video.title}
+                                className="w-full h-full object-cover"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              />
+
+                              <div
+                                className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center cursor-pointer"
+                                onClick={() => window.open(video.videoUrl, "_blank")}
+                              >
+                                <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                  <svg className="w-6 h-6 text-[#012787] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                  </svg>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded flex items-center gap-1 z-10">
+                              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                              </svg>
+                              YouTube
+                            </div>
+
+                            <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              Ver video completo
+                            </div>
+                          </div>
+
+                          <div className="p-6">
+                            <h4 className="text-lg font-bold text-[#012787] mb-2 group-hover:text-[#d2dd0a] transition-colors duration-300 font-['Montserrat',sans-serif]">
+                              {video.title}
+                            </h4>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-3">{video.description}</p>
+                            <div className="flex items-center justify-between text-xs text-gray-500">
+                              <span>{video.views}</span>
+                              <span>hace {video.duration}</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      ))}
+                    </div>
 
-                      {/* YouTube Badge */}
-                      <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded flex items-center gap-1 z-10">
-                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                    <div className="text-center mt-12">
+                      <button
+                        onClick={() => setShowAllVideos(!showAllVideos)}
+                        className="inline-flex items-center gap-2 bg-[#012787] hover:bg-[#d2dd0a] text-white hover:text-[#012787] font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                      >
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                         </svg>
-                        YouTube
-                      </div>
-
-                      {/* Watch Full Video Badge */}
-                      <div className="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        Ver video completo
-                      </div>
+                        {showAllVideos ? "Ver menos videos" : "Ver más videos"}
+                        <svg 
+                          className={`w-4 h-4 transition-transform duration-300 ${showAllVideos ? "rotate-180" : ""}`} 
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
                     </div>
-
-                    <div className="p-6">
-                      <h4 className="text-lg font-bold text-[#012787] mb-2 group-hover:text-[#d2dd0a] transition-colors duration-300 font-['Montserrat',sans-serif]">
-                        {video.title}
-                      </h4>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-3">{video.description}</p>
-                      <div className="flex items-center justify-between text-xs text-gray-500">
-                        <span>{video.views}</span>
-                        <span>hace {video.duration}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Call to Action for More Videos */}
-              <div className="text-center mt-12">
-                <a
-                  href="https://www.youtube.com/@anprmexico"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#012787] hover:bg-[#d2dd0a] text-white hover:text-[#012787] font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                  </svg>
-                  Ver Más Videos en YouTube
-                </a>
-              </div>
+                  </>
+                );
+              })()}
             </div>
           </div>
         </section>
