@@ -139,7 +139,7 @@ export default function LandingPageV0() {
               <img
                 src="/images/hojas.png"
                 alt=""
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] w-[150px] sm:w-[200px] md:w-[270px] lg:w-[340px] xl:w-[400px] h-auto object-contain pointer-events-none"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%] w-[120px] sm:w-[160px] md:w-[220px] lg:w-[280px] xl:w-[340px] h-auto object-contain pointer-events-none"
                 style={{ opacity: 0.85 }}
               />
               <h1
