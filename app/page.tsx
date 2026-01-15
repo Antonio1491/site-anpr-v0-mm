@@ -1154,20 +1154,6 @@ export default function LandingPageV0() {
                   </div>
                 </a>
                 <a
-                  href="https://parquesdemexico.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block transition-transform transform hover:scale-105"
-                >
-                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
-                    <img
-                      src="/images/logos/parques-mexico.png"
-                      alt="Parques de México"
-                      className="h-16 md:h-20 w-auto object-contain"
-                    />
-                  </div>
-                </a>
-                <a
                   href="https://www.hunterirrigation.com/es"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -1177,6 +1163,20 @@ export default function LandingPageV0() {
                     <img
                       src="/images/logos/hunter.png"
                       alt="Hunter Industries"
+                      className="h-16 md:h-20 w-auto object-contain"
+                    />
+                  </div>
+                </a>
+                <a
+                  href="https://parquesdemexico.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-transform transform hover:scale-105"
+                >
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+                    <img
+                      src="/images/logos/parques-mexico.png"
+                      alt="Parques de México"
                       className="h-16 md:h-20 w-auto object-contain"
                     />
                   </div>
