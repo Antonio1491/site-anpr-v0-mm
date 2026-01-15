@@ -59,9 +59,9 @@ export default function LandingPageV0() {
   }, [])
 
   useEffect(() => {
-    // Load Montserrat font with Black weight (900)
+    // Load Montserrat font with weights 700 and 900 - explicitly normal style only
     const link = document.createElement("link")
-    link.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap"
+    link.href = "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,900&display=swap"
     link.rel = "stylesheet"
     document.head.appendChild(link)
 
@@ -137,25 +137,25 @@ export default function LandingPageV0() {
           <div className="mb-8 animate-fade-in-up animation-delay-400 relative">
             {/* Título principal dividido en dos líneas */}
             <div className="flex flex-col items-center">
-              {/* 5ª con hojas detrás */}
+              {/* 5ª con hojas detrás - tamaño mayor, Bold */}
               <div className="relative inline-block">
                 <img
                   src="/images/hojas.png"
                   alt=""
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] w-[100px] sm:w-[130px] md:w-[180px] lg:w-[220px] xl:w-[280px] h-auto object-contain pointer-events-none"
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[55%] w-[140px] sm:w-[180px] md:w-[260px] lg:w-[320px] xl:w-[400px] h-auto object-contain pointer-events-none"
                   style={{ opacity: 0.85 }}
                 />
                 <span
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-['Montserrat',sans-serif] relative z-10 block"
-                  style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#FFFFFF", fontWeight: 900, fontStyle: "italic" }}
+                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] relative z-10 block font-['Montserrat',sans-serif] font-bold not-italic hero-title-normal"
+                  style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#FFFFFF" }}
                 >
                   5ª
                 </span>
               </div>
-              {/* Jornada sin hojas */}
+              {/* Jornada sin hojas - tamaño menor, Black */}
               <h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-['Montserrat',sans-serif] relative z-10 -mt-2 md:-mt-4"
-                style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#57d476", fontWeight: 900, fontStyle: "italic" }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl relative z-10 -mt-2 md:-mt-4 font-['Montserrat',sans-serif] font-black not-italic hero-title-normal"
+                style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#57d476" }}
               >
                 Jornada
               </h1>
@@ -164,7 +164,7 @@ export default function LandingPageV0() {
               className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide mt-4 text-white font-['Montserrat',sans-serif] relative z-20"
               style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
             >
-              DE CAPACITACIÓN ANPR MÉXICO
+              DE CAPACITACIÓN | ANPR MÉXICO
             </p>
           </div>
 

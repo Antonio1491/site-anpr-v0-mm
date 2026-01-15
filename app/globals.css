@@ -28,6 +28,11 @@ body {
   font-family: var(--font-inter);
 }
 
+.hero-title-normal {
+  font-style: normal !important;
+  font-synthesis: none !important;
+}
+
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
