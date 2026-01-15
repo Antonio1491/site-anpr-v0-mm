@@ -746,22 +746,22 @@ export default function LandingPageV0() {
             <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
               {[
                 {
-                  image: "/images/experts/carlos-hernandez.jpg",
-                  name: "Dr. Carlos Hernández",
-                  role: "Consultor urbano y profesor",
-                  company: "Universidad Iberoamericana",
+                  image: "/images/experts/luis-romahn.jpg",
+                  name: "Luis Romahn",
+                  role: "Director",
+                  company: "Organización Mundial de Parques Urbanos",
                 },
                 {
-                  image: "/images/experts/israel-ortega.jpg",
-                  name: "Israel Ortega González",
-                  role: "Titular",
-                  company: "Fideicomiso Complejo Tres Centurias (Ficotrece)",
+                  image: "/images/experts/perfil.jpg",
+                  name: "Evaristo Aguilar",
+                  role: "Area Manager Mexico / Central America / Caribbean",
+                  company: "Hunter",
                 },
                 {
-                  image: "/images/experts/jose-roberto-barretero.png",
-                  name: "José Roberto Barretero Muñoz",
-                  role: "Jefe de Departamento de Planeación y Diseño Urbano",
-                  company: "Instituto Municipal de Planeación y Evaluación de Aguascalientes",
+                  image: "/images/experts/perfil.jpg",
+                  name: "Por Confirmar",
+                  role: "Por Confirmar",
+                  company: "",
                 },
               ].map((expert, index) => (
                 <div
