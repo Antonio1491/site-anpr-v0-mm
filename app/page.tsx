@@ -843,7 +843,7 @@ export default function LandingPageV0() {
                   { time: "13:15", activity: "Cuarta Conferencia", type: "conference" },
                   { time: "14:05", activity: "Quinta Conferencia", type: "conference" },
                   { time: "14:35", activity: "Espacio de Coffee Break y Networking", type: "break" },
-                  { time: "14:55", activity: "Recorrido por Complejo Turístico Tres Centurias", type: "tour" },
+                  { time: "14:55", activity: "Recorrido por Jardín de Eventos del Bosque Los Colomos", type: "tour" },
                 ].map((item, index) => (
                   <div
                     key={index}
@@ -1306,8 +1306,8 @@ export default function LandingPageV0() {
               {[
                 {
                   title: "Correo Electrónico",
-                  contact: "aux.programas@anpr.org.mx",
-                  href: "mailto:aux.programas@anpr.org.mx",
+                  contact: "contenido@anpr.org.mx",
+                  href: "mailto:contenido@anpr.org.mx",
                   icon: Mail,
                 },
                 {
