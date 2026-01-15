@@ -135,19 +135,29 @@ export default function LandingPageV0() {
 
           {/* Main Title with Hojas Image */}
           <div className="mb-8 animate-fade-in-up animation-delay-400 relative">
-            {/* Hojas image positioned over the text */}
-            <div className="relative inline-block">
-              <img
-                src="/images/hojas.png"
-                alt=""
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%] w-[120px] sm:w-[160px] md:w-[220px] lg:w-[280px] xl:w-[340px] h-auto object-contain pointer-events-none"
-                style={{ opacity: 0.85 }}
-              />
+            {/* Título principal dividido en dos líneas */}
+            <div className="flex flex-col items-center">
+              {/* 5ª con hojas detrás */}
+              <div className="relative inline-block">
+                <img
+                  src="/images/hojas.png"
+                  alt=""
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] w-[100px] sm:w-[130px] md:w-[180px] lg:w-[220px] xl:w-[280px] h-auto object-contain pointer-events-none"
+                  style={{ opacity: 0.85 }}
+                />
+                <span
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-['Montserrat',sans-serif] relative z-10 block"
+                  style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#FFFFFF", fontWeight: 900, fontStyle: "italic" }}
+                >
+                  5ª
+                </span>
+              </div>
+              {/* Jornada sin hojas */}
               <h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight max-w-5xl mx-auto font-['Montserrat',sans-serif] relative z-10"
-                style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#57d476", fontWeight: 900 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-['Montserrat',sans-serif] relative z-10 -mt-2 md:-mt-4"
+                style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#57d476", fontWeight: 900, fontStyle: "italic" }}
               >
-                5ª Jornada
+                Jornada
               </h1>
             </div>
             <p
