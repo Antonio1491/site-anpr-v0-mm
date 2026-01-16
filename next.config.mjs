@@ -9,16 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Required for Replit environment
-  experimental: {
-    allowedDevOrigins: [
-      'https://*.spock.replit.dev',
-      'https://*.replit.dev',
-      'https://*.repl.co',
-      'http://localhost:5000',
-      'http://127.0.0.1:5000'
-    ]
-  },
   // Enable all hosts for development in Replit
   async headers() {
     return [

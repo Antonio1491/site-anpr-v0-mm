@@ -227,9 +227,6 @@ export default function PremiosANPR() {
               <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl font-montserrat">
                 Fechas Importantes
               </p>
-              <span className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full mt-4 animate-pulse">
-                NUEVAS FECHAS
-              </span>
             </div>
 
             {/* Countdown Timer */}
@@ -289,6 +286,12 @@ export default function PremiosANPR() {
                   </span>
                 </div>
               </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto mt-6">
+              <span className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full animate-pulse">
+                NUEVAS FECHAS
+              </span>
             </div>
 
             {/* Timeline */}
