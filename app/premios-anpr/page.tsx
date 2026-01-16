@@ -220,15 +220,15 @@ export default function PremiosANPR() {
         <section id="fechas" className="bg-white py-16 sm:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <span className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full mb-4 animate-pulse">
-                NUEVAS FECHAS
-              </span>
               <h2 className="text-base font-semibold text-[#012787] tracking-wide uppercase font-montserrat">
                 ¡No te quedes fuera!
               </h2>
               <p className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl font-montserrat">
                 Fechas Importantes
               </p>
+              <span className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full mt-4 animate-pulse">
+                NUEVAS FECHAS
+              </span>
             </div>
 
             {/* Countdown Timer */}
