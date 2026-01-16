@@ -22,7 +22,7 @@ export default function PremiosANPR() {
   }
 
   useEffect(() => {
-    const targetDate = new Date("2026-01-15T23:59:59").getTime()
+    const targetDate = new Date("2026-01-25T23:59:59").getTime()
 
     const applicationOpenDate = new Date("2025-11-14T00:00:00").getTime()
 
@@ -220,6 +220,9 @@ export default function PremiosANPR() {
         <section id="fechas" className="bg-white py-16 sm:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
+              <span className="inline-block bg-red-600 text-white text-sm font-bold px-4 py-1 rounded-full mb-4 animate-pulse">
+                NUEVAS FECHAS
+              </span>
               <h2 className="text-base font-semibold text-[#012787] tracking-wide uppercase font-montserrat">
                 ¡No te quedes fuera!
               </h2>
@@ -303,7 +306,7 @@ export default function PremiosANPR() {
                     2
                   </div>
                   <p className="text-lg text-red-600">
-                    <span className="font-bold text-red-700">Cierre de convocatoria:</span> 15 de enero 2026
+                    <span className="font-bold text-red-700">Cierre de convocatoria:</span> 25 de enero 2026
                   </p>
                 </li>
                 <li className="flex items-center space-x-4">
@@ -311,7 +314,7 @@ export default function PremiosANPR() {
                     3
                   </div>
                   <p className="text-lg text-gray-700">
-                    <span className="font-bold text-gray-900">Lanzamiento de Voto Social:</span> 1 de febrero 2026
+                    <span className="font-bold text-gray-900">Lanzamiento de Voto Social:</span> 15 de febrero 2026
                   </p>
                 </li>
                 <li className="flex items-center space-x-4">
@@ -319,7 +322,7 @@ export default function PremiosANPR() {
                     4
                   </div>
                   <p className="text-lg text-gray-700">
-                    <span className="font-bold text-gray-900">Cierre de Voto Social:</span> 1 de marzo 2026
+                    <span className="font-bold text-gray-900">Cierre de Voto Social:</span> 13 de marzo 2026
                   </p>
                 </li>
                 <li className="flex items-center space-x-4">
@@ -327,7 +330,7 @@ export default function PremiosANPR() {
                     5
                   </div>
                   <p className="text-lg text-gray-700">
-                    <span className="font-bold text-gray-900">Resultados:</span> 15 de marzo 2026
+                    <span className="font-bold text-gray-900">Resultados:</span> 20 de marzo 2026
                   </p>
                 </li>
                 <li className="flex items-center space-x-4">
