@@ -752,16 +752,16 @@ export default function LandingPageV0() {
                   company: "Organización Mundial de Parques Urbanos",
                 },
                 {
-                  image: "/images/experts/perfil.jpg",
+                  image: "/images/experts/evaristo.jpg",
                   name: "Evaristo Aguilar",
                   role: "Area Manager Mexico / Central America / Caribbean",
-                  company: "Hunter",
+                  company: "Hunter Industries",
                 },
                 {
                   image: "/images/experts/perfil.jpg",
                   name: "Por Confirmar",
                   role: "Por Confirmar",
-                  company: "",
+                  company: "Agencia Metropolitana de Bosques Urbanos",
                 },
               ].map((expert, index) => (
                 <div
