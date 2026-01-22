@@ -170,8 +170,8 @@ export default function LandingPageV0() {
 
           {/* Event Badge */}
           <div className="mb-8 animate-fade-in-up animation-delay-600">
-            <div className="inline-block bg-[#0f2161]/40 border-2 border-white text-white font-bold text-lg sm:text-xl md:text-2xl py-4 px-8 rounded-full drop-shadow-2xl backdrop-blur-sm max-w-4xl">
-              <span className="font-extrabold">Guadalajara, Jalisco, 2026</span>
+            <div className="inline-block bg-[#0f2161]/40 border-2 border-white text-white font-bold text-xl sm:text-2xl md:text-3xl py-4 px-8 rounded-full drop-shadow-2xl backdrop-blur-sm max-w-4xl">
+              <span className="font-extrabold">Guadalajara, Jalisco</span>
             </div>
           </div>
 
