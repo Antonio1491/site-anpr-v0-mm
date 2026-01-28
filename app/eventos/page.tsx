@@ -206,7 +206,7 @@ export default function EventosPage() {
                   key={event.id}
                   id={`event-${event.id}`}
                   data-animate
-                  className={`bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-700 hover:shadow-xl hover:-translate-y-1 ${
+                  className={`bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-700 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full ${
                     isVisible(`event-${event.id}`)
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-8"
@@ -214,7 +214,7 @@ export default function EventosPage() {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {/* Event Image Banner */}
-                  <div className="relative h-40 bg-[#012787] overflow-hidden">
+                  <div className="relative h-40 bg-[#012787] overflow-hidden flex-shrink-0">
                     <img
                       src={event.image}
                       alt={event.title}
@@ -223,7 +223,7 @@ export default function EventosPage() {
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     {/* Type Badge and External Link */}
                     <div className="flex items-center justify-between mb-4">
                       <span
@@ -278,7 +278,7 @@ export default function EventosPage() {
                       href={event.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full bg-[#012787] text-white text-center py-3 rounded-lg font-medium hover:bg-[#0040af] transition-colors"
+                      className="block w-full bg-[#012787] text-white text-center py-3 rounded-lg font-medium hover:bg-[#0040af] transition-colors mt-auto"
                     >
                       Más información
                     </a>
