@@ -47,7 +47,9 @@ export default function Header() {
     },
     {
       name: "Eventos",
+      href: "/eventos",
       submenu: [
+        { name: "Todos los Eventos", href: "/eventos" },
         { name: "Jornada De Capacitación", href: "https://jornada-de-capacitacion.anpr.org.mx/" },
         { name: "Bootcamp 2025", href: "https://anpr.org.mx/bootcamp-2025/" },
         { name: "Park Tour", href: "https://anpr.org.mx/park-tour/" },
@@ -128,10 +130,20 @@ export default function Header() {
                 onMouseEnter={() => handleMouseEnter(item.name)}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center text-gray-700 hover:text-[#BCCE16] px-3 py-2 text-sm font-medium transition-colors">
-                  {item.name}
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
+                {"href" in item && item.href ? (
+                  <Link
+                    href={item.href}
+                    className="flex items-center text-gray-700 hover:text-[#BCCE16] px-3 py-2 text-sm font-medium transition-colors"
+                  >
+                    {item.name}
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </Link>
+                ) : (
+                  <button className="flex items-center text-gray-700 hover:text-[#BCCE16] px-3 py-2 text-sm font-medium transition-colors">
+                    {item.name}
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  </button>
+                )}
 
                 {/* Dropdown Menu */}
                 {activeDropdown === item.name && (
