@@ -214,11 +214,12 @@ export default function EventosPage() {
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
                   {/* Event Image Banner */}
-                  <div className="relative h-40 bg-[#012787] flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#012787] to-[#0040af]"></div>
-                    <h3 className="relative z-10 text-white text-xl md:text-2xl font-bold text-center px-4 font-['Montserrat',sans-serif] uppercase tracking-wide">
-                      {event.title}
-                    </h3>
+                  <div className="relative h-40 bg-[#012787] overflow-hidden">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Card Content */}
