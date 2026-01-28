@@ -200,7 +200,7 @@ export default function EventosPage() {
       <section className="flex-grow py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {viewMode === "descriptive" ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
               {events.map((event, index) => (
                 <article
                   key={event.id}
@@ -257,9 +257,11 @@ export default function EventosPage() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 text-sm mb-6 line-clamp-4">
-                      {event.description}
-                    </p>
+                    <div className="flex-grow">
+                      <p className="text-gray-600 text-sm mb-6 line-clamp-4">
+                        {event.description}
+                      </p>
+                    </div>
 
                     {/* Location and Duration */}
                     <div className="space-y-2 mb-6">
@@ -278,7 +280,7 @@ export default function EventosPage() {
                       href={event.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full bg-[#012787] text-white text-center py-3 rounded-lg font-medium hover:bg-[#0040af] transition-colors mt-auto"
+                      className="block w-full bg-[#012787] text-white text-center py-3 rounded-lg font-medium hover:bg-[#0040af] transition-colors"
                     >
                       Más información
                     </a>
