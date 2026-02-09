@@ -31,7 +31,7 @@ export default function PremiosANPR() {
       const now = new Date().getTime()
       const distance = targetDate - now
 
-      setIsApplicationOpen(now >= applicationOpenDate)
+      setIsApplicationOpen(false)
 
       if (distance < 0) {
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 })
