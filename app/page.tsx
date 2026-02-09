@@ -758,9 +758,9 @@ export default function LandingPageV0() {
                   company: "Hunter Industries",
                 },
                 {
-                  image: "/images/experts/perfil.jpg",
-                  name: "Por Confirmar",
-                  role: "Por Confirmar",
+                  image: "/images/experts/jesus-felix-new.jpg",
+                  name: "Jesús Alexandro Félix Gastelum",
+                  role: "Administrador General",
                   company: "Agencia Metropolitana de Bosques Urbanos",
                 },
               ].map((expert, index) => (
