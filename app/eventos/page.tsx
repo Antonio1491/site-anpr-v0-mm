@@ -32,17 +32,6 @@ const events: Event[] = [
     href: "https://jornada-de-capacitacion.anpr.org.mx/",
   },
   {
-    id: "encuentro-parques",
-    title: "Encuentro Parques",
-    date: "25 de marzo de 2025",
-    description: "Evento que reúne a líderes y tomadores de decisiones del sector parques urbanos y espacios públicos para compartir experiencias y conocimientos.",
-    location: "Puebla, México",
-    duration: "3 días",
-    type: "capacitacion",
-    image: "/images/eventos/encuentro-parques.png",
-    href: "https://anpr.org.mx/encuentro-parques-mx/",
-  },
-  {
     id: "expo-espacio-publico",
     title: "Expo Espacio Público",
     date: "14 y 15 de mayo de 2026",
@@ -63,6 +52,17 @@ const events: Event[] = [
     type: "congreso",
     image: "/images/eventos/congreso-parques-new.png",
     href: "https://congresoparques.com/",
+  },
+  {
+    id: "encuentro-parques",
+    title: "Encuentro Parques",
+    date: "25 de marzo de 2025",
+    description: "Evento que reúne a líderes y tomadores de decisiones del sector parques urbanos y espacios públicos para compartir experiencias y conocimientos.",
+    location: "Puebla, México",
+    duration: "3 días",
+    type: "capacitacion",
+    image: "/images/eventos/encuentro-parques.png",
+    href: "https://anpr.org.mx/encuentro-parques-mx/",
   },
   {
     id: "park-tour",
@@ -88,24 +88,27 @@ const events: Event[] = [
   },
 ]
 
-const typeConfig: Record<EventType, { label: string; bgColor: string; textColor: string; icon: React.ReactNode }> = {
+const typeConfig: Record<EventType, { label: string; bgColor: string; textColor: string; icon: React.ReactNode; cardAccent: string }> = {
   exposicion: {
     label: "Exposición",
-    bgColor: "bg-[#e8f5e9]",
-    textColor: "text-[#2e7d32]",
+    bgColor: "bg-[#012787]/10",
+    textColor: "text-[#012787]",
     icon: <Landmark className="w-3.5 h-3.5" />,
+    cardAccent: "border-t-4 border-t-[#012787]",
   },
   congreso: {
     label: "Congreso",
-    bgColor: "bg-[#e3f2fd]",
-    textColor: "text-[#1565c0]",
+    bgColor: "bg-[#0040af]/10",
+    textColor: "text-[#0040af]",
     icon: <Mic className="w-3.5 h-3.5" />,
+    cardAccent: "border-t-4 border-t-[#0040af]",
   },
   capacitacion: {
     label: "Capacitación",
-    bgColor: "bg-[#e8f5e9]",
-    textColor: "text-[#388e3c]",
+    bgColor: "bg-[#00DFBF]/15",
+    textColor: "text-[#0a7a68]",
     icon: <GraduationCap className="w-3.5 h-3.5" />,
+    cardAccent: "border-t-4 border-t-[#00DFBF]",
   },
 }
 
@@ -206,7 +209,7 @@ export default function EventosPage() {
                   key={event.id}
                   id={`event-${event.id}`}
                   data-animate
-                  className={`bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-700 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full ${
+                  className={`bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-700 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full ${typeConfig[event.type].cardAccent} ${
                     isVisible(`event-${event.id}`)
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-8"
