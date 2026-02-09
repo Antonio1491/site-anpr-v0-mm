@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Calendar, MapPin, Clock, ExternalLink, List, CalendarDays } from "lucide-react"
+import { Calendar, MapPin, Clock, ExternalLink, List, CalendarDays, Landmark, Mic, GraduationCap } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
@@ -21,48 +21,48 @@ interface Event {
 
 const events: Event[] = [
   {
+    id: "jornada-capacitacion",
+    title: "5a Jornada de Capacitación",
+    date: "25 de febrero de 2026",
+    description: "Evento gratuito de capacitación enfocado en el desarrollo de habilidades y conocimientos especializados para profesionales del sector.",
+    location: "Guadalajara, Jalisco",
+    duration: "1 día",
+    type: "capacitacion",
+    image: "/images/eventos/jornada-capacitacion-new.png",
+    href: "https://jornada-de-capacitacion.anpr.org.mx/",
+  },
+  {
+    id: "encuentro-parques",
+    title: "Encuentro Parques",
+    date: "25 de marzo de 2025",
+    description: "Evento que reúne a líderes y tomadores de decisiones del sector parques urbanos y espacios públicos para compartir experiencias y conocimientos.",
+    location: "Puebla, México",
+    duration: "3 días",
+    type: "capacitacion",
+    image: "/images/eventos/encuentro-parques.png",
+    href: "https://anpr.org.mx/encuentro-parques-mx/",
+  },
+  {
     id: "expo-espacio-publico",
     title: "Expo Espacio Público",
-    date: "25 de noviembre de 2026",
+    date: "14 y 15 de mayo de 2026",
     description: "Exposición especializada en diseño, construcción y gestión de espacios públicos urbanos y equipamiento recreativo.",
     location: "Próximamente",
     duration: "2 días",
     type: "exposicion",
-    image: "/images/eventos/expo-espacio-publico.png",
+    image: "/images/eventos/expo-espacio-publico-new.png",
     href: "https://www.expoespaciopublico.com/",
   },
   {
     id: "congreso-parques",
-    title: "Congreso Parques",
-    date: "24 de noviembre de 2026",
+    title: "IX Congreso Parques",
+    date: "13 al 15 de mayo de 2026",
     description: "Congreso internacional sobre gestión de parques, espacios públicos y recreación, con ponentes nacionales e internacionales.",
     location: "Próximamente",
     duration: "3 días",
     type: "congreso",
-    image: "/images/eventos/congreso-parques.png",
+    image: "/images/eventos/congreso-parques-new.png",
     href: "https://congresoparques.com/",
-  },
-  {
-    id: "bootcamp-parques",
-    title: "Bootcamp Parques",
-    date: "24 de septiembre de 2025",
-    description: "Programa intensivo de capacitación diseñado para equipos multidisciplinarios donde se aprende resolviendo los retos reales de un parque urbano.",
-    location: "Bosque de Chapultepec, CDMX",
-    duration: "2 días",
-    type: "capacitacion",
-    image: "/images/eventos/bootcamp-parques.png",
-    href: "https://anpr.org.mx/bootcamp-2025/",
-  },
-  {
-    id: "jornada-capacitacion",
-    title: "Jornada De Capacitación",
-    date: "2 de septiembre de 2025",
-    description: "Evento gratuito de capacitación enfocado en el desarrollo de habilidades y conocimientos especializados para profesionales del sector.",
-    location: "Chihuahua, Chihuahua",
-    duration: "1 día",
-    type: "capacitacion",
-    image: "/images/eventos/jornada-capacitacion.png",
-    href: "https://jornada-de-capacitacion.anpr.org.mx/",
   },
   {
     id: "park-tour",
@@ -76,36 +76,36 @@ const events: Event[] = [
     href: "https://anpr.org.mx/park-tour/",
   },
   {
-    id: "encuentro-parques",
-    title: "Encuentro Parques",
-    date: "25 de marzo de 2025",
-    description: "Evento que reúne a líderes y tomadores de decisiones del sector parques urbanos y espacios públicos para compartir experiencias y conocimientos.",
-    location: "Puebla, México",
-    duration: "3 días",
+    id: "bootcamp-parques",
+    title: "Bootcamp Parques",
+    date: "24 de septiembre de 2025",
+    description: "Programa intensivo de capacitación diseñado para equipos multidisciplinarios donde se aprende resolviendo los retos reales de un parque urbano.",
+    location: "Bosque de Chapultepec, CDMX",
+    duration: "2 días",
     type: "capacitacion",
-    image: "/images/eventos/encuentro-parques.png",
-    href: "https://anpr.org.mx/encuentro-parques-mx/",
+    image: "/images/eventos/bootcamp-parques.png",
+    href: "https://anpr.org.mx/bootcamp-2025/",
   },
 ]
 
-const typeConfig: Record<EventType, { label: string; bgColor: string; textColor: string; icon: string }> = {
+const typeConfig: Record<EventType, { label: string; bgColor: string; textColor: string; icon: React.ReactNode }> = {
   exposicion: {
     label: "Exposición",
     bgColor: "bg-[#e8f5e9]",
     textColor: "text-[#2e7d32]",
-    icon: "🏛️",
+    icon: <Landmark className="w-3.5 h-3.5" />,
   },
   congreso: {
     label: "Congreso",
     bgColor: "bg-[#e3f2fd]",
     textColor: "text-[#1565c0]",
-    icon: "🎤",
+    icon: <Mic className="w-3.5 h-3.5" />,
   },
   capacitacion: {
     label: "Capacitación",
     bgColor: "bg-[#e8f5e9]",
     textColor: "text-[#388e3c]",
-    icon: "🎓",
+    icon: <GraduationCap className="w-3.5 h-3.5" />,
   },
 }
 
@@ -231,7 +231,7 @@ export default function EventosPage() {
                           typeConfig[event.type].bgColor
                         } ${typeConfig[event.type].textColor}`}
                       >
-                        <span>{typeConfig[event.type].icon}</span>
+                        {typeConfig[event.type].icon}
                         {typeConfig[event.type].label}
                       </span>
                       <a
