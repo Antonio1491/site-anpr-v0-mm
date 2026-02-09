@@ -180,23 +180,12 @@ export default function PremiosANPR() {
                   Reconocemos las mejores prácticas en parques, espacio público y recreación de Latinoamérica.
                 </p>
                 <div className="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                  {isApplicationOpen ? (
-                    <a
-                      href="https://premios.anpr.org.mx/participants/create"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-[#00DFBF] hover:bg-[#00c9ab] shadow-lg transform hover:scale-105 transition-all duration-300"
-                    >
-                      Aplica Ahora
-                    </a>
-                  ) : (
-                    <button
-                      disabled
-                      className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-[#00DFBF] opacity-60 cursor-not-allowed shadow-lg transition-all duration-300"
-                    >
-                      Aplica a partir del 14 de noviembre
-                    </button>
-                  )}
+                  <button
+                    disabled
+                    className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-[#00DFBF] opacity-60 cursor-not-allowed shadow-lg transition-all duration-300"
+                  >
+                    Aplica Ahora
+                  </button>
                   <a
                     href="https://anpr.org.mx/mp-files/bases-premios-anpr-2026.pdf/"
                     target="_blank"
@@ -698,23 +687,12 @@ export default function PremiosANPR() {
             </div>
 
             <div className="mt-12 flex justify-center">
-              {isApplicationOpen ? (
-                <a
-                  href="https://premios.anpr.org.mx/participants/create"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-[#00DFBF] hover:bg-[#00c9ab] shadow-lg transform hover:scale-105 transition-all duration-300"
-                >
-                  Aplica Ahora
-                </a>
-              ) : (
-                <button
-                  disabled
-                  className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-[#00DFBF] opacity-60 cursor-not-allowed shadow-lg transition-all duration-300"
-                >
-                  Aplica a partir del 14 de noviembre
-                </button>
-              )}
+              <button
+                disabled
+                className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-[#00DFBF] opacity-60 cursor-not-allowed shadow-lg transition-all duration-300"
+              >
+                Aplica Ahora
+              </button>
             </div>
           </div>
         </section>
