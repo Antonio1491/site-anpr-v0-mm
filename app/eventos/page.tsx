@@ -11,6 +11,7 @@ interface Event {
   id: string
   title: string
   date: string
+  sortDate: string
   description: string
   location: string
   duration: string
@@ -19,11 +20,14 @@ interface Event {
   href: string
 }
 
-const events: Event[] = [
+const CURRENT_YEAR = 2026
+
+const rawEvents: Event[] = [
   {
     id: "jornada-capacitacion",
     title: "5a Jornada de Capacitación",
     date: "25 de febrero de 2026",
+    sortDate: "2026-02-25",
     description: "Evento gratuito de capacitación enfocado en el desarrollo de habilidades y conocimientos especializados para profesionales del sector.",
     location: "Guadalajara, Jalisco",
     duration: "1 día",
@@ -35,6 +39,7 @@ const events: Event[] = [
     id: "expo-espacio-publico",
     title: "Expo Espacio Público",
     date: "14 y 15 de mayo de 2026",
+    sortDate: "2026-05-14",
     description: "Exposición especializada en diseño, construcción y gestión de espacios públicos urbanos y equipamiento recreativo.",
     location: "Próximamente",
     duration: "2 días",
@@ -46,6 +51,7 @@ const events: Event[] = [
     id: "congreso-parques",
     title: "IX Congreso Parques",
     date: "13 al 15 de mayo de 2026",
+    sortDate: "2026-05-13",
     description: "Congreso internacional sobre gestión de parques, espacios públicos y recreación, con ponentes nacionales e internacionales.",
     location: "Próximamente",
     duration: "3 días",
@@ -57,6 +63,7 @@ const events: Event[] = [
     id: "encuentro-parques",
     title: "Encuentro Parques",
     date: "25 de marzo de 2025",
+    sortDate: "2025-03-25",
     description: "Evento que reúne a líderes y tomadores de decisiones del sector parques urbanos y espacios públicos para compartir experiencias y conocimientos.",
     location: "Puebla, México",
     duration: "3 días",
@@ -68,6 +75,7 @@ const events: Event[] = [
     id: "park-tour",
     title: "Park Tour",
     date: "24 de junio de 2025",
+    sortDate: "2025-06-24",
     description: "Recorrido especializado por diferentes parques y espacios recreativos de EE.UU., explorando mejores prácticas e innovaciones en gestión.",
     location: "Washington D.C.",
     duration: "3 días",
@@ -79,6 +87,7 @@ const events: Event[] = [
     id: "bootcamp-parques",
     title: "Bootcamp Parques",
     date: "24 de septiembre de 2025",
+    sortDate: "2025-09-24",
     description: "Programa intensivo de capacitación diseñado para equipos multidisciplinarios donde se aprende resolviendo los retos reales de un parque urbano.",
     location: "Bosque de Chapultepec, CDMX",
     duration: "2 días",
@@ -88,25 +97,33 @@ const events: Event[] = [
   },
 ]
 
-const typeConfig: Record<EventType, { label: string; bgColor: string; textColor: string; icon: React.ReactNode; cardAccent: string }> = {
+const events = (() => {
+  const currentYear = rawEvents.filter(e => e.sortDate.startsWith(String(CURRENT_YEAR)))
+  const previousYear = rawEvents.filter(e => !e.sortDate.startsWith(String(CURRENT_YEAR)))
+  currentYear.sort((a, b) => a.sortDate.localeCompare(b.sortDate))
+  previousYear.sort((a, b) => a.sortDate.localeCompare(b.sortDate))
+  return [...currentYear, ...previousYear]
+})()
+
+const typeConfig: Record<EventType, { label: string; badgeBg: string; badgeText: string; icon: React.ReactNode; cardAccent: string }> = {
   exposicion: {
     label: "Exposición",
-    bgColor: "bg-[#012787]/10",
-    textColor: "text-[#012787]",
+    badgeBg: "#e8eef8",
+    badgeText: "#012787",
     icon: <Landmark className="w-3.5 h-3.5" />,
     cardAccent: "border-t-4 border-t-[#012787]",
   },
   congreso: {
     label: "Congreso",
-    bgColor: "bg-[#0040af]/10",
-    textColor: "text-[#0040af]",
+    badgeBg: "#eae5f6",
+    badgeText: "#5a2d9e",
     icon: <Mic className="w-3.5 h-3.5" />,
     cardAccent: "border-t-4 border-t-[#0040af]",
   },
   capacitacion: {
     label: "Capacitación",
-    bgColor: "bg-[#00DFBF]/15",
-    textColor: "text-[#0a7a68]",
+    badgeBg: "#e0f7f1",
+    badgeText: "#0a7a68",
     icon: <GraduationCap className="w-3.5 h-3.5" />,
     cardAccent: "border-t-4 border-t-[#00DFBF]",
   },
@@ -230,9 +247,8 @@ export default function EventosPage() {
                     {/* Type Badge and External Link */}
                     <div className="flex items-center justify-between mb-4">
                       <span
-                        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium ${
-                          typeConfig[event.type].bgColor
-                        } ${typeConfig[event.type].textColor}`}
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium"
+                        style={{ backgroundColor: typeConfig[event.type].badgeBg, color: typeConfig[event.type].badgeText }}
                       >
                         {typeConfig[event.type].icon}
                         {typeConfig[event.type].label}
@@ -304,12 +320,8 @@ export default function EventosPage() {
               </div>
 
               <div className="space-y-4">
-                {events
-                  .sort((a, b) => {
-                    const dateA = new Date(a.date.split(" de ").reverse().join("-"))
-                    const dateB = new Date(b.date.split(" de ").reverse().join("-"))
-                    return dateA.getTime() - dateB.getTime()
-                  })
+                {[...events]
+                  .sort((a, b) => a.sortDate.localeCompare(b.sortDate))
                   .map((event, index) => (
                     <a
                       key={event.id}
@@ -331,9 +343,8 @@ export default function EventosPage() {
                       <div className="flex-grow">
                         <div className="flex items-center gap-2 mb-1">
                           <span
-                            className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${
-                              typeConfig[event.type].bgColor
-                            } ${typeConfig[event.type].textColor}`}
+                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium"
+                            style={{ backgroundColor: typeConfig[event.type].badgeBg, color: typeConfig[event.type].badgeText }}
                           >
                             {typeConfig[event.type].label}
                           </span>
