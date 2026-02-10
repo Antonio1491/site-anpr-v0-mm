@@ -307,7 +307,7 @@ export default function PremiosANPR() {
                     3
                   </div>
                   <p className="text-lg text-gray-700">
-                    <span className="font-bold text-gray-900">Lanzamiento de Voto Social:</span> 15 de febrero 2026
+                    <span className="font-bold text-gray-900">Lanzamiento de Voto Social:</span> 23 de febrero 2026
                   </p>
                 </li>
                 <li className="flex items-center space-x-4">
@@ -315,7 +315,7 @@ export default function PremiosANPR() {
                     4
                   </div>
                   <p className="text-lg text-gray-700">
-                    <span className="font-bold text-gray-900">Cierre de Voto Social:</span> 13 de marzo 2026
+                    <span className="font-bold text-gray-900">Cierre de Voto Social:</span> 20 de marzo 2026
                   </p>
                 </li>
                 <li className="flex items-center space-x-4">
@@ -323,7 +323,7 @@ export default function PremiosANPR() {
                     5
                   </div>
                   <p className="text-lg text-gray-700">
-                    <span className="font-bold text-gray-900">Resultados:</span> 20 de marzo 2026
+                    <span className="font-bold text-gray-900">Resultados:</span> 27 de marzo 2026
                   </p>
                 </li>
                 <li className="flex items-center space-x-4">
