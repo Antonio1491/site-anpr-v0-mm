@@ -33,7 +33,7 @@ const rawEvents: Event[] = [
     duration: "1 día",
     type: "capacitacion",
     image: "/images/eventos/jornada-capacitacion-new.png",
-    href: "https://jornada-de-capacitacion.anpr.org.mx/",
+    href: "/jornada-de-capacitacion",
   },
   {
     id: "expo-espacio-publico",
@@ -45,7 +45,7 @@ const rawEvents: Event[] = [
     duration: "2 días",
     type: "exposicion",
     image: "/images/eventos/expo-espacio-publico-new.png",
-    href: "https://www.expoespaciopublico.com/",
+    href: "https://tijuana.congresoparques.com/expo-espacio-publico",
   },
   {
     id: "congreso-parques",
@@ -253,15 +253,17 @@ export default function EventosPage() {
                         {typeConfig[event.type].icon}
                         {typeConfig[event.type].label}
                       </span>
-                      <a
-                        href={event.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-[#012787] transition-colors"
-                        aria-label={`Abrir ${event.title} en nueva ventana`}
-                      >
-                        <ExternalLink className="w-5 h-5" />
-                      </a>
+                      {event.href.startsWith("http") && (
+                        <a
+                          href={event.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-400 hover:text-[#012787] transition-colors"
+                          aria-label={`Abrir ${event.title} en nueva ventana`}
+                        >
+                          <ExternalLink className="w-5 h-5" />
+                        </a>
+                      )}
                     </div>
 
                     {/* Event Title */}
@@ -297,9 +299,8 @@ export default function EventosPage() {
                     {/* CTA Button */}
                     <a
                       href={event.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full bg-[#012787] text-white text-center py-3 rounded-lg font-medium hover:bg-[#0040af] transition-colors"
+                      {...(event.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="block w-full bg-[#012787] text-white text-center py-3 rounded-lg font-medium hover:bg-[#00DFBF] hover:text-[#012787] transition-all duration-300"
                     >
                       Más información
                     </a>
@@ -326,9 +327,8 @@ export default function EventosPage() {
                     <a
                       key={event.id}
                       href={event.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-xl border border-gray-200 hover:border-[#012787] hover:shadow-md transition-all group"
+                      {...(event.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-xl border border-gray-200 hover:border-[#012787] hover:shadow-md transition-all duration-300 group"
                     >
                       <div className="flex-shrink-0 w-24 text-center">
                         <div className="bg-[#012787] text-white rounded-lg py-2 px-3">
