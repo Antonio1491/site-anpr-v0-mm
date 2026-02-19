@@ -41,7 +41,7 @@ const rawEvents: Event[] = [
     date: "14 y 15 de mayo de 2026",
     sortDate: "2026-05-14",
     description: "Exposición especializada en diseño, construcción y gestión de espacios públicos urbanos y equipamiento recreativo.",
-    location: "Próximamente",
+    location: "Tijuana, Baja California",
     duration: "2 días",
     type: "exposicion",
     image: "/images/eventos/expo-espacio-publico-new.png",
@@ -53,29 +53,17 @@ const rawEvents: Event[] = [
     date: "13 al 15 de mayo de 2026",
     sortDate: "2026-05-13",
     description: "Congreso internacional sobre gestión de parques, espacios públicos y recreación, con ponentes nacionales e internacionales.",
-    location: "Próximamente",
+    location: "Tijuana, Baja California",
     duration: "3 días",
     type: "congreso",
     image: "/images/eventos/congreso-parques-new.png",
     href: "https://congresoparques.com/",
   },
   {
-    id: "encuentro-parques",
-    title: "Encuentro Parques",
-    date: "25 de marzo de 2025",
-    sortDate: "2025-03-25",
-    description: "Evento que reúne a líderes y tomadores de decisiones del sector parques urbanos y espacios públicos para compartir experiencias y conocimientos.",
-    location: "Puebla, México",
-    duration: "3 días",
-    type: "capacitacion",
-    image: "/images/eventos/encuentro-parques.png",
-    href: "https://anpr.org.mx/encuentro-parques-mx/",
-  },
-  {
     id: "park-tour",
     title: "Park Tour",
-    date: "24 de junio de 2025",
-    sortDate: "2025-06-24",
+    date: "Agosto 2026",
+    sortDate: "2026-08-01",
     description: "Recorrido especializado por diferentes parques y espacios recreativos de EE.UU., explorando mejores prácticas e innovaciones en gestión.",
     location: "Washington D.C.",
     duration: "3 días",
@@ -84,10 +72,22 @@ const rawEvents: Event[] = [
     href: "https://anpr.org.mx/park-tour/",
   },
   {
+    id: "encuentro-parques",
+    title: "Encuentro Parques",
+    date: "Del 21 al 23 de octubre de 2026",
+    sortDate: "2026-10-21",
+    description: "Evento que reúne a líderes y tomadores de decisiones del sector parques urbanos y espacios públicos para compartir experiencias y conocimientos.",
+    location: "Puebla, México",
+    duration: "3 días",
+    type: "capacitacion",
+    image: "/images/eventos/encuentro-parques.png",
+    href: "https://anpr.org.mx/encuentro-parques-mx/",
+  },
+  {
     id: "bootcamp-parques",
     title: "Bootcamp Parques",
-    date: "24 de septiembre de 2025",
-    sortDate: "2025-09-24",
+    date: "Próximamente",
+    sortDate: "2026-12-31",
     description: "Programa intensivo de capacitación diseñado para equipos multidisciplinarios donde se aprende resolviendo los retos reales de un parque urbano.",
     location: "Bosque de Chapultepec, CDMX",
     duration: "2 días",
@@ -312,7 +312,7 @@ export default function EventosPage() {
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-bold text-[#012787] mb-2 font-['Montserrat',sans-serif]">
-                  Calendario de Eventos 2025-2026
+                  Calendario de Eventos 2026
                 </h2>
                 <p className="text-gray-600">
                   Vista cronológica de todos nuestros eventos
@@ -332,12 +332,20 @@ export default function EventosPage() {
                     >
                       <div className="flex-shrink-0 w-24 text-center">
                         <div className="bg-[#012787] text-white rounded-lg py-2 px-3">
-                          <span className="text-sm font-medium">
-                            {event.date.split(" de ")[0]}
-                          </span>
-                          <span className="block text-xs opacity-80">
-                            {event.date.split(" de ").slice(1).join(" ")}
-                          </span>
+                          {event.date.includes(" de ") ? (
+                            <>
+                              <span className="text-sm font-medium">
+                                {event.date.split(" de ")[0]}
+                              </span>
+                              <span className="block text-xs opacity-80">
+                                {event.date.split(" de ").slice(1).join(" ")}
+                              </span>
+                            </>
+                          ) : (
+                            <span className="text-sm font-medium">
+                              {event.date}
+                            </span>
+                          )}
                         </div>
                       </div>
                       <div className="flex-grow">
