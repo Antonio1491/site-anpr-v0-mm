@@ -50,7 +50,7 @@ export default function Header() {
       href: "/eventos",
       submenu: [
         { name: "Todos los Eventos", href: "/eventos" },
-        { name: "Jornada De Capacitación", href: "https://jornada-de-capacitacion.anpr.org.mx/" },
+        { name: "Jornada De Capacitación", href: "/jornada-de-capacitacion" },
         { name: "Bootcamp 2025", href: "https://anpr.org.mx/bootcamp-2025/" },
         { name: "Park Tour", href: "https://anpr.org.mx/park-tour/" },
         { name: "Encuentro Parques", href: "https://anpr.org.mx/encuentro-parques-mx/" },
