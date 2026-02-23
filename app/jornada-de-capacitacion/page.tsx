@@ -23,10 +23,13 @@ import Footer from "@/components/footer"
 // Add Montserrat font
 const montserratFont = "font-['Montserrat',sans-serif]"
 
+const eventoReprogramado = true
+
 export default function JornadaDeCapacitacionPage() {
   const [scrollY, setScrollY] = useState(0)
   const [visibleElements, setVisibleElements] = useState(new Set())
   const [showAllVideos, setShowAllVideos] = useState(false)
+  const [showComunicado, setShowComunicado] = useState(eventoReprogramado)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,6 +78,35 @@ export default function JornadaDeCapacitacionPage() {
   return (
     <div className="bg-white text-gray-800 font-sans antialiased">
       <Header />
+
+      {/* Comunicado Oficial Modal */}
+      {showComunicado && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setShowComunicado(false)}
+        >
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+          <div
+            className="relative max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowComunicado(false)}
+              className="absolute top-3 right-3 z-10 bg-white/90 hover:bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110"
+              aria-label="Cerrar comunicado"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img
+              src="/images/comunicado-jornada.jpg"
+              alt="Comunicado Oficial - 5a Jornada de Capacitación reprogramada hasta nuevo aviso"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      )}
 
       {/* SECCIÓN PRINCIPAL (HÉROE) */}
       <header className="relative min-h-screen flex items-center justify-center text-center text-white px-4 overflow-hidden">
@@ -186,19 +218,33 @@ export default function JornadaDeCapacitacionPage() {
 
           {/* CTA Button */}
           <div className="mb-16 animate-fade-in-up animation-delay-800">
-            <a
-              href="https://anpr.org.mx/event/5ta-jornada-de-capacitacion/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#57d476] hover:bg-[#45c264] text-white font-bold text-xl py-5 px-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(87,212,118,0.5)] focus:outline-none focus:ring-4 focus:ring-[#57d476]/50"
-            >
-              <span className="flex items-center gap-3">
-                Regístrate Gratis
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </span>
-            </a>
+            {eventoReprogramado ? (
+              <button
+                disabled
+                className="inline-block bg-[#57d476] text-white font-bold text-xl py-5 px-14 rounded-full shadow-2xl opacity-50 cursor-not-allowed"
+              >
+                <span className="flex items-center gap-3">
+                  Regístrate Gratis
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </button>
+            ) : (
+              <a
+                href="https://anpr.org.mx/event/5ta-jornada-de-capacitacion/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#57d476] hover:bg-[#45c264] text-white font-bold text-xl py-5 px-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(87,212,118,0.5)] focus:outline-none focus:ring-4 focus:ring-[#57d476]/50"
+              >
+                <span className="flex items-center gap-3">
+                  Regístrate Gratis
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </a>
+            )}
           </div>
 
           {/* Event Details Quick Info */}
@@ -206,7 +252,7 @@ export default function JornadaDeCapacitacionPage() {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
               <div className="flex items-center justify-center gap-2 text-white">
                 <CalendarDays className="w-5 h-5 text-[#d2dd0a]" />
-                <span className="font-semibold">Miércoles, 25 de febrero</span>
+                <span className="font-semibold">{eventoReprogramado ? "Reprogramado a nuevo aviso" : "Miércoles, 25 de febrero"}</span>
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
@@ -826,7 +872,7 @@ export default function JornadaDeCapacitacionPage() {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               {/* Header */}
               <div className="bg-[#012787] text-white p-6 text-center">
-                <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">25 de febrero, 2026</h3>
+                <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">{eventoReprogramado ? "Evento reprogramado a nuevo aviso" : "25 de febrero, 2026"}</h3>
                 <p className="text-[#d2dd0a] font-semibold">Jardín de Eventos del Bosque Los Colomos, Guadalajara, Jalisco</p>
               </div>
 
@@ -1260,20 +1306,35 @@ export default function JornadaDeCapacitacionPage() {
             </p>
             <div className="w-full max-w-lg mx-auto">
               <div className="flex justify-center">
-                <a
-                  href="https://anpr.org.mx/event/5ta-jornada-de-capacitacion/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-animate
-                  id="register-btn"
-                  className={`inline-block bg-[#d2dd0a] hover:bg-[#b8c409] text-[#012787] font-bold py-4 px-8 rounded-md shadow-lg transition-all duration-300 hover:scale-105 ${
-                    isVisible("register-btn")
-                      ? "opacity-100 translate-y-0 scale-100"
-                      : "opacity-0 translate-y-8 scale-95"
-                  }`}
-                >
-                  Inscríbete Ahora
-                </a>
+                {eventoReprogramado ? (
+                  <button
+                    disabled
+                    data-animate
+                    id="register-btn"
+                    className={`inline-block bg-[#d2dd0a] text-[#012787] font-bold py-4 px-8 rounded-md shadow-lg opacity-50 cursor-not-allowed ${
+                      isVisible("register-btn")
+                        ? "translate-y-0 scale-100"
+                        : "translate-y-8 scale-95"
+                    }`}
+                  >
+                    Inscríbete Ahora
+                  </button>
+                ) : (
+                  <a
+                    href="https://anpr.org.mx/event/5ta-jornada-de-capacitacion/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-animate
+                    id="register-btn"
+                    className={`inline-block bg-[#d2dd0a] hover:bg-[#b8c409] text-[#012787] font-bold py-4 px-8 rounded-md shadow-lg transition-all duration-300 hover:scale-105 ${
+                      isVisible("register-btn")
+                        ? "opacity-100 translate-y-0 scale-100"
+                        : "opacity-0 translate-y-8 scale-95"
+                    }`}
+                  >
+                    Inscríbete Ahora
+                  </a>
+                )}
               </div>
             </div>
           </div>
