@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { createPortal } from "react-dom"
 import {
   CalendarDays,
   Clock,
@@ -29,7 +30,8 @@ export default function LandingPageV0() {
   const [scrollY, setScrollY] = useState(0)
   const [visibleElements, setVisibleElements] = useState(new Set())
   const [showAllVideos, setShowAllVideos] = useState(false)
-  const [showComunicado, setShowComunicado] = useState(eventoReprogramado)
+  const [showModal, setShowModal] = useState(eventoReprogramado)
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,40 +75,99 @@ export default function LandingPageV0() {
     }
   }, [])
 
+  useEffect(() => {
+    setPortalTarget(document.body)
+  }, [])
+
   const isVisible = (id: string) => visibleElements.has(id)
+
+  const comunicadoModal = showModal && portalTarget
+    ? createPortal(
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            zIndex: 9999,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "rgba(0,0,0,0.6)",
+          }}
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "520px",
+              width: "90%",
+              borderRadius: "16px",
+              overflow: "visible",
+              boxShadow: "0 25px 60px rgba(0,0,0,0.4)",
+              background: "#fff",
+              padding: "8px",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowModal(false)}
+              style={{
+                position: "absolute",
+                top: "-12px",
+                right: "-12px",
+                width: "36px",
+                height: "36px",
+                borderRadius: "50%",
+                background: "#012787",
+                color: "#fff",
+                border: "3px solid #fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                fontSize: "18px",
+                fontWeight: "bold",
+                lineHeight: 1,
+                boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                transition: "transform 0.2s, background 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.15)"
+                e.currentTarget.style.background = "#d2dd0a"
+                e.currentTarget.style.color = "#012787"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)"
+                e.currentTarget.style.background = "#012787"
+                e.currentTarget.style.color = "#fff"
+              }}
+              aria-label="Cerrar comunicado"
+            >
+              ✕
+            </button>
+            <img
+              src="/images/comunicado-jornada.jpg"
+              alt="Comunicado Oficial - 5a Jornada de Capacitación reprogramada hasta nuevo aviso"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: "12px",
+              }}
+            />
+          </div>
+        </div>,
+        portalTarget
+      )
+    : null
 
   return (
     <div className="bg-white text-gray-800 font-sans antialiased">
       <Header />
 
-      {/* Comunicado Oficial Modal */}
-      {showComunicado && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setShowComunicado(false)}
-        >
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-          <div
-            className="relative max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl animate-scale-in"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setShowComunicado(false)}
-              className="absolute top-3 right-3 z-10 bg-white/90 hover:bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110"
-              aria-label="Cerrar comunicado"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <img
-              src="/images/comunicado-jornada.jpg"
-              alt="Comunicado Oficial - 5a Jornada de Capacitación reprogramada hasta nuevo aviso"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      )}
+      {comunicadoModal}
 
       {/* SECCIÓN PRINCIPAL (HÉROE) */}
       <header className="relative min-h-screen flex items-center justify-center text-center text-white px-4 overflow-hidden">
