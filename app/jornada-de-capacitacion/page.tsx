@@ -29,7 +29,6 @@ export default function JornadaDeCapacitacionPage() {
   const [scrollY, setScrollY] = useState(0)
   const [visibleElements, setVisibleElements] = useState(new Set())
   const [showAllVideos, setShowAllVideos] = useState(false)
-  const [showComunicado, setShowComunicado] = useState(eventoReprogramado)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,35 +77,6 @@ export default function JornadaDeCapacitacionPage() {
   return (
     <div className="bg-white text-gray-800 font-sans antialiased">
       <Header />
-
-      {/* Comunicado Oficial Modal */}
-      {showComunicado && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setShowComunicado(false)}
-        >
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-          <div
-            className="relative max-w-lg w-full rounded-2xl overflow-hidden shadow-2xl animate-scale-in"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setShowComunicado(false)}
-              className="absolute top-3 right-3 z-10 bg-white/90 hover:bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110"
-              aria-label="Cerrar comunicado"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <img
-              src="/images/comunicado-jornada.jpg"
-              alt="Comunicado Oficial - 5a Jornada de Capacitación reprogramada hasta nuevo aviso"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-      )}
 
       {/* SECCIÓN PRINCIPAL (HÉROE) */}
       <header className="relative min-h-screen flex items-center justify-center text-center text-white px-4 overflow-hidden">
