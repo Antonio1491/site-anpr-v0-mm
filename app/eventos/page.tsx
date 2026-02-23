@@ -27,7 +27,7 @@ const rawEvents: Event[] = [
   {
     id: "jornada-capacitacion",
     title: "5a Jornada de Capacitación",
-    date: eventoReprogramado ? "Evento reprogramado a nuevo aviso" : "25 de febrero de 2026",
+    date: eventoReprogramado ? "Evento reprogramado hasta nuevo aviso" : "25 de febrero de 2026",
     sortDate: "2026-02-25",
     description: "Evento gratuito de capacitación enfocado en el desarrollo de habilidades y conocimientos especializados para profesionales del sector.",
     location: "Guadalajara, Jalisco",

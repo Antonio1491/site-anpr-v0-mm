@@ -313,7 +313,7 @@ export default function LandingPageV0() {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
               <div className="flex items-center justify-center gap-2 text-white">
                 <CalendarDays className="w-5 h-5 text-[#d2dd0a]" />
-                <span className="font-semibold">{eventoReprogramado ? "Reprogramado a nuevo aviso" : "Miércoles, 25 de febrero"}</span>
+                <span className="font-semibold">{eventoReprogramado ? "Reprogramado hasta nuevo aviso" : "Miércoles, 25 de febrero"}</span>
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
@@ -933,7 +933,7 @@ export default function LandingPageV0() {
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
               {/* Header */}
               <div className="bg-[#012787] text-white p-6 text-center">
-                <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">{eventoReprogramado ? "Evento reprogramado a nuevo aviso" : "25 de febrero, 2026"}</h3>
+                <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">{eventoReprogramado ? "Evento reprogramado hasta nuevo aviso" : "25 de febrero, 2026"}</h3>
                 <p className="text-[#d2dd0a] font-semibold">Jardín de Eventos del Bosque Los Colomos, Guadalajara, Jalisco</p>
               </div>
 
