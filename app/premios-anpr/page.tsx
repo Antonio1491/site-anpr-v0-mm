@@ -653,7 +653,7 @@ export default function PremiosANPR() {
                     Semilla
                   </h3>
                   <p className="mt-4 text-white">
-                    Celebra a jóvenes líderes (menores de 35 años) que están transformando su entorno e impulsando
+                    Celebra a jóvenes líderes (35 o menos) que están transformando su entorno e impulsando
                     cambios positivos en la industria de los parques urbanos.
                   </p>
                 </div>
