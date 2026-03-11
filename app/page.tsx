@@ -149,7 +149,7 @@ export default function LandingPageV0() {
             </button>
             <img
               src="/images/comunicado-jornada.jpg"
-              alt="Comunicado Oficial - 5a Jornada de Capacitación reprogramada al 28 de abril, 2026"
+              alt="Evento Reprogramado - 5a Jornada de Capacitación ANPR México - Nueva fecha: 28 de abril"
               style={{
                 width: "100%",
                 height: "auto",
