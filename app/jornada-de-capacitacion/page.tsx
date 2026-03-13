@@ -23,7 +23,7 @@ import Footer from "@/components/footer"
 // Add Montserrat font
 const montserratFont = "font-['Montserrat',sans-serif]"
 
-const eventoReprogramado = true
+const eventoReprogramado = false
 
 export default function JornadaDeCapacitacionPage() {
   const [scrollY, setScrollY] = useState(0)
