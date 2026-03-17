@@ -202,7 +202,7 @@ export default function JornadaDeCapacitacionPage() {
               </button>
             ) : (
               <a
-                href="https://anpr.org.mx/event/5ta-jornada-de-capacitacion/"
+                href="https://anpr.org.mx/register/5-jornada-de-capacitacion-guadalajara-jalisco/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#57d476] hover:bg-[#45c264] text-white font-bold text-xl py-5 px-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(87,212,118,0.5)] focus:outline-none focus:ring-4 focus:ring-[#57d476]/50"
@@ -1291,7 +1291,7 @@ export default function JornadaDeCapacitacionPage() {
                   </button>
                 ) : (
                   <a
-                    href="https://anpr.org.mx/event/5ta-jornada-de-capacitacion/"
+                    href="https://anpr.org.mx/register/5-jornada-de-capacitacion-guadalajara-jalisco/"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-animate
