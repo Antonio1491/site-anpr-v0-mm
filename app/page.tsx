@@ -280,7 +280,9 @@ export default function LandingPageV0() {
           {/* CTA Button */}
           <div className="mb-16 animate-fade-in-up animation-delay-800">
             <a
-              href="/registro-jornada"
+              href="https://anpr.org.mx/event/5ta-jornada-de-capacitacion/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-[#57d476] hover:bg-[#45c264] text-white font-bold text-xl py-5 px-14 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 hover:shadow-[0_0_30px_rgba(87,212,118,0.5)] focus:outline-none focus:ring-4 focus:ring-[#57d476]/50"
             >
               <span className="flex items-center gap-3">
@@ -1352,7 +1354,9 @@ export default function LandingPageV0() {
             <div className="w-full max-w-lg mx-auto">
               <div className="flex justify-center">
                 <a
-                  href="/registro-jornada"
+                  href="https://anpr.org.mx/event/5ta-jornada-de-capacitacion/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-animate
                   id="register-btn"
                   className={`inline-block bg-[#d2dd0a] hover:bg-[#b8c409] text-[#012787] font-bold py-4 px-8 rounded-md shadow-lg transition-all duration-300 hover:scale-105 ${
