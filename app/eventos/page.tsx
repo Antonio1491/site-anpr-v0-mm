@@ -34,7 +34,7 @@ const rawEvents: Event[] = [
     duration: "1 día",
     type: "capacitacion",
     image: "/images/eventos/jornada-capacitacion-new.png",
-    href: "/jornada-de-capacitacion",
+    href: "/",
   },
   {
     id: "expo-espacio-publico",
