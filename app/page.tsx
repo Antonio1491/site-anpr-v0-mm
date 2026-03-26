@@ -1736,6 +1736,126 @@ export default function LandingPageV0() {
               </div>
             </section>
 
+            {/* SECCIÓN HORARIOS - LA PAZ */}
+            <section className="py-20 px-4">
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  className="text-3xl md:text-4xl font-bold text-[#012787] text-center mb-16 font-['Montserrat',sans-serif]"
+                >
+                  Programa del Evento
+                </h2>
+
+                <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                  {/* Header */}
+                  <div className="bg-[#012787] text-white p-6 text-center">
+                    <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">Jueves 30 de abril, 2026</h3>
+                    <p className="text-[#d2dd0a] font-semibold">Sala de Capacitación del H. Cuerpo de Bomberos, La Paz, Baja California Sur</p>
+                  </div>
+
+                  {/* Schedule Items */}
+                  <div className="divide-y divide-gray-100">
+                    {[
+                      { time: "9:00", activity: "Registro y bienvenida", type: "registration" },
+                      { time: "9:35", activity: "Introducción por ANPR México", type: "intro" },
+                      { time: "10:10", activity: "Primera Conferencia", type: "conference" },
+                      { time: "10:55", activity: "Espacio de Coffee Break y Networking", type: "break" },
+                      { time: "11:10", activity: "Segunda Conferencia", type: "conference" },
+                      { time: "12:00", activity: "Tercera Conferencia", type: "conference" },
+                      { time: "12:45", activity: "Espacio de Coffee Break y Networking", type: "break" },
+                      { time: "13:15", activity: "Cuarta Conferencia", type: "conference" },
+                      { time: "14:05", activity: "Quinta Conferencia", type: "conference" },
+                      { time: "14:35", activity: "Espacio de Coffee Break y Networking", type: "break" },
+                      { time: "14:55", activity: "Recorrido por Sala de Capacitación del H. Cuerpo de Bomberos", type: "tour" },
+                    ].map((item, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center p-6 hover:bg-gray-50 transition-all duration-300 group"
+                      >
+                        <div className="flex-shrink-0 w-20 text-right mr-6">
+                          <div className="text-2xl font-bold text-[#012787] group-hover:text-[#d2dd0a] transition-colors duration-300 font-['Montserrat',sans-serif]">
+                            {item.time}
+                          </div>
+                        </div>
+                        <div className="flex-shrink-0 relative">
+                          <div
+                            className={`w-4 h-4 rounded-full border-4 transition-all duration-300 ${
+                              item.type === "conference"
+                                ? "bg-[#012787] border-[#012787] group-hover:bg-[#d2dd0a] group-hover:border-[#d2dd0a]"
+                                : item.type === "break"
+                                  ? "bg-[#49db76] border-[#49db76]"
+                                  : item.type === "registration"
+                                    ? "bg-[#d2dd0a] border-[#d2dd0a]"
+                                    : item.type === "tour"
+                                      ? "bg-[#00dfbf] border-[#00dfbf]"
+                                      : "bg-[#00dfbf] border-[#00dfbf]"
+                            }`}
+                          />
+                          {index < 10 && (
+                            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-0.5 h-12 bg-gray-200"></div>
+                          )}
+                        </div>
+                        <div className="flex-1 ml-6">
+                          <h4 className="text-lg font-semibold text-gray-900 group-hover:text-[#012787] transition-colors duration-300">
+                            {item.activity}
+                          </h4>
+                          {item.type === "conference" && (
+                            <p className="text-sm text-gray-500 mt-1">Conferencia magistral</p>
+                          )}
+                          {item.type === "break" && <p className="text-sm text-gray-500 mt-1">Pausa para networking</p>}
+                          {item.type === "tour" && <p className="text-sm text-gray-500 mt-1">Recorrido guiado</p>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="bg-gray-50 p-6 text-center">
+                    <p className="text-sm text-gray-600">
+                      <span className="font-semibold">Nota:</span> Los horarios pueden estar sujetos a cambios menores. Se
+                      notificará cualquier modificación con anticipación.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Additional info cards */}
+                <div className="grid md:grid-cols-3 gap-6 mt-12">
+                  {[
+                    {
+                      icon: Clock,
+                      title: "Duración Total",
+                      content: "6 horas de contenido especializado",
+                      color: "#012787",
+                    },
+                    {
+                      icon: Users,
+                      title: "5 Conferencias",
+                      content: "Ponencias magistrales de expertos",
+                      color: "#d2dd0a",
+                    },
+                    {
+                      icon: Handshake,
+                      title: "3 Espacios de Networking",
+                      content: "Oportunidades para conectar",
+                      color: "#49db76",
+                    },
+                  ].map((info, index) => (
+                    <div
+                      key={index}
+                      className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center hover:shadow-md transition-all duration-300"
+                    >
+                      <div
+                        className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center"
+                        style={{ backgroundColor: `${info.color}20` }}
+                      >
+                        <info.icon className="w-6 h-6" style={{ color: info.color }} />
+                      </div>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">{info.title}</h4>
+                      <p className="text-gray-600 text-sm">{info.content}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
             {/* SECCIÓN EJES TEMÁTICOS - LA PAZ */}
             <section className="py-20 px-4" style={{ backgroundColor: "#f3f8ff" }}>
               <div className="max-w-5xl mx-auto text-center">
@@ -1842,6 +1962,31 @@ export default function LandingPageV0() {
                         />
                       </div>
                     </a>
+                  </div>
+                </div>
+
+                {/* Con el apoyo de - LA PAZ */}
+                <div className="text-center mt-12">
+                  <h3 className="text-xl font-bold text-[#012787] mb-6 font-['Montserrat',sans-serif]">Con el apoyo de:</h3>
+                  <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                    <div className="inline-block transition-transform transform hover:scale-105">
+                      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+                        <img
+                          src="/images/logo-eslapaz.png"
+                          alt="Es La Paz"
+                          className="h-16 md:h-20 w-auto object-contain"
+                        />
+                      </div>
+                    </div>
+                    <div className="inline-block transition-transform transform hover:scale-105">
+                      <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+                        <img
+                          src="/images/logo-ayuntamiento-lapaz-nobg.png"
+                          alt="H. XVIII Ayuntamiento del Municipio de La Paz, B.C.S."
+                          className="h-16 md:h-20 w-auto object-contain"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

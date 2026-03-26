@@ -21,7 +21,8 @@
       "Bash(kill 4043 4044)",
       "Bash(kill -9 10435)",
       "Bash(git diff:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(find /home/runner/workspace/app -type f -name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js)"
     ]
   }
 }
