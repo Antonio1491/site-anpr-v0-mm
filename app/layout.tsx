@@ -36,7 +36,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" type="image/png" />
       </head>
-      <body className={`${inter.className} ${montserrat.variable}`}>{children}</body>
+      <body className={`${inter.className} ${montserrat.variable} pt-16 md:pt-20`}>{children}</body>
     </html>
   )
 }
