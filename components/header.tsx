@@ -43,7 +43,7 @@ const recursosMegaMenu = [
     title: "Participa",
     items: [
       { name: "Eventos", href: "/eventos", icon: Calendar },
-      { name: "Jornada de Capacitación", href: "/jornada-de-capacitacion", icon: GraduationCap },
+      { name: "Jornada de Capacitación", href: "/", icon: GraduationCap },
       { name: "Mes de los Parques", href: "/mes-de-los-parques", icon: CalendarDays },
       { name: "Premios", href: "/premios-anpr", icon: Trophy },
     ],
