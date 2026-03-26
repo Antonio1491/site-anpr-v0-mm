@@ -2,90 +2,96 @@
 
 import { useEffect, useState, useRef } from "react"
 
-type Phase = "showing-normal" | "flipping-to-anni" | "showing-anni" | "shimmering" | "flipping-to-normal"
+export default function LogoFlip() {
+  // true = mostrando logo de aniversario, false = logo normal
+  const [flipped, setFlipped] = useState(false)
+  const [animating, setAnimating] = useState(false)
+  const [shimmer, setShimmer] = useState(false)
+  const timers = useRef<NodeJS.Timeout[]>([])
 
-export default function LogoFlip({ className }: { className?: string }) {
-  const [phase, setPhase] = useState<Phase>("showing-normal")
-  const [showShimmer, setShowShimmer] = useState(false)
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const after = (ms: number, fn: () => void) => {
+    const t = setTimeout(fn, ms)
+    timers.current.push(t)
+  }
 
-  const schedule = (fn: () => void, delay: number) => {
-    timerRef.current = setTimeout(fn, delay)
+  // Giro hacia el logo de aniversario con destello al final
+  const flipToAnniversary = (onDone?: () => void) => {
+    setAnimating(true)
+    // A los 350ms (mitad del giro) cambiamos la imagen
+    after(350, () => setFlipped(true))
+    // Al terminar el giro (700ms) activamos el destello
+    after(700, () => {
+      setAnimating(false)
+      setShimmer(true)
+      after(800, () => {
+        setShimmer(false)
+        onDone?.()
+      })
+    })
+  }
+
+  // Giro de vuelta al logo normal
+  const flipToNormal = (onDone?: () => void) => {
+    setAnimating(true)
+    after(350, () => setFlipped(false))
+    after(700, () => {
+      setAnimating(false)
+      onDone?.()
+    })
+  }
+
+  // Ciclo completo de repetición
+  const runCycle = () => {
+    // Volver brevemente al logo normal (2s) y luego volver al aniversario
+    flipToNormal(() => {
+      after(2000, () => {
+        flipToAnniversary(() => {
+          // Repetir ciclo cada 18 segundos
+          after(18000, runCycle)
+        })
+      })
+    })
   }
 
   useEffect(() => {
-    // Respeta prefers-reduced-motion
+    // Respetar prefers-reduced-motion
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     if (reduced) {
-      setPhase("showing-anni")
+      setFlipped(true)
       return
     }
 
-    // Secuencia inicial: esperar 1.5s, luego girar al aniversario
-    schedule(() => {
-      setPhase("flipping-to-anni")
-      // Al llegar a 90° (mitad del giro) cambiamos la fase visual
-      schedule(() => {
-        setPhase("showing-anni")
-        // Activar shimmer tras completar el giro
-        schedule(() => {
-          setShowShimmer(true)
-          schedule(() => {
-            setShowShimmer(false)
-            // Permanecer en aniversario ~12s, luego repetir ciclo
-            schedule(startLoop, 12000)
-          }, 900)
-        }, 400)
-      }, 350)
-    }, 1500)
+    // Secuencia: 1s de espera → flip → destello → reposo largo → repetición
+    after(1000, () => {
+      flipToAnniversary(() => {
+        // Reposo largo de 14 segundos antes de primera repetición
+        after(14000, runCycle)
+      })
+    })
 
-    return () => { if (timerRef.current) clearTimeout(timerRef.current) }
+    return () => timers.current.forEach(clearTimeout)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const startLoop = () => {
-    // Girar brevemente al logo normal
-    setPhase("flipping-to-normal")
-    schedule(() => {
-      setPhase("showing-normal")
-      // Permanecer en normal ~2.5s
-      schedule(() => {
-        setPhase("flipping-to-anni")
-        schedule(() => {
-          setPhase("showing-anni")
-          schedule(() => {
-            setShowShimmer(true)
-            schedule(() => {
-              setShowShimmer(false)
-              // Loop cada ~15s
-              schedule(startLoop, 15000)
-            }, 900)
-          }, 400)
-        }, 350)
-      }, 2500)
-    }, 350)
-  }
-
-  const isFlipping = phase === "flipping-to-anni" || phase === "flipping-to-normal"
-  const showAnni = phase === "showing-anni" || phase === "shimmering" || phase === "flipping-to-normal"
-
   return (
     <div
-      className={`relative ${className ?? ""}`}
-      style={{ perspective: "600px" }}
+      className="relative flex items-center"
+      style={{ perspective: "700px" }}
     >
-      {/* Card container que rota */}
+      {/* Contenedor con giro 3D */}
       <div
         style={{
           transformStyle: "preserve-3d",
-          transition: isFlipping ? "transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)" : "none",
-          transform: showAnni ? "rotateY(180deg)" : "rotateY(0deg)",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          transition: animating
+            ? "transform 0.7s cubic-bezier(0.42, 0, 0.58, 1)"
+            : "none",
           position: "relative",
-          width: "100%",
-          height: "100%",
+          display: "flex",
+          alignItems: "center",
         }}
       >
-        {/* Cara frontal: logo normal */}
+        {/* Cara frontal — logo ANPR normal */}
         <img
           src="/images/anpr-logo-header.svg"
           alt="ANPR México"
@@ -97,7 +103,7 @@ export default function LogoFlip({ className }: { className?: string }) {
           }}
         />
 
-        {/* Cara trasera: logo 10 aniversario */}
+        {/* Cara trasera — logo 10° Aniversario */}
         <img
           src="/images/anpr-insignia-10-aniversario.png"
           alt="ANPR México 10° Aniversario"
@@ -110,23 +116,29 @@ export default function LogoFlip({ className }: { className?: string }) {
         />
       </div>
 
-      {/* Shimmer overlay — destelleo metálico sutil */}
-      {showShimmer && (
-        <div
-          className="absolute inset-0 rounded-full pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(120deg, transparent 20%, rgba(255,220,100,0.55) 50%, transparent 80%)",
-            animation: "shimmerSweep 0.9s ease-out forwards",
-          }}
-        />
+      {/* Destello dorado — solo al mostrar el logo de aniversario */}
+      {shimmer && (
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 rounded-full pointer-events-none overflow-hidden"
+          style={{ animation: "anprShimmer 0.8s ease-out forwards" }}
+        >
+          <span
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(110deg, transparent 25%, rgba(255, 215, 80, 0.6) 50%, transparent 75%)",
+              borderRadius: "inherit",
+            }}
+          />
+        </span>
       )}
 
       <style>{`
-        @keyframes shimmerSweep {
-          0%   { opacity: 0; transform: translateX(-60%) skewX(-10deg); }
-          30%  { opacity: 1; }
-          100% { opacity: 0; transform: translateX(120%) skewX(-10deg); }
+        @keyframes anprShimmer {
+          0%   { opacity: 0; transform: translateX(-80%); }
+          25%  { opacity: 1; }
+          100% { opacity: 0; transform: translateX(120%); }
         }
       `}</style>
     </div>
