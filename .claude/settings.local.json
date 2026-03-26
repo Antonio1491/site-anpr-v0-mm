@@ -19,7 +19,9 @@
       "Bash(kill 6445 6448 6459 6460 7251 7254 7265 7266)",
       "Bash(curl:*)",
       "Bash(kill 4043 4044)",
-      "Bash(kill -9 10435)"
+      "Bash(kill -9 10435)",
+      "Bash(git diff:*)",
+      "Bash(npm run:*)"
     ]
   }
 }

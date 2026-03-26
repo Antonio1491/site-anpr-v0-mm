@@ -178,7 +178,7 @@ export default function LandingPageV0() {
       {comunicadoModal}
 
       {/* SECCIÓN PRINCIPAL (HÉROE) - Genérico para ambas sedes */}
-      <header className="relative min-h-screen flex items-center justify-center text-center text-white px-4 py-24 overflow-hidden">
+      <header className="relative min-h-[85vh] flex items-center justify-center text-center text-white px-4 py-16 overflow-hidden">
         {/* Background image */}
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
@@ -241,7 +241,7 @@ export default function LandingPageV0() {
               alt="Jornada de Capacitación ANPR México"
               className="h-auto object-contain"
               style={{
-                width: "clamp(150px, 18vw, 240px)",
+                width: "clamp(180px, 24vw, 320px)",
                 filter: "drop-shadow(0px 4px 12px rgba(0,0,0,0.6)) drop-shadow(0px 2px 5px rgba(0,0,0,0.4))",
               }}
             />
@@ -284,7 +284,7 @@ export default function LandingPageV0() {
                   </div>
                   <div className="flex items-center gap-2 text-gray-700">
                     <CalendarDays className="w-5 h-5 text-[#012787] flex-shrink-0" />
-                    <span>28 de abril de 2026</span>
+                    <span>Martes 28 de abril de 2026</span>
                   </div>
                 </div>
 
@@ -303,6 +303,13 @@ export default function LandingPageV0() {
                     onClick={(e) => {
                       e.stopPropagation()
                       handleSelectSede("guadalajara")
+                      setTimeout(() => {
+                        const el = document.getElementById("detalles-evento")
+                        if (el) {
+                          const y = el.getBoundingClientRect().top + window.scrollY - 80
+                          window.scrollTo({ top: y, behavior: "smooth" })
+                        }
+                      }, 100)
                     }}
                     className={`flex-1 inline-flex items-center justify-center gap-2 font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 hover:scale-105 text-sm ${
                       selectedSede === "guadalajara"
@@ -345,7 +352,7 @@ export default function LandingPageV0() {
                   </div>
                   <div className="flex items-center gap-2 text-gray-700">
                     <CalendarDays className="w-5 h-5 text-[#012787] flex-shrink-0" />
-                    <span>30 de abril de 2026</span>
+                    <span>Jueves 30 de abril de 2026</span>
                   </div>
                 </div>
 
@@ -364,6 +371,13 @@ export default function LandingPageV0() {
                     onClick={(e) => {
                       e.stopPropagation()
                       handleSelectSede("lapaz")
+                      setTimeout(() => {
+                        const el = document.getElementById("detalles-evento")
+                        if (el) {
+                          const y = el.getBoundingClientRect().top + window.scrollY - 80
+                          window.scrollTo({ top: y, behavior: "smooth" })
+                        }
+                      }, 100)
                     }}
                     className={`flex-1 inline-flex items-center justify-center gap-2 font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 hover:scale-105 text-sm ${
                       selectedSede === "lapaz"
@@ -409,7 +423,7 @@ export default function LandingPageV0() {
         {selectedSede === "guadalajara" && (
           <div className="animate-fade-in-up">
             {/* SECCIÓN DE DETALLES DEL EVENTO - GUADALAJARA */}
-            <section className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: "#00338d" }}>
+            <section id="detalles-evento" className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: "#00338d" }}>
               {/* Decorative elements */}
               <img
                 src="/images/decorations/hoja-amarilla.png"
@@ -435,17 +449,14 @@ export default function LandingPageV0() {
               />
 
               <div className="max-w-6xl mx-auto relative z-10">
-                {/* Sede indicator */}
-                <div className="text-center mb-6">
-                  <span className="inline-block bg-[#57d476] text-white text-sm font-bold px-4 py-1.5 rounded-full">
-                    Guadalajara, Jalisco
-                  </span>
-                </div>
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-white text-center mb-12 font-['Montserrat',sans-serif]"
+                  className="text-3xl md:text-4xl font-bold text-white text-center mb-4 font-['Montserrat',sans-serif]"
                 >
                   Detalles del Evento
                 </h2>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-black text-center mb-12 font-['Montserrat',sans-serif]" style={{ color: "#57d476", textShadow: "2px 2px 6px rgba(0,0,0,0.4)" }}>
+                  Guadalajara, Jalisco
+                </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
                   {[
                     {
@@ -933,7 +944,7 @@ export default function LandingPageV0() {
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
                   {/* Header */}
                   <div className="bg-[#012787] text-white p-6 text-center">
-                    <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">28 de abril, 2026</h3>
+                    <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">Martes 28 de abril, 2026</h3>
                     <p className="text-[#d2dd0a] font-semibold">Jardín de Eventos del Bosque Los Colomos, Guadalajara, Jalisco</p>
                   </div>
 
@@ -1232,7 +1243,7 @@ export default function LandingPageV0() {
         {selectedSede === "lapaz" && (
           <div className="animate-fade-in-up">
             {/* SECCIÓN DE DETALLES DEL EVENTO - LA PAZ */}
-            <section className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: "#00338d" }}>
+            <section id="detalles-evento" className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: "#00338d" }}>
               <img
                 src="/images/decorations/hoja-amarilla.png"
                 alt=""
@@ -1257,16 +1268,12 @@ export default function LandingPageV0() {
               />
 
               <div className="max-w-6xl mx-auto relative z-10">
-                {/* Sede indicator */}
-                <div className="text-center mb-6">
-                  <span className="inline-block bg-[#57d476] text-white text-sm font-bold px-4 py-1.5 rounded-full">
-                    La Paz, Baja California Sur
-                  </span>
-                </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4 font-['Montserrat',sans-serif]">
-                  Jornada de Capacitación ANPR | La Paz
+                  Detalles del Evento
                 </h2>
-                <p className="text-center text-white/80 text-lg mb-12">30 de abril del 2026</p>
+                <p className="text-4xl md:text-5xl lg:text-6xl font-black text-center mb-12 font-['Montserrat',sans-serif]" style={{ color: "#57d476", textShadow: "2px 2px 6px rgba(0,0,0,0.4)" }}>
+                  La Paz, Baja California Sur
+                </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
                   {[
@@ -1285,7 +1292,7 @@ export default function LandingPageV0() {
                     {
                       icon: CalendarDays,
                       title: "Fecha",
-                      content: "30 de abril del 2026",
+                      content: "Jueves 30 de abril del 2026",
                       iconColor: "#00dfbf",
                     },
                   ].map((item, index) => (
