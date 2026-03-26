@@ -135,17 +135,36 @@ export default function JornadaDeCapacitacionPage() {
           {/* Logo Section */}
           <div className="mb-8 animate-fade-in-up animation-delay-200"></div>
 
-          {/* Main Title - Logo */}
-          <div className="mb-10 animate-fade-in-up animation-delay-400 flex justify-center">
-            <img
-              src="/images/logo-jornada.png"
-              alt="Jornada de Capacitación ANPR México"
-              className="w-[280px] sm:w-[360px] md:w-[460px] lg:w-[540px] xl:w-[620px] h-auto object-contain"
-              style={{
-                filter:
-                  "drop-shadow(0px 6px 18px rgba(0,0,0,0.6)) drop-shadow(0px 2px 6px rgba(0,0,0,0.4))",
-              }}
-            />
+          {/* Main Title with Hojas Image */}
+          <div className="mb-8 animate-fade-in-up animation-delay-400 relative">
+            <div className="flex flex-col items-center">
+              <div className="relative inline-block">
+                <img
+                  src="/images/hojas.png"
+                  alt=""
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[55%] w-[140px] sm:w-[180px] md:w-[260px] lg:w-[320px] xl:w-[400px] h-auto object-contain pointer-events-none"
+                  style={{ opacity: 0.85 }}
+                />
+                <span
+                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] relative z-10 block font-['Montserrat',sans-serif] font-bold not-italic hero-title-normal"
+                  style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#FFFFFF" }}
+                >
+                  5ª
+                </span>
+              </div>
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl relative z-10 -mt-2 md:-mt-4 font-['Montserrat',sans-serif] font-black not-italic hero-title-normal"
+                style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#57d476" }}
+              >
+                Jornada
+              </h1>
+            </div>
+            <p
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide mt-4 text-white font-['Montserrat',sans-serif] relative z-20"
+              style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
+            >
+              DE CAPACITACIÓN | ANPR MÉXICO
+            </p>
           </div>
 
           {/* Event Badge */}

@@ -239,9 +239,10 @@ export default function LandingPageV0() {
             <img
               src="/images/logo-jornada.png"
               alt="Jornada de Capacitación ANPR México"
-              className="w-[260px] sm:w-[320px] md:w-[420px] lg:w-[500px] xl:w-[580px] h-auto object-contain"
+              className="h-auto object-contain"
               style={{
-                filter: "drop-shadow(0px 6px 18px rgba(0,0,0,0.6)) drop-shadow(0px 2px 6px rgba(0,0,0,0.4))",
+                width: "clamp(150px, 18vw, 240px)",
+                filter: "drop-shadow(0px 4px 12px rgba(0,0,0,0.6)) drop-shadow(0px 2px 5px rgba(0,0,0,0.4))",
               }}
             />
           </div>
