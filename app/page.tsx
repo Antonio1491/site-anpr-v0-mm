@@ -1979,7 +1979,7 @@ export default function LandingPageV0() {
                       </div>
                     </a>
                     <a href="https://www.lapaz.gob.mx/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform transform hover:scale-105">
-                      <div className="bg-[#1a1a1a] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
+                      <div className="rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6 bg-[#ffffff]">
                         <img
                           src="/images/logo-ayuntamiento-lapaz.png"
                           alt="H. XVIII Ayuntamiento del Municipio de La Paz, B.C.S."

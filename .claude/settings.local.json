@@ -22,7 +22,8 @@
       "Bash(kill -9 10435)",
       "Bash(git diff:*)",
       "Bash(npm run:*)",
-      "Bash(find /home/runner/workspace/app -type f -name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js)"
+      "Bash(find /home/runner/workspace/app -type f -name *.tsx -o -name *.ts -o -name *.jsx -o -name *.js)",
+      "Bash(grep -n \"anpr-cta-button\\\\|anpr-cta-btn\\\\|hero.*button\" /home/runner/workspace/*.css /home/runner/workspace/**/*.css)"
     ]
   }
 }
