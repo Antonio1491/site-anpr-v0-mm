@@ -2,12 +2,11 @@
 
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown, Home, LogIn, UserPlus } from "lucide-react"
+import { Menu, X, ChevronDown, Search } from "lucide-react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [scrolled, setScrolled] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const navigationItems = [
@@ -30,7 +29,10 @@ export default function Header() {
         { name: "Blog", href: "https://anpr.org.mx/blog/" },
         { name: "Podcast", href: "https://anpr.org.mx/podcast-parques/" },
         { name: "Revista Parques", href: "https://anpr.org.mx/revista-parques/" },
-        { name: "Centro de Investigación", href: "https://anpr.org.mx/centro-para-la-investigacion-y-estudios-de-parques-urbanos/" },
+        {
+          name: "Centro de Investigación",
+          href: "https://anpr.org.mx/centro-para-la-investigacion-y-estudios-de-parques-urbanos/",
+        },
         { name: "Webinars", href: "https://anpr.org.mx/webinars/" },
         { name: "Biblioteca Parques", href: "https://anpr.org.mx/biblioteca-parques/" },
         { name: "Directorio de la Industria", href: "https://anpr.org.mx/directorio/" },
@@ -76,58 +78,51 @@ export default function Header() {
   ]
 
   const handleMouseEnter = (itemName: string) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
     setActiveDropdown(itemName)
   }
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setActiveDropdown(null), 150)
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 150) // 150ms delay before closing
   }
 
   const handleDropdownMouseEnter = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
   }
 
   const handleDropdownMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setActiveDropdown(null), 150)
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 150)
   }
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10)
-    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-      if (timeoutRef.current) clearTimeout(timeoutRef.current)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
     }
   }, [])
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 bg-white ${
-        scrolled ? "shadow-md" : "shadow-sm"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
-
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex items-center">
             <Link href="https://anpr.org.mx/" className="flex items-center">
-              <img src="/images/anpr-logo-header.svg" alt="ANPR México" className="h-10 md:h-14 w-auto" />
+              <img src="/images/anpr-logo-header.svg" alt="ANPR México" className="h-14 w-auto" />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
-            {/* Home icon */}
-            <Link
-              href="/"
-              className="relative flex items-center justify-center w-9 h-9 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-[#012787] hover:bg-gray-50"
-              title="Inicio"
-            >
-              <Home className="h-[18px] w-[18px]" />
-            </Link>
-
+          <nav className="hidden lg:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <div
                 key={item.name}
@@ -138,21 +133,22 @@ export default function Header() {
                 {"href" in item && item.href ? (
                   <Link
                     href={item.href}
-                    className="flex items-center gap-0.5 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#012787] transition-colors rounded-md hover:bg-gray-50"
+                    className="flex items-center text-gray-700 hover:text-[#BCCE16] px-3 py-2 text-sm font-medium transition-colors"
                   >
                     {item.name}
-                    <ChevronDown className="h-3.5 w-3.5 opacity-60" />
+                    <ChevronDown className="ml-1 h-4 w-4" />
                   </Link>
                 ) : (
-                  <button className="flex items-center gap-0.5 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#012787] transition-colors rounded-md hover:bg-gray-50">
+                  <button className="flex items-center text-gray-700 hover:text-[#BCCE16] px-3 py-2 text-sm font-medium transition-colors">
                     {item.name}
-                    <ChevronDown className="h-3.5 w-3.5 opacity-60" />
+                    <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                 )}
 
+                {/* Dropdown Menu */}
                 {activeDropdown === item.name && (
                   <div
-                    className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-100 py-1.5 z-50"
+                    className="absolute top-full left-0 mt-1 w-64 bg-white rounded-md shadow-lg border border-gray-200 py-2 z-50"
                     onMouseEnter={handleDropdownMouseEnter}
                     onMouseLeave={handleDropdownMouseLeave}
                   >
@@ -160,7 +156,7 @@ export default function Header() {
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-[#012787] transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
                       >
                         {subItem.name}
                       </Link>
@@ -172,100 +168,70 @@ export default function Header() {
           </nav>
 
           {/* Right side buttons */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center space-x-4">
+            <button className="text-gray-500 hover:text-gray-700">
+              <Search className="h-5 w-5" />
+            </button>
             <Link
               href="https://anpr.org.mx/login/"
-              className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#012787] transition-colors rounded-md hover:bg-gray-50"
+              className="bg-[#d2dd0a] text-black px-4 py-2 rounded-md text-sm font-medium hover:bg-[#c1cc09] transition-colors"
             >
-              <LogIn className="h-4 w-4" />
               Ingresar
-            </Link>
-            <Link
-              href="https://anpr.org.mx/membresias-anpr/"
-              className="flex items-center gap-1.5 bg-[#1e2a4a] hover:bg-[#162038] text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
-            >
-              <UserPlus className="h-4 w-4" />
-              Únete
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-500 hover:text-gray-700 p-2 rounded-md hover:bg-gray-50 transition-colors"
-            >
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-500 hover:text-gray-700">
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white">
-          <div className="px-4 pt-2 pb-4 space-y-1">
-            <Link
-              href="/"
-              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#012787] hover:bg-gray-50 rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <Home className="h-4 w-4" />
-              Inicio
-            </Link>
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="lg:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+              {navigationItems.map((item) => (
+                <div key={item.name} className="space-y-1">
+                  <button
+                    onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                    className="flex items-center justify-between w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-[#BCCE16] hover:bg-gray-50"
+                  >
+                    {item.name}
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform ${activeDropdown === item.name ? "rotate-180" : ""}`}
+                    />
+                  </button>
 
-            {navigationItems.map((item) => (
-              <div key={item.name}>
-                <button
-                  onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                  className="flex items-center justify-between w-full px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#012787] hover:bg-gray-50 rounded-md transition-colors"
+                  {activeDropdown === item.name && (
+                    <div className="pl-6 space-y-1">
+                      {item.submenu.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          href={subItem.href}
+                          className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              <div className="pt-4 border-t border-gray-200">
+                <Link
+                  href="https://anpr.org.mx/login/"
+                  className="block w-full text-center bg-[#d2dd0a] text-black px-4 py-2 rounded-md text-sm font-medium hover:bg-[#c1cc09] transition-colors"
                 >
-                  {item.name}
-                  <ChevronDown
-                    className={`h-4 w-4 opacity-60 transition-transform ${
-                      activeDropdown === item.name ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {activeDropdown === item.name && (
-                  <div className="pl-4 mt-1 space-y-1">
-                    {item.submenu.map((subItem) => (
-                      <Link
-                        key={subItem.name}
-                        href={subItem.href}
-                        className="block px-3 py-2 text-sm text-gray-600 hover:text-[#012787] hover:bg-gray-50 rounded-md transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {subItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
+                  Ingresar
+                </Link>
               </div>
-            ))}
-
-            <div className="pt-3 border-t border-gray-100 space-y-2">
-              <Link
-                href="https://anpr.org.mx/login/"
-                className="flex items-center gap-2 w-full px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#012787] hover:bg-gray-50 rounded-md transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <LogIn className="h-4 w-4" />
-                Ingresar
-              </Link>
-              <Link
-                href="https://anpr.org.mx/membresias-anpr/"
-                className="flex items-center justify-center gap-2 w-full bg-[#1e2a4a] hover:bg-[#162038] text-white px-4 py-2.5 rounded-md text-sm font-semibold transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <UserPlus className="h-4 w-4" />
-                Únete
-              </Link>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
   )
 }
