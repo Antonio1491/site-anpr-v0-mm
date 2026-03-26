@@ -1,0 +1,220 @@
+Prompt para Replit       
+                           
+  Crea un header/navbar    
+  fijo y responsive para mi
+   aplicación React con    
+  Tailwind CSS y Lucide    
+  React icons. Debe        
+  replicar exactamente este
+   diseño y comportamiento:
+                           
+  ## ESTRUCTURA GENERAL
+  - Header fijo en la parte
+   superior (`fixed top-0  
+  left-0 right-0 w-full
+  z-50`)                   
+  - Contenedor máximo de
+  `max-w-7xl mx-auto px-4  
+  md:px-6`
+  - Altura: `h-16` en      
+  móvil, `h-20` en desktop 
+  (`md:h-20`)
+  - Distribución flex: logo
+   a la izquierda, nav al  
+  centro, botones a la
+  derecha                  
+                  
+  ## EFECTO DE SCROLL
+  - Sin scroll: fondo
+  sólido blanco con sombra 
+  sutil (`bg-white
+  shadow-sm`)              
+  - Con scroll (>10px):
+  fondo semi-transparente  
+  con blur (`bg-white/95
+  backdrop-blur-md         
+  shadow-lg`)     
+  - Transición suave:
+  `transition-all          
+  duration-300`
+                           
+  ## LOGO (izquierda)
+  - Imagen SVG del logo,
+  altura `h-10` en móvil,  
+  `h-14` en desktop
+  (`md:h-14`)              
+  - Enlazado a la página
+  principal "/"            
+   
+  ## NAVEGACIÓN DESKTOP    
+  (oculta en móvil, visible
+   desde `lg:`)            
+  - Items de navegación con
+   `gap-1` entre ellos
+  - Cada item: `px-3 py-2
+  text-sm font-medium      
+  rounded-md`
+  - Color normal: texto    
+  oscuro (`text-gray-800`) 
+  - Hover: texto primario
+  azul + fondo tenue       
+  (`hover:text-blue-800
+  hover:bg-blue-800/5`)    
+  - Estado activo: texto
+  azul primario + barra    
+  inferior de 3px (`h-[3px]
+   rounded-t-full          
+  bg-blue-800`) posicionada
+   con `absolute
+  -bottom-[13px]`
+
+  ### Dropdowns desktop:   
+  - Se activan con hover
+  (mouseEnter/mouseLeave   
+  con timeout de 150ms para
+   evitar flickering)      
+  - Panel dropdown:
+  `absolute top-full       
+  left-1/2 -translate-x-1/2
+   mt-2 bg-white rounded-lg
+   shadow-xl border py-2
+  z-50`
+  - Dropdown simple (una
+  columna): `w-64`, items  
+  con icono + texto
+  - Dropdown mega-menú     
+  (múltiples columnas):    
+  `w-[700px] py-6 px-8`,
+  grid de `grid-cols-4     
+  gap-x-6`        
+    - Cada columna tiene un
+   título en color primario
+   (`font-semibold
+  text-blue-800 text-sm    
+  mb-3`)          
+    - Items con icono +
+  texto, hover con fondo   
+  tenue
+  - El ChevronDown icon de 
+  Lucide acompaña los items
+   con dropdown
+                           
+  ## BOTONES (derecha,     
+  ocultos en móvil)
+  - Botón "Ingresar":      
+  variante ghost/outline,  
+  con icono LogIn
+  - Botón "Únete": variante
+   sólida con fondo        
+  primario azul (#0B3BA7 /
+  hsl 221 98% 27%), texto  
+  blanco, icono   
+  UserRoundPlus
+
+  ## MENÚ MÓVIL (visible
+  solo debajo de `lg:`)
+  - Botón hamburguesa:
+  icono Menu (☰), al abrir─
+   cambia a X
+  - Panel: debajo del      
+  header, fondo blanco,    
+  borde superior,
+  `max-h-[calc(100vh-4rem)]
+   overflow-y-auto`
+  - Items con `px-3 py-3
+  text-sm font-medium
+  rounded-md`
+  - Secciones desplegables
+  con ChevronDown que rota 
+  180° al expandir
+  (`transition-transform   
+  duration-200`)  
+  - Subitems indentados con
+   borde izquierdo: `ml-3  
+  border-l-2
+  border-blue-800/20 pl-3` 
+  - Soporte para DOS
+  niveles de anidamiento   
+  (ej: categoría >
+  subcategoría > items)    
+  - Botones "Ingresar" y
+  "Únete" en la parte      
+  inferior, full width,
+  separados por `border-t` 
+                  
+  ## PALETA DE COLORES     
+  (tema claro)
+  - Primary: hsl(221, 98%, 
+  27%) → azul oscuro       
+  profundo (#0B3BA7)
+  - Secondary: hsl(172,    
+  100%, 44%) →             
+  turquesa/verde agua
+  - Accent: hsl(66, 96%,   
+  44%) → verde lima
+  - Background: blanco puro
+  - Foreground/texto:      
+  hsl(210, 30%, 20%) → gris
+   oscuro                  
+  - Muted: hsl(210, 30%,
+  40%) → gris medio        
+  - Border: hsl(150, 20%,
+  88%) → gris muy claro con
+   tono verde     
+                           
+  ## TIPOGRAFÍA   
+  - Font principal:
+  'Montserrat', sans-serif 
+  - Navegación: `text-sm
+  font-medium`             
+                  
+  ## COMPORTAMIENTO
+  RESPONSIVE
+  - Mobile (< 1024px /
+  `lg:`): Solo se muestra  
+  logo + botón hamburguesa
+  - Desktop (≥ 1024px): Nav
+   completa + botones de   
+  acción
+  - Los dropdowns desktop  
+  usan hover; el menú móvil
+   usa click/tap
+  - Al hacer click en un   
+  link del menú móvil, se  
+  cierra automáticamente el
+   menú                    
+                  
+  ## DETECCIÓN DE RUTA     
+  ACTIVA
+  - Usar el router para    
+  detectar la ruta actual  
+  - Resaltar el item de
+  navegación               
+  correspondiente a la
+  página activa            
+  - La barra inferior azul
+  de 3px aparece solo en el
+   item activo
+                           
+  ## TECNOLOGÍAS  
+  - React (con hooks:
+  useState, useRef,        
+  useEffect)
+  - Tailwind CSS para todos
+   los estilos    
+  - Lucide React para
+  iconografía              
+  - Router de React para
+  navegación y detección de
+   ruta activa    
+
+  IMPORTANTE: Adapta los   
+  nombres de los links de
+  navegación y sus rutas   
+  según las necesidades de
+  MI aplicación. La
+  estructura, diseño
+  visual, comportamiento de
+   dropdowns, responsive, y
+   efectos deben ser
+  idénticos.
