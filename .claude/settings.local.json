@@ -8,7 +8,18 @@
       "Bash(npm run build:*)",
       "Bash(npm run dev:*)",
       "WebFetch(domain:localhost)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/jornada-de-capacitacion)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/eventos)",
+      "Bash(jobs -l)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5000)",
+      "Bash(curl -s http://localhost:5000)",
+      "Bash(kill 6445 6448 6459 6460 7251 7254 7265 7266)",
+      "Bash(curl:*)",
+      "Bash(kill 4043 4044)",
+      "Bash(kill -9 10435)"
     ]
   }
 }

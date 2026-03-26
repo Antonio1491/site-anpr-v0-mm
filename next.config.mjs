@@ -9,15 +9,15 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Enable all hosts for development in Replit
+  // Allow embedding in preview iframe
   async headers() {
     return [
       {
         source: '/:path*',
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
+            key: 'Content-Security-Policy',
+            value: 'frame-ancestors *',
           },
         ],
       },
