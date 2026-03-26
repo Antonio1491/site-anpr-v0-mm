@@ -7,7 +7,8 @@
       "Bash(git commit -m \"$\\(cat <<''EOF''\nUpdate event dates and reorder chronologically\n\nUpdate Encuentro Parques \\(Oct 2026\\), Park Tour \\(Aug 2026\\), and\nBootcamp Parques \\(Próximamente\\) with correct dates and chronological\norder. Fix calendar view to handle dates without prepositions and\nupdate calendar title to 2026.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(npm run build:*)",
       "Bash(npm run dev:*)",
-      "WebFetch(domain:localhost)"
+      "WebFetch(domain:localhost)",
+      "Bash(npx next:*)"
     ]
   }
 }
