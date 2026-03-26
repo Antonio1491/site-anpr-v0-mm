@@ -1969,7 +1969,7 @@ export default function LandingPageV0() {
                 <div className="text-center mt-12">
                   <h3 className="text-xl font-bold text-[#012787] mb-6 font-['Montserrat',sans-serif]">Con el apoyo de:</h3>
                   <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-                    <div className="inline-block transition-transform transform hover:scale-105">
+                    <a href="https://www.lapaz.gob.mx/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform transform hover:scale-105">
                       <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
                         <img
                           src="/images/logo-eslapaz.png"
@@ -1977,8 +1977,8 @@ export default function LandingPageV0() {
                           className="h-16 md:h-20 w-auto object-contain"
                         />
                       </div>
-                    </div>
-                    <div className="inline-block transition-transform transform hover:scale-105">
+                    </a>
+                    <a href="https://www.lapaz.gob.mx/" target="_blank" rel="noopener noreferrer" className="inline-block transition-transform transform hover:scale-105">
                       <div className="bg-[#1a1a1a] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
                         <img
                           src="/images/logo-ayuntamiento-lapaz.png"
@@ -1986,7 +1986,7 @@ export default function LandingPageV0() {
                           className="h-16 md:h-20 w-auto object-contain"
                         />
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
