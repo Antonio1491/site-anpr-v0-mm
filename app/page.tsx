@@ -235,29 +235,15 @@ export default function LandingPageV0() {
           <div className="mb-6 animate-fade-in-up animation-delay-200"></div>
 
           {/* Main Title */}
-          <div className="mb-6 animate-fade-in-up animation-delay-400 relative">
-            <div className="flex flex-col items-center">
-              <div className="relative inline-block">
-                <img
-                  src="/images/hojas.png"
-                  alt=""
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[55%] w-[140px] sm:w-[180px] md:w-[260px] lg:w-[320px] xl:w-[400px] h-auto object-contain pointer-events-none"
-                  style={{ opacity: 0.85 }}
-                />
-                <span
-                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl relative z-10 block font-['Montserrat',sans-serif] font-bold not-italic hero-title-normal"
-                  style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#57d476" }}
-                >
-                  Jornada
-                </span>
-              </div>
-              <h1
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl relative z-10 -mt-1 md:-mt-2 font-['Montserrat',sans-serif] font-black not-italic hero-title-normal uppercase tracking-wide"
-                style={{ textShadow: "4px 4px 8px rgba(0,0,0,0.9)", color: "#FFFFFF" }}
-              >
-                DE CAPACITACIÓN | ANPR MÉXICO
-              </h1>
-            </div>
+          <div className="mb-6 animate-fade-in-up animation-delay-400 flex justify-center">
+            <img
+              src="/images/logo-jornada.png"
+              alt="Jornada de Capacitación ANPR México"
+              className="w-[260px] sm:w-[320px] md:w-[420px] lg:w-[500px] xl:w-[580px] h-auto object-contain"
+              style={{
+                filter: "drop-shadow(0px 6px 18px rgba(0,0,0,0.6)) drop-shadow(0px 2px 6px rgba(0,0,0,0.4))",
+              }}
+            />
           </div>
 
           {/* Sede Selection Cards */}
