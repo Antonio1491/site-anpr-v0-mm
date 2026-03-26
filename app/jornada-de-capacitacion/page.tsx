@@ -136,13 +136,14 @@ export default function JornadaDeCapacitacionPage() {
           <div className="mb-8 animate-fade-in-up animation-delay-200"></div>
 
           {/* Main Title - Logo */}
-          <div className="mb-8 animate-fade-in-up animation-delay-400 flex justify-center">
+          <div className="mb-10 animate-fade-in-up animation-delay-400 flex justify-center">
             <img
               src="/images/logo-jornada.png"
               alt="Jornada de Capacitación ANPR México"
-              className="w-[180px] sm:w-[220px] md:w-[270px] lg:w-[320px] xl:w-[360px] h-auto object-contain"
+              className="w-[280px] sm:w-[360px] md:w-[460px] lg:w-[540px] xl:w-[620px] h-auto object-contain"
               style={{
-                filter: "drop-shadow(0px 8px 24px rgba(0,0,0,0.55))",
+                filter:
+                  "drop-shadow(0px 6px 18px rgba(0,0,0,0.6)) drop-shadow(0px 2px 6px rgba(0,0,0,0.4))",
               }}
             />
           </div>
