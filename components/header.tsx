@@ -10,6 +10,7 @@ import {
   GraduationCap, Calendar, CalendarDays, Trophy,
   MessageCircle, LayoutGrid, LogIn,
 } from "lucide-react"
+import LogoFlip from "./logo-flip"
 
 const acercaDeItems = [
   { name: "Nosotros", href: "https://anpr.org.mx/nosotros/", icon: Building2 },
@@ -98,7 +99,7 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="https://anpr.org.mx/" className="flex items-center flex-shrink-0">
-            <img src="/images/anpr-logo-header.svg" alt="ANPR México" className="h-10 md:h-14 w-auto" />
+            <LogoFlip />
           </Link>
 
           {/* Desktop Navigation */}

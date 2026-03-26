@@ -1,0 +1,48 @@
+Actúa como desarrollador front-end y diseñador UI con experiencia en animaciones ligeras para web.
+
+CONTEXTO
+En el sitio anpr.org.mx, el logo del header debe adaptarse a la celebración del 10 aniversario.
+
+OBJETIVO
+Crear una animación sutil, elegante y ligera para el logo del header, donde el logo actual se transforme en el logo del 10 aniversario.
+
+COMPORTAMIENTO DESEADO
+- Al cargar la página, el logo actual debe hacer una animación de giro tipo moneda (flip 3D en eje vertical).
+- Durante el giro, al mostrar el reverso, debe cambiar al logo del 10 aniversario.
+- La animación debe sentirse conmemorativa, elegante y visualmente atractiva.
+- Agregar un efecto sutil de celebración, por ejemplo:
+  - destello breve
+  - brillo/reflejo metálico
+  - pequeño sparkle
+- Evitar efectos exagerados o infantiles.
+
+COMPORTAMIENTO EN LOOP
+- Después de mostrarse el logo del 10 aniversario, debe permanecer estático por un tiempo.
+- Cada cierto tiempo, puede volver momentáneamente al logo normal y repetir la animación.
+- La frecuencia debe ser baja para no distraer al usuario.
+- La versión final visible la mayor parte del tiempo debe ser el logo del 10 aniversario.
+
+RESTRICCIONES DE RENDIMIENTO
+- La animación no debe hacer lenta la página.
+- Usar una solución ligera, preferentemente con CSS transforms y opacity.
+- Evitar librerías pesadas.
+- Optimizar para desktop y mobile.
+- Respetar prefers-reduced-motion si es posible.
+
+IMPLEMENTACIÓN
+- No modificar la estructura general del header.
+- No cambiar tamaños, alineación ni navegación.
+- Solo intervenir el logo y su animación.
+- Si el logo del header es un componente global, aplicar la animación de forma controlada sin afectar otras funciones del menú.
+
+CRITERIOS VISUALES
+- Debe verse premium, institucional y conmemorativo.
+- El giro debe simular una moneda o medalla, con sensación de volumen.
+- El cambio entre logo actual y logo 10 aniversario debe ser limpio.
+- El efecto de brillo/reflejo debe ser breve y sutil.
+
+IMPORTANTE
+- No hacer una animación continua e invasiva.
+- No usar GIF pesado.
+- No degradar el tiempo de carga.
+- Mantener buena legibilidad del logo en todos los estados.
