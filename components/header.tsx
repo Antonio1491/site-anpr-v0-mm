@@ -3,69 +3,55 @@
 import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, ChevronDown, Search, LogIn, UserRoundPlus } from "lucide-react"
+import {
+  Menu, X, ChevronDown, Home,
+  Building2, Users, Shield, Megaphone, UserRoundPlus,
+  BookOpen, Library, FlaskConical, Mic2, Newspaper, Video,
+  GraduationCap, Calendar, CalendarDays, Trophy,
+  MessageCircle, LayoutGrid, LogIn,
+} from "lucide-react"
 
-const navigationItems = [
+const acercaDeItems = [
+  { name: "Nosotros", href: "https://anpr.org.mx/nosotros/", icon: Building2 },
+  { name: "Nuestro Equipo", href: "https://anpr.org.mx/nuestro-equipo/", icon: Users },
+  { name: "Consejo Consultivo", href: "https://anpr.org.mx/consejo-anpr/", icon: Shield },
+  { name: "Comité y Embajadores", href: "https://anpr.org.mx/comites-embajadores/", icon: Megaphone },
+  { name: "Únete", href: "https://anpr.org.mx/membresias-anpr/", icon: UserRoundPlus },
+]
+
+const recursosMegaMenu = [
   {
-    name: "ANPR",
-    submenu: [
-      { name: "Nosotros", href: "https://anpr.org.mx/nosotros/" },
-      { name: "¿Qué hacemos?", href: "https://anpr.org.mx/que-hacemos/" },
-      { name: "Nuestro Equipo", href: "https://anpr.org.mx/nuestro-equipo/" },
-      { name: "Consejo consultivo", href: "https://anpr.org.mx/consejo-anpr/" },
-      { name: "Comités (embajadores)", href: "https://anpr.org.mx/comites-embajadores/" },
-      { name: "Iniciativas de Cambio", href: "https://anpr.org.mx/iniciativa-de-cambio/" },
-      { name: "Aliados", href: "https://anpr.org.mx/miembros-aliados/" },
-      { name: "Únete", href: "https://anpr.org.mx/membresias-anpr/" },
+    title: "Capacítate",
+    items: [
+      { name: "Blog", href: "https://anpr.org.mx/blog/", icon: BookOpen },
+      { name: "Biblioteca Parques", href: "https://anpr.org.mx/biblioteca-parques/", icon: Library },
+      { name: "Estudios", href: "https://anpr.org.mx/centro-para-la-investigacion-y-estudios-de-parques-urbanos/", icon: FlaskConical },
+      { name: "Podcast", href: "https://anpr.org.mx/podcast-parques/", icon: Mic2 },
+      { name: "Revista Parques", href: "https://anpr.org.mx/revista-parques/", icon: Newspaper },
+      { name: "Webinars", href: "https://anpr.org.mx/webinars/", icon: Video },
     ],
   },
   {
-    name: "Recursos",
-    submenu: [
-      { name: "Blog", href: "https://anpr.org.mx/blog/" },
-      { name: "Podcast", href: "https://anpr.org.mx/podcast-parques/" },
-      { name: "Revista Parques", href: "https://anpr.org.mx/revista-parques/" },
-      { name: "Centro de Investigación", href: "https://anpr.org.mx/centro-para-la-investigacion-y-estudios-de-parques-urbanos/" },
-      { name: "Webinars", href: "https://anpr.org.mx/webinars/" },
-      { name: "Biblioteca Parques", href: "https://anpr.org.mx/biblioteca-parques/" },
-      { name: "Directorio de la Industria", href: "https://anpr.org.mx/directorio/" },
+    title: "Certifícate",
+    items: [
+      { name: "Parques (GFA)", href: "https://anpr.org.mx/green-flag-award-en-mexico/", icon: Shield },
+      { name: "Profesionales (Academia)", href: "https://anpr.org.mx/academia-parques/", icon: GraduationCap },
     ],
   },
   {
-    name: "Certificaciones",
-    submenu: [
-      { name: "Espacios Públicos", href: "https://anpr.org.mx/green-flag-award-en-mexico/" },
-      { name: "Profesionales", href: "https://anpr.org.mx/academia-parques/" },
+    title: "Participa",
+    items: [
+      { name: "Eventos", href: "/eventos", icon: Calendar },
+      { name: "Jornada de Capacitación", href: "/jornada-de-capacitacion", icon: GraduationCap },
+      { name: "Mes de los Parques", href: "/mes-de-los-parques", icon: CalendarDays },
+      { name: "Premios", href: "/premios-anpr", icon: Trophy },
     ],
   },
   {
-    name: "Eventos",
-    href: "/eventos",
-    submenu: [
-      { name: "Todos los Eventos", href: "/eventos" },
-      { name: "Jornada De Capacitación", href: "/jornada-de-capacitacion" },
-      { name: "Bootcamp 2025", href: "https://anpr.org.mx/bootcamp-2025/" },
-      { name: "Park Tour", href: "https://anpr.org.mx/park-tour/" },
-      { name: "Encuentro Parques", href: "https://anpr.org.mx/encuentro-parques-mx/" },
-      { name: "Congreso Parques", href: "https://congresoparques.com/" },
-      { name: "Expo Espacio Público", href: "https://www.expoespaciopublico.com/" },
-    ],
-  },
-  {
-    name: "Programas",
-    submenu: [
-      { name: "Premios ANPR", href: "/premios-anpr" },
-      { name: "Mes de los Parques", href: "/mes-de-los-parques" },
-    ],
-  },
-  {
-    name: "Comunidad",
-    submenu: [
-      { name: "Actividad", href: "https://anpr.org.mx/activity/" },
-      { name: "Grupos/Foros", href: "https://anpr.org.mx/groups/" },
-      { name: "Directorio de Miembros", href: "https://anpr.org.mx/members/" },
-      { name: "Únete", href: "https://anpr.org.mx/membresias-anpr/" },
-      { name: "Fidelidad ANPR", href: "https://anpr.org.mx/puntos-semillas/" },
+    title: "Conecta",
+    items: [
+      { name: "Comunidad", href: "https://anpr.org.mx/activity/", icon: MessageCircle },
+      { name: "Directorio", href: "https://anpr.org.mx/directorio/", icon: LayoutGrid },
     ],
   },
 ]
@@ -85,39 +71,26 @@ export default function Header() {
   }, [])
 
   useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current)
-    }
+    return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current) }
   }, [])
 
-  const handleMouseEnter = (name: string) => {
+  const openDropdown = (name: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
     setActiveDropdown(name)
   }
 
-  const handleMouseLeave = () => {
+  const closeDropdown = () => {
     timeoutRef.current = setTimeout(() => setActiveDropdown(null), 150)
   }
 
-  const handleDropdownMouseEnter = () => {
+  const keepOpen = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
-  }
-
-  const handleDropdownMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => setActiveDropdown(null), 150)
-  }
-
-  const isActive = (item: typeof navigationItems[0]) => {
-    if ("href" in item && item.href && pathname === item.href) return true
-    return item.submenu.some((sub) => sub.href === pathname)
   }
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-white shadow-sm"
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 font-['Montserrat',sans-serif] ${
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-white shadow-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -125,100 +98,139 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="https://anpr.org.mx/" className="flex items-center flex-shrink-0">
-            <img
-              src="/images/anpr-logo-header.svg"
-              alt="ANPR México"
-              className="h-10 md:h-14 w-auto"
-            />
+            <img src="/images/anpr-logo-header.svg" alt="ANPR México" className="h-10 md:h-14 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navigationItems.map((item) => {
-              const active = isActive(item)
-              return (
-                <div
-                  key={item.name}
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter(item.name)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  {"href" in item && item.href ? (
-                    <Link
-                      href={item.href}
-                      className={`relative flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors font-['Montserrat',sans-serif] ${
-                        active
-                          ? "text-[#0B3BA7]"
-                          : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
-                      }`}
-                    >
-                      {item.name}
-                      <ChevronDown className="ml-1 h-4 w-4 flex-shrink-0" />
-                      {active && (
-                        <span className="absolute -bottom-[13px] left-0 right-0 h-[3px] rounded-t-full bg-[#0B3BA7]" />
-                      )}
-                    </Link>
-                  ) : (
-                    <button
-                      className={`relative flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors font-['Montserrat',sans-serif] ${
-                        active
-                          ? "text-[#0B3BA7]"
-                          : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
-                      }`}
-                    >
-                      {item.name}
-                      <ChevronDown className="ml-1 h-4 w-4 flex-shrink-0" />
-                      {active && (
-                        <span className="absolute -bottom-[13px] left-0 right-0 h-[3px] rounded-t-full bg-[#0B3BA7]" />
-                      )}
-                    </button>
-                  )}
 
-                  {/* Dropdown */}
-                  {activeDropdown === item.name && (
-                    <div
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
-                      onMouseEnter={handleDropdownMouseEnter}
-                      onMouseLeave={handleDropdownMouseLeave}
+            {/* Home icon */}
+            <Link
+              href="/"
+              className={`flex items-center justify-center px-3 py-2 rounded-md transition-colors ${
+                pathname === "/"
+                  ? "text-[#0B3BA7]"
+                  : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
+              }`}
+            >
+              <Home className="h-5 w-5" />
+              {pathname === "/" && (
+                <span className="absolute bottom-0 left-0 right-0 h-[3px] rounded-t-full bg-[#0B3BA7]" />
+              )}
+            </Link>
+
+            {/* Acerca de */}
+            <div
+              className="relative"
+              onMouseEnter={() => openDropdown("acerca")}
+              onMouseLeave={closeDropdown}
+            >
+              <button
+                className={`relative flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  activeDropdown === "acerca" ? "text-[#0B3BA7]" : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
+                }`}
+              >
+                Acerca de
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${activeDropdown === "acerca" ? "rotate-180" : ""}`} />
+              </button>
+
+              {activeDropdown === "acerca" && (
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
+                  onMouseEnter={keepOpen}
+                  onMouseLeave={closeDropdown}
+                >
+                  {acercaDeItems.map(({ name, href, icon: Icon }) => (
+                    <Link
+                      key={name}
+                      href={href}
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors"
                     >
-                      {item.submenu.map((sub) => (
-                        <Link
-                          key={sub.name}
-                          href={sub.href}
-                          className={`block px-4 py-2 text-sm transition-colors font-['Montserrat',sans-serif] ${
-                            pathname === sub.href
-                              ? "text-[#0B3BA7] bg-[#0B3BA7]/5 font-semibold"
-                              : "text-gray-700 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
-                          }`}
-                        >
-                          {sub.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                      <Icon className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                      {name}
+                    </Link>
+                  ))}
                 </div>
-              )
-            })}
+              )}
+            </div>
+
+            {/* Recursos (mega-menu) */}
+            <div
+              className="relative"
+              onMouseEnter={() => openDropdown("recursos")}
+              onMouseLeave={closeDropdown}
+            >
+              <button
+                className={`relative flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  activeDropdown === "recursos" ? "text-[#0B3BA7]" : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
+                }`}
+              >
+                Recursos
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${activeDropdown === "recursos" ? "rotate-180" : ""}`} />
+              </button>
+
+              {activeDropdown === "recursos" && (
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[700px] bg-white rounded-lg shadow-xl border border-gray-100 py-6 px-8 z-50"
+                  onMouseEnter={keepOpen}
+                  onMouseLeave={closeDropdown}
+                >
+                  <div className="grid grid-cols-4 gap-x-6">
+                    {recursosMegaMenu.map((col) => (
+                      <div key={col.title}>
+                        <p className="text-sm font-semibold text-[#0B3BA7] mb-3">{col.title}</p>
+                        <ul className="space-y-1">
+                          {col.items.map(({ name, href, icon: Icon }) => (
+                            <li key={name}>
+                              <Link
+                                href={href}
+                                className={`flex items-start gap-2.5 px-2 py-2 text-sm rounded-md transition-colors ${
+                                  pathname === href
+                                    ? "text-[#0B3BA7] font-semibold bg-[#0B3BA7]/5"
+                                    : "text-gray-700 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
+                                }`}
+                              >
+                                <Icon className="h-4 w-4 flex-shrink-0 text-gray-400 mt-0.5" />
+                                <span>{name}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Eventos (directo) */}
+            <Link
+              href="/eventos"
+              className={`relative flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                pathname === "/eventos" || pathname === "/jornada-de-capacitacion"
+                  ? "text-[#0B3BA7]"
+                  : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
+              }`}
+            >
+              Eventos
+              {(pathname === "/eventos" || pathname === "/jornada-de-capacitacion") && (
+                <span className="absolute -bottom-[13px] left-0 right-0 h-[3px] rounded-t-full bg-[#0B3BA7]" />
+              )}
+            </Link>
           </nav>
 
           {/* Desktop Right Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <button
-              className="text-gray-500 hover:text-[#0B3BA7] transition-colors p-1"
-              aria-label="Buscar"
-            >
-              <Search className="h-5 w-5" />
-            </button>
+          <div className="hidden lg:flex items-center gap-4">
             <Link
               href="https://anpr.org.mx/login/"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-800 border border-gray-300 rounded-md hover:text-[#0B3BA7] hover:border-[#0B3BA7] transition-colors font-['Montserrat',sans-serif]"
+              className="flex items-center gap-2 text-sm font-medium text-gray-800 hover:text-[#0B3BA7] transition-colors"
             >
               <LogIn className="h-4 w-4" />
               Ingresar
             </Link>
             <Link
               href="https://anpr.org.mx/membresias-anpr/"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-[#0B3BA7] rounded-md hover:bg-[#0a2f8a] transition-colors font-['Montserrat',sans-serif]"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-[#0B3BA7] rounded-md hover:bg-[#0a2f8a] transition-colors"
             >
               <UserRoundPlus className="h-4 w-4" />
               Únete
@@ -242,49 +254,94 @@ export default function Header() {
       {isMenuOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white max-h-[calc(100vh-4rem)] overflow-y-auto">
           <div className="px-3 py-3 space-y-1">
-            {navigationItems.map((item) => (
-              <div key={item.name}>
-                <button
-                  onClick={() =>
-                    setMobileOpenItem(mobileOpenItem === item.name ? null : item.name)
-                  }
-                  className="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-gray-800 rounded-md hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors font-['Montserrat',sans-serif]"
-                >
-                  {item.name}
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-200 ${
-                      mobileOpenItem === item.name ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
 
-                {mobileOpenItem === item.name && (
-                  <div className="ml-3 border-l-2 border-[#0B3BA7]/20 pl-3 space-y-1 mt-1">
-                    {item.submenu.map((sub) => (
-                      <Link
-                        key={sub.name}
-                        href={sub.href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className={`block px-3 py-2 text-sm rounded-md transition-colors font-['Montserrat',sans-serif] ${
-                          pathname === sub.href
-                            ? "text-[#0B3BA7] font-semibold bg-[#0B3BA7]/5"
-                            : "text-gray-600 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
-                        }`}
-                      >
-                        {sub.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+            {/* Home */}
+            <Link
+              href="/"
+              onClick={() => setIsMenuOpen(false)}
+              className={`flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-md transition-colors ${
+                pathname === "/" ? "text-[#0B3BA7] bg-[#0B3BA7]/5" : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
+              }`}
+            >
+              <Home className="h-4 w-4" />
+              Inicio
+            </Link>
 
-            {/* Mobile Bottom Buttons */}
+            {/* Acerca de */}
+            <div>
+              <button
+                onClick={() => setMobileOpenItem(mobileOpenItem === "acerca" ? null : "acerca")}
+                className="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-gray-800 rounded-md hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors"
+              >
+                Acerca de
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileOpenItem === "acerca" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileOpenItem === "acerca" && (
+                <div className="ml-3 border-l-2 border-[#0B3BA7]/20 pl-3 space-y-1 mt-1">
+                  {acercaDeItems.map(({ name, href, icon: Icon }) => (
+                    <Link
+                      key={name}
+                      href={href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 rounded-md hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors"
+                    >
+                      <Icon className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                      {name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Recursos */}
+            <div>
+              <button
+                onClick={() => setMobileOpenItem(mobileOpenItem === "recursos" ? null : "recursos")}
+                className="flex items-center justify-between w-full px-3 py-3 text-sm font-medium text-gray-800 rounded-md hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors"
+              >
+                Recursos
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileOpenItem === "recursos" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileOpenItem === "recursos" && (
+                <div className="ml-3 border-l-2 border-[#0B3BA7]/20 pl-3 space-y-3 mt-1 pb-2">
+                  {recursosMegaMenu.map((col) => (
+                    <div key={col.title}>
+                      <p className="px-3 py-1 text-xs font-semibold text-[#0B3BA7] uppercase tracking-wide">{col.title}</p>
+                      {col.items.map(({ name, href, icon: Icon }) => (
+                        <Link
+                          key={name}
+                          href={href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 rounded-md hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors"
+                        >
+                          <Icon className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                          {name}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Eventos */}
+            <Link
+              href="/eventos"
+              onClick={() => setIsMenuOpen(false)}
+              className={`flex items-center gap-3 px-3 py-3 text-sm font-medium rounded-md transition-colors ${
+                pathname === "/eventos" ? "text-[#0B3BA7] bg-[#0B3BA7]/5" : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
+              }`}
+            >
+              <Calendar className="h-4 w-4" />
+              Eventos
+            </Link>
+
+            {/* Bottom Buttons */}
             <div className="pt-4 border-t border-gray-200 space-y-2">
               <Link
                 href="https://anpr.org.mx/login/"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-gray-800 border border-gray-300 rounded-md hover:text-[#0B3BA7] hover:border-[#0B3BA7] transition-colors font-['Montserrat',sans-serif]"
+                className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-gray-800 border border-gray-300 rounded-md hover:text-[#0B3BA7] hover:border-[#0B3BA7] transition-colors"
               >
                 <LogIn className="h-4 w-4" />
                 Ingresar
@@ -292,7 +349,7 @@ export default function Header() {
               <Link
                 href="https://anpr.org.mx/membresias-anpr/"
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-white bg-[#0B3BA7] rounded-md hover:bg-[#0a2f8a] transition-colors font-['Montserrat',sans-serif]"
+                className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-white bg-[#0B3BA7] rounded-md hover:bg-[#0a2f8a] transition-colors"
               >
                 <UserRoundPlus className="h-4 w-4" />
                 Únete
