@@ -1219,8 +1219,11 @@ export default function LandingPageV0() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Montserrat',sans-serif]">
                   Forma Parte del Cambio
                 </h2>
-                <p className="text-lg opacity-90 mb-8">
-                  Inscríbete sin costo y acompáñanos en la 5ª Jornada en Guadalajara. ¡El espacio es limitado!
+                <p className="text-lg opacity-90 mb-4">
+                  Inscríbete sin costo y acompáñanos en la <strong>5ª Jornada en Guadalajara</strong>.
+                </p>
+                <p className="text-base font-semibold text-[#d2dd0a] mb-8">
+                  ¡Solo 50 lugares disponibles!
                 </p>
                 <div className="w-full max-w-lg mx-auto">
                   <div className="flex justify-center">
@@ -1228,9 +1231,9 @@ export default function LandingPageV0() {
                       href="https://anpr.org.mx/register/5-jornada-de-capacitacion-guadalajara-jalisco/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-[#d2dd0a] hover:bg-[#b8c409] text-[#012787] font-bold py-4 px-8 rounded-md shadow-lg transition-all duration-300 hover:scale-105"
+                      className="inline-flex items-center justify-center gap-2 bg-[#57d476] hover:bg-[#45c264] text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 text-lg"
                     >
-                      Inscríbete Ahora — Guadalajara
+                      REGÍSTRATE GRATIS
                     </a>
                   </div>
                 </div>
@@ -2021,8 +2024,11 @@ export default function LandingPageV0() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-['Montserrat',sans-serif]">
                   Forma Parte del Cambio
                 </h2>
-                <p className="text-lg opacity-90 mb-8">
-                  Inscríbete sin costo y acompáñanos en la Jornada en La Paz, BCS. ¡Solo 50 lugares disponibles!
+                <p className="text-lg opacity-90 mb-4">
+                  Inscríbete sin costo y acompáñanos en la <strong>6ª Jornada en La Paz</strong>, BCS.
+                </p>
+                <p className="text-base font-semibold text-[#d2dd0a] mb-8">
+                  ¡Solo 50 lugares disponibles!
                 </p>
                 <div className="w-full max-w-lg mx-auto">
                   <div className="flex justify-center">
@@ -2030,9 +2036,9 @@ export default function LandingPageV0() {
                       href="https://anpr.org.mx/register/jornada-de-capacitacion-la-paz-bcs/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-[#d2dd0a] hover:bg-[#b8c409] text-[#012787] font-bold py-4 px-8 rounded-md shadow-lg transition-all duration-300 hover:scale-105"
+                      className="inline-flex items-center justify-center gap-2 bg-[#57d476] hover:bg-[#45c264] text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 hover:scale-105 text-lg"
                     >
-                      Inscríbete Ahora — La Paz
+                      REGÍSTRATE GRATIS
                     </a>
                   </div>
                 </div>
