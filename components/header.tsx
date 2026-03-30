@@ -147,7 +147,7 @@ export default function Header() {
                       href={href}
                       className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors"
                     >
-                      <Icon className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                      <Icon className="h-4 w-4 flex-shrink-0" style={{ color: '#9ca3af' }} />
                       {name}
                     </Link>
                   ))}
@@ -191,7 +191,7 @@ export default function Header() {
                                     : "text-gray-700 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
                                 }`}
                               >
-                                <Icon className="h-4 w-4 flex-shrink-0 text-gray-400 mt-0.5" />
+                                <Icon className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: '#9ca3af' }} />
                                 <span>{name}</span>
                               </Link>
                             </li>
@@ -286,7 +286,7 @@ export default function Header() {
                       onClick={() => setIsMenuOpen(false)}
                       className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 rounded-md hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors"
                     >
-                      <Icon className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                      <Icon className="h-4 w-4 flex-shrink-0" style={{ color: '#9ca3af' }} />
                       {name}
                     </Link>
                   ))}
@@ -315,7 +315,7 @@ export default function Header() {
                           onClick={() => setIsMenuOpen(false)}
                           className="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-600 rounded-md hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5 transition-colors"
                         >
-                          <Icon className="h-4 w-4 flex-shrink-0 text-gray-400" />
+                          <Icon className="h-4 w-4 flex-shrink-0" style={{ color: '#9ca3af' }} />
                           {name}
                         </Link>
                       ))}
