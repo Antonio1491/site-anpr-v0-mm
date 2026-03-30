@@ -93,7 +93,7 @@ export default function LogoFlip() {
       >
         {/* Cara frontal — logo ANPR normal */}
         <img
-          src="/images/anpr-logo-header.svg"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/anpr-logo-header.svg`}
           alt="ANPR México"
           className="h-10 md:h-14 w-auto"
           style={{
@@ -105,7 +105,7 @@ export default function LogoFlip() {
 
         {/* Cara trasera — logo 10° Aniversario */}
         <img
-          src="/images/anpr-insignia-10-aniversario.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/anpr-insignia-10-aniversario.png`}
           alt="ANPR México 10° Aniversario"
           className="h-10 md:h-14 w-auto absolute top-0 left-0"
           style={{

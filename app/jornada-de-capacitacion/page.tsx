@@ -104,30 +104,30 @@ export default function JornadaDeCapacitacionPage() {
 
         {/* Decorative elements */}
         <img
-          src="/images/decorations/hoja-turquesa.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-turquesa.png`}
           alt=""
           className="absolute top-10 left-4 md:left-8 w-12 md:w-20 opacity-30 z-10 animate-float"
           style={{ animationDelay: "0s" }}
         />
         <img
-          src="/images/decorations/hoja-amarilla.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-amarilla.png`}
           alt=""
           className="absolute top-12 right-4 md:right-8 w-14 md:w-24 opacity-25 z-10 animate-float transform rotate-45"
           style={{ animationDelay: "1s" }}
         />
         <img
-          src="/images/decorations/hoja-verde.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-verde.png`}
           alt=""
           className="absolute bottom-24 left-4 md:left-12 w-12 md:w-18 opacity-30 z-10 animate-float"
           style={{ animationDelay: "2s" }}
         />
         <img
-          src="/images/decorations/linea1.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/linea1.png`}
           alt=""
           className="absolute top-1/4 right-0 w-24 md:w-40 opacity-20 z-10"
         />
         <img
-          src="/images/decorations/linea2.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/linea2.png`}
           alt=""
           className="absolute bottom-1/3 left-0 w-20 md:w-32 opacity-20 z-10 transform rotate-180"
         />
@@ -140,7 +140,7 @@ export default function JornadaDeCapacitacionPage() {
             <div className="flex flex-col items-center">
               <div className="relative inline-block">
                 <img
-                  src="/images/hojas.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/hojas.png`}
                   alt=""
                   className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[55%] w-[140px] sm:w-[190px] md:w-[270px] lg:w-[370px] xl:w-[460px] h-auto object-contain pointer-events-none"
                   style={{ opacity: 0.85 }}
@@ -254,24 +254,24 @@ export default function JornadaDeCapacitacionPage() {
         <section className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: "#00338d" }}>
           {/* Decorative elements */}
           <img
-            src="/images/decorations/hoja-amarilla.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-amarilla.png`}
             alt=""
             className="absolute top-10 right-10 w-20 md:w-32 opacity-30 animate-float"
             style={{ animationDelay: "0.5s" }}
           />
           <img
-            src="/images/decorations/hoja-verde.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-verde.png`}
             alt=""
             className="absolute bottom-10 left-10 w-16 md:w-24 opacity-30 animate-float transform -scale-x-100"
             style={{ animationDelay: "1.5s" }}
           />
           <img
-            src="/images/decorations/linea3.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/linea3.png`}
             alt=""
             className="absolute top-1/2 left-0 w-24 md:w-40 opacity-20 transform -translate-y-1/2"
           />
           <img
-            src="/images/decorations/linea1.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/linea1.png`}
             alt=""
             className="absolute bottom-20 right-0 w-32 md:w-48 opacity-20 transform rotate-45"
           />
@@ -345,7 +345,7 @@ export default function JornadaDeCapacitacionPage() {
                 }`}
               >
                 <img
-                  src="/images/anpr-logo.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/anpr-logo.png`}
                   alt="5.ª Jornada de Capacitación ANPR México - Guadalajara, Jalisco 2026"
                   className="w-full max-w-xs h-auto object-contain"
                 />
@@ -654,26 +654,26 @@ export default function JornadaDeCapacitacionPage() {
         <section className="py-20 px-4 relative overflow-hidden" style={{ backgroundColor: "#012787" }}>
           {/* Decorative elements */}
           <img
-            src="/images/decorations/hoja-turquesa.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-turquesa.png`}
             alt=""
             className="absolute top-16 left-8 w-16 md:w-28 opacity-40 animate-float"
             style={{ animationDelay: "0s" }}
           />
           <img
-            src="/images/decorations/hoja-verde.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-verde.png`}
             alt=""
             className="absolute top-1/3 right-12 w-20 md:w-32 opacity-35 animate-float transform rotate-12"
             style={{ animationDelay: "1s" }}
           />
           <img
-            src="/images/decorations/hoja-amarilla.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-amarilla.png`}
             alt=""
             className="absolute bottom-20 left-16 w-18 md:w-28 opacity-35 animate-float transform -rotate-45"
             style={{ animationDelay: "2s" }}
           />
-          <img src="/images/decorations/linea2.png" alt="" className="absolute top-0 right-0 w-28 md:w-44 opacity-25" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/linea2.png`} alt="" className="absolute top-0 right-0 w-28 md:w-44 opacity-25" />
           <img
-            src="/images/decorations/linea3.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/linea3.png`}
             alt=""
             className="absolute bottom-0 left-0 w-24 md:w-40 opacity-25 transform rotate-180"
           />
@@ -1133,7 +1133,7 @@ export default function JornadaDeCapacitacionPage() {
               >
                 <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
                   <img
-                    src="/images/anpr.png"
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/anpr.png`}
                     alt="ANPR México - Asociación Nacional de Parques y Recreación de México"
                     className="h-16 md:h-20 w-auto object-contain"
                   />
@@ -1160,7 +1160,7 @@ export default function JornadaDeCapacitacionPage() {
                 >
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
                     <img
-                      src="/images/bugy.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/bugy.png`}
                       alt="Grupo BUGY - Proyectos Recreativos"
                       className="h-16 md:h-20 w-auto object-contain"
                     />
@@ -1174,7 +1174,7 @@ export default function JornadaDeCapacitacionPage() {
                 >
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
                     <img
-                      src="/images/logos/hunter.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/logos/hunter.png`}
                       alt="Hunter Industries"
                       className="h-16 md:h-20 w-auto object-contain"
                     />
@@ -1188,7 +1188,7 @@ export default function JornadaDeCapacitacionPage() {
                 >
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 md:p-6">
                     <img
-                      src="/images/logos/parques-mexico.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/logos/parques-mexico.png`}
                       alt="Parques de México"
                       className="h-16 md:h-20 w-auto object-contain"
                     />
@@ -1215,7 +1215,7 @@ export default function JornadaDeCapacitacionPage() {
               >
                 <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 mx-auto max-w-sm">
                   <img
-                    src="/images/logos/ambu.png"
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/logos/ambu.png`}
                     alt="AMBU - Asociación Mexicana de Bosques Urbanos"
                     className="w-full h-auto object-contain max-h-24"
                   />
@@ -1229,24 +1229,24 @@ export default function JornadaDeCapacitacionPage() {
         <section id="registro" className="px-4 bg-[#012787] text-white text-center py-20 relative overflow-hidden">
           {/* Decorative elements */}
           <img
-            src="/images/decorations/hoja-turquesa.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-turquesa.png`}
             alt=""
             className="absolute top-10 right-16 w-20 md:w-32 opacity-35 animate-float"
             style={{ animationDelay: "0.5s" }}
           />
           <img
-            src="/images/decorations/hoja-amarilla.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/hoja-amarilla.png`}
             alt=""
             className="absolute bottom-16 left-12 w-24 md:w-36 opacity-30 animate-float transform rotate-90"
             style={{ animationDelay: "1.5s" }}
           />
           <img
-            src="/images/decorations/linea1.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/linea1.png`}
             alt=""
             className="absolute top-1/3 left-0 w-28 md:w-44 opacity-20 transform -rotate-45"
           />
           <img
-            src="/images/decorations/linea2.png"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/decorations/linea2.png`}
             alt=""
             className="absolute bottom-1/4 right-0 w-32 md:w-48 opacity-20"
           />

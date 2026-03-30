@@ -168,7 +168,7 @@ export default function PremiosANPR() {
               {/* Image Section */}
               <div className="flex-shrink-0 w-full flex justify-center">
                 <img
-                  src="/images/premio-20anpr.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/premio-20anpr.png`}
                   alt="Premio ANPR"
                   className="w-80 md:w-96 lg:w-[28rem] h-auto drop-shadow-2xl"
                 />
@@ -493,7 +493,7 @@ export default function PremiosANPR() {
               {/* Right column - Image */}
               <div className="flex items-center justify-center lg:justify-end">
                 <img
-                  src="/images/recurso-202.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/recurso-202.png`}
                   alt="Premios ANPR - Ilustración de ganador"
                   className="w-full max-w-md lg:max-w-lg h-auto object-contain"
                 />
@@ -647,7 +647,7 @@ export default function PremiosANPR() {
                     </span>
                   </div>
                   <div className="flex items-center justify-center">
-                    <img src="/images/premio-20semilla.png" alt="Premio Semilla" className="w-24 h-24 object-contain" />
+                    <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/premio-20semilla.png`} alt="Premio Semilla" className="w-24 h-24 object-contain" />
                   </div>
                   <h3 className="mt-6 text-2xl font-bold font-montserrat" style={{ color: "#efd175" }}>
                     Semilla
@@ -670,7 +670,7 @@ export default function PremiosANPR() {
                   </div>
                   <div className="flex items-center justify-center">
                     <img
-                      src="/images/premio-20li-cc-81der.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/premio-20li-cc-81der.png`}
                       alt="Premio Líder"
                       className="w-24 h-24 object-contain"
                     />
@@ -740,7 +740,7 @@ export default function PremiosANPR() {
                   </div>
                   <div className="flex items-center justify-center">
                     <img
-                      src="/images/premio-20fundador-20y-20lealtad-20anpr.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/premio-20fundador-20y-20lealtad-20anpr.png`}
                       alt="Premio Lealtad ANPR"
                       className="w-24 h-24 object-contain"
                     />
@@ -766,7 +766,7 @@ export default function PremiosANPR() {
                   </div>
                   <div className="flex items-center justify-center">
                     <img
-                      src="/images/trayectoria-20anpr.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/trayectoria-20anpr.png`}
                       alt="Premio Trayectoria ANPR"
                       className="w-24 h-24 object-contain"
                     />
@@ -793,7 +793,7 @@ export default function PremiosANPR() {
                   </div>
                   <div className="flex items-center justify-center">
                     <img
-                      src="/images/legado-20anpr.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/legado-20anpr.png`}
                       alt="Premio Legado ANPR"
                       className="w-24 h-24 object-contain"
                     />

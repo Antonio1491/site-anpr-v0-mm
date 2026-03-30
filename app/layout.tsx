@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Montserrat } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -11,6 +12,14 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 })
 
+const komikaDisplay = localFont({
+  src: "../public/fonts/komika-display.ttf",
+  variable: "--font-komika",
+  display: "swap",
+})
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 export const metadata: Metadata = {
   title: "Jornadas de Capacitación ANPR México",
   description:
@@ -18,7 +27,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon.ico",
+        url: `${basePath}/favicon.ico`,
         type: "image/png",
       },
     ],
@@ -34,9 +43,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/favicon.ico" type="image/png" />
+        <link rel="icon" href={`${basePath}/favicon.ico`} type="image/png" />
       </head>
-      <body className={`${inter.className} ${montserrat.variable} pt-16 md:pt-20`}>{children}</body>
+      <body className={`${inter.className} ${montserrat.variable} ${komikaDisplay.variable} pt-16 md:pt-20`}>{children}</body>
     </html>
   )
 }

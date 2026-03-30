@@ -28,7 +28,12 @@
       "Bash(grep -r 57d476 /home/runner/workspace --include=*.tsx --include=*.ts --include=*.jsx --include=*.js --include=*.css)",
       "Bash(grep -r \"cardAccent\\\\|typeConfig\" /home/runner/workspace --include=*.tsx --include=*.ts)",
       "Bash(find /home/runner/workspace/assets -type f \\\\\\(-name *.css -o -name *.scss \\\\\\) ! -path */node_modules/*)",
-      "Bash(xargs ls:*)"
+      "Bash(xargs ls:*)",
+      "Bash(find /home/runner/workspace -maxdepth 3 -not -path */node_modules/* -not -path */.next/* -not -path */.cache/* -not -path */.local/* -not -path */.git/* -type f)",
+      "Bash(find /home/runner/workspace -maxdepth 2 -name *deploy* -o -name *vercel*)",
+      "Bash(grep -h src=/ /home/runner/workspace/app/*.tsx /home/runner/workspace/components/*.tsx)",
+      "Bash(grep -h href=/ /home/runner/workspace/app/*.tsx /home/runner/workspace/components/*.tsx)",
+      "Bash(git remote:*)"
     ]
   }
 }

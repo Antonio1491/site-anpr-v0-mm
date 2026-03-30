@@ -13,7 +13,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        komika: ["KomiKa Display", "cursive", "sans-serif"],
+        komika: ["var(--font-komika)", "cursive", "sans-serif"],
         komikax: ["Komikax", "cursive", "sans-serif"],
         montserrat: ["var(--font-montserrat)", "sans-serif"],
       },

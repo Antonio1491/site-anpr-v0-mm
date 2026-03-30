@@ -78,7 +78,7 @@ export default function MesDeLosParques() {
     komikaxStyle.textContent = `
       @font-face {
         font-family: 'Komikax';
-        src: url('/fonts/komikax.ttf') format('truetype');
+        src: url('${process.env.NEXT_PUBLIC_BASE_PATH || ""}/fonts/komikax.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
       }
@@ -183,7 +183,7 @@ export default function MesDeLosParques() {
               }`}
             >
               <img
-                src="/images/logo-mes-parques.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/logo-mes-parques.png`}
                 alt="Mes de los Parques 2025"
                 className="w-64 md:w-80 mx-auto drop-shadow-2xl"
               />
@@ -243,7 +243,7 @@ export default function MesDeLosParques() {
             >
               <div className="flex justify-center mb-10">
                 <img
-                  src="/images/perrito-celular.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/perrito-celular.png`}
                   alt="Perrito promocionando Mes de los Parques"
                   className="w-full max-w-sm mx-auto drop-shadow-2xl transform hover:scale-105 transition-transform duration-300"
                 />
@@ -294,7 +294,7 @@ export default function MesDeLosParques() {
                 }`}
               >
                 <img
-                  src="/images/logo-mes-parques.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/logo-mes-parques.png`}
                   alt="Mes de los Parques 2025"
                   className="w-64 md:w-80 lg:w-[24rem] mx-auto lg:mx-0 drop-shadow-2xl"
                 />
@@ -383,7 +383,7 @@ export default function MesDeLosParques() {
               >
                 <div className="relative">
                   <img
-                    src="/images/perrito-celular.png"
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/perrito-celular.png`}
                     alt="Perrito promocionando Mes de los Parques"
                     className="w-full max-w-md mx-auto drop-shadow-2xl transform hover:scale-105 transition-transform duration-300"
                   />
@@ -436,7 +436,7 @@ export default function MesDeLosParques() {
               }`}
             >
               <img
-                src="/images/actividades-caricatura1.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/actividades-caricatura1.png`}
                 alt=""
                 role="presentation"
                 aria-hidden="true"
@@ -500,7 +500,7 @@ export default function MesDeLosParques() {
                 }`}
               >
                 <img
-                  src="/images/actividades-caricatura2.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/actividades-caricatura2.png`}
                   alt=""
                   role="presentation"
                   aria-hidden="true"
@@ -872,7 +872,7 @@ export default function MesDeLosParques() {
                     {/* Imagen decorativa de fondo anclada en la parte superior */}
                     <div className="absolute top-0 left-0 right-0 z-0 pointer-events-none overflow-hidden">
                       <img
-                        src="/images/deco-comic-turquesa.png"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/deco-comic-turquesa.png`}
                         alt=""
                         className="w-full h-auto object-cover object-top"
                         style={{
@@ -900,7 +900,7 @@ export default function MesDeLosParques() {
                     {/* Imagen decorativa de fondo anclada en la parte superior */}
                     <div className="absolute top-0 left-0 right-0 z-0 pointer-events-none overflow-hidden">
                       <img
-                        src="/images/deco-comic-turquesa.png"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/deco-comic-turquesa.png`}
                         alt=""
                         className="w-full h-auto object-cover object-top"
                         style={{

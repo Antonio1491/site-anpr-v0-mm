@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Logo y descripción */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
-              <img src="/images/anpr-logo-footer.svg" alt="ANPR México" className="h-12 w-auto mr-3" />
+              <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/anpr-logo-footer.svg`} alt="ANPR México" className="h-12 w-auto mr-3" />
               <span className="text-white font-bold leading-tight">
                 Asociación Nacional de Parques y Recreación de México
               </span>
