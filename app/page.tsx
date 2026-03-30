@@ -257,22 +257,19 @@ export default function LandingPageV0() {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {/* TARJETA GUADALAJARA */}
-              <div className="flex flex-col">
-                <div className="flex justify-center mb-2 h-7">
-                  {selectedSede === "guadalajara" && (
-                    <span className="bg-[#57d476] text-white text-xs font-bold px-4 py-1 rounded-full shadow-md">
-                      Sede seleccionada
-                    </span>
-                  )}
-                </div>
               <div
                 onClick={() => handleSelectSede("guadalajara")}
-                className={`relative cursor-pointer bg-white backdrop-blur-md rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.25)] px-6 pb-6 pt-6 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:-translate-y-1 flex flex-col text-left text-gray-800 ${
+                className={`relative cursor-pointer bg-white backdrop-blur-md rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.25)] px-6 pt-6 pb-6 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:-translate-y-1 flex flex-col text-left text-gray-800 ${
                   selectedSede === "guadalajara"
                     ? "border-[3px] border-[#57d476] shadow-[0_0_20px_rgba(87,212,118,0.3)] ring-2 ring-[#57d476]/30"
                     : "border-[3px] border-transparent hover:border-white/40"
                 }`}
               >
+                {selectedSede === "guadalajara" && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#57d476] text-white text-xs font-bold px-4 py-1 rounded-full shadow-md whitespace-nowrap">
+                    Sede seleccionada
+                  </div>
+                )}
 
                 <h3 className="text-xl font-bold text-[#012787] mb-2 font-['Montserrat',sans-serif]">
                   5ª Jornada de Capacitación ANPR
@@ -326,25 +323,21 @@ export default function LandingPageV0() {
                   </button>
                 </div>
               </div>
-              </div>
 
               {/* TARJETA LA PAZ */}
-              <div className="flex flex-col">
-                <div className="flex justify-center mb-2 h-7">
-                  {selectedSede === "lapaz" && (
-                    <span className="bg-[#57d476] text-white text-xs font-bold px-4 py-1 rounded-full shadow-md">
-                      Sede seleccionada
-                    </span>
-                  )}
-                </div>
               <div
                 onClick={() => handleSelectSede("lapaz")}
-                className={`relative cursor-pointer bg-white backdrop-blur-md rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.25)] px-6 pb-6 pt-6 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:-translate-y-1 flex flex-col text-left text-gray-800 ${
+                className={`relative cursor-pointer bg-white backdrop-blur-md rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.25)] px-6 pt-6 pb-6 transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)] hover:-translate-y-1 flex flex-col text-left text-gray-800 ${
                   selectedSede === "lapaz"
                     ? "border-[3px] border-[#57d476] shadow-[0_0_20px_rgba(87,212,118,0.3)] ring-2 ring-[#57d476]/30"
                     : "border-[3px] border-transparent hover:border-white/40"
                 }`}
               >
+                {selectedSede === "lapaz" && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#57d476] text-white text-xs font-bold px-4 py-1 rounded-full shadow-md whitespace-nowrap">
+                    Sede seleccionada
+                  </div>
+                )}
 
                 <h3 className="text-xl font-bold text-[#012787] mb-2 font-['Montserrat',sans-serif]">
                   6ª Jornada de Capacitación ANPR
@@ -397,7 +390,6 @@ export default function LandingPageV0() {
                     Ver información
                   </button>
                 </div>
-              </div>
               </div>
             </div>
           </div>
