@@ -8,7 +8,7 @@ import {
   Building2, Users, Shield, Megaphone, UserRoundPlus,
   BookOpen, Library, FlaskConical, Mic2, Newspaper, Video,
   GraduationCap, Calendar, CalendarDays, Trophy,
-  MessageCircle, LayoutGrid, LogIn,
+  MessageCircle, LayoutGrid, LogIn, Search,
 } from "lucide-react"
 import LogoFlip from "./logo-flip"
 
@@ -63,7 +63,28 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileOpenItem, setMobileOpenItem] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
+  const searchInputRef = useRef<HTMLInputElement>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()
+    const q = searchQuery.trim()
+    if (q) {
+      window.location.href = `https://anpr.org.mx/?s=${encodeURIComponent(q)}`
+    }
+  }
+
+  const openSearch = () => {
+    setSearchOpen(true)
+    setTimeout(() => searchInputRef.current?.focus(), 50)
+  }
+
+  const closeSearch = () => {
+    setSearchOpen(false)
+    setSearchQuery("")
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10)
@@ -222,6 +243,46 @@ export default function Header() {
 
           {/* Desktop Right Buttons */}
           <div className="hidden lg:flex items-center gap-4">
+            {/* Search */}
+            <div className="relative flex items-center">
+              {searchOpen ? (
+                <form onSubmit={handleSearch} className="flex items-center gap-1">
+                  <input
+                    ref={searchInputRef}
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={(e) => e.key === "Escape" && closeSearch()}
+                    placeholder="Buscar..."
+                    className="w-44 px-3 py-1.5 text-sm border border-gray-300 rounded-md outline-none focus:border-[#0B3BA7] focus:ring-1 focus:ring-[#0B3BA7]/30 transition-all"
+                  />
+                  <button
+                    type="submit"
+                    className="p-1.5 text-gray-500 hover:text-[#0B3BA7] transition-colors"
+                    aria-label="Buscar"
+                  >
+                    <Search className="h-4 w-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={closeSearch}
+                    className="p-1.5 text-gray-400 hover:text-gray-600 transition-colors"
+                    aria-label="Cerrar búsqueda"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </form>
+              ) : (
+                <button
+                  onClick={openSearch}
+                  className="p-2 text-gray-600 hover:text-[#0B3BA7] transition-colors"
+                  aria-label="Buscar"
+                >
+                  <Search className="h-[18px] w-[18px]" />
+                </button>
+              )}
+            </div>
+
             <Link
               href="https://anpr.org.mx/login/"
               className="flex items-center gap-2 text-sm font-medium text-gray-800 hover:text-[#0B3BA7] transition-colors"
@@ -339,6 +400,28 @@ export default function Header() {
 
             {/* Bottom Buttons */}
             <div className="pt-4 border-t border-gray-200 space-y-2">
+              {/* Search mobile */}
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  const q = searchQuery.trim()
+                  if (q) {
+                    setIsMenuOpen(false)
+                    window.location.href = `https://anpr.org.mx/?s=${encodeURIComponent(q)}`
+                  }
+                }}
+                className="flex items-center gap-2 w-full px-3 py-2 border border-gray-300 rounded-md focus-within:border-[#0B3BA7] focus-within:ring-1 focus-within:ring-[#0B3BA7]/30 transition-all"
+              >
+                <Search className="h-4 w-4 text-gray-400 flex-shrink-0" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Buscar en anpr.org.mx..."
+                  className="flex-1 text-sm outline-none bg-transparent text-gray-800 placeholder-gray-400"
+                />
+              </form>
+
               <Link
                 href="https://anpr.org.mx/login/"
                 onClick={() => setIsMenuOpen(false)}
