@@ -278,7 +278,7 @@ export default function Header() {
                   className="p-1.5 text-gray-500 hover:text-[#0B3BA7] transition-colors"
                   aria-label="Buscar"
                 >
-                  <Search className="h-[15px] w-[15px]" />
+                  <Search className="h-[13px] w-[13px]" />
                 </button>
               )}
             </div>
