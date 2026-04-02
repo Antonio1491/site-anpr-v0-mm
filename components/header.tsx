@@ -244,7 +244,7 @@ export default function Header() {
           {/* Desktop Right Buttons */}
           <div className="hidden lg:flex items-center gap-4">
             {/* Search */}
-            <div className="relative flex items-center">
+            <div className="relative flex items-center mr-2">
               {searchOpen ? (
                 <form onSubmit={handleSearch} className="flex items-center gap-1">
                   <input
@@ -275,10 +275,10 @@ export default function Header() {
               ) : (
                 <button
                   onClick={openSearch}
-                  className="p-2 text-gray-600 hover:text-[#0B3BA7] transition-colors"
+                  className="p-1.5 text-gray-500 hover:text-[#0B3BA7] transition-colors"
                   aria-label="Buscar"
                 >
-                  <Search className="h-[18px] w-[18px]" />
+                  <Search className="h-[15px] w-[15px]" />
                 </button>
               )}
             </div>
