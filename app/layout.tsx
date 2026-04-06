@@ -7,7 +7,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["700", "900"],
+  weight: ["400", "500", "600", "700", "900"],
   style: ["normal"],
   variable: "--font-montserrat",
 })
