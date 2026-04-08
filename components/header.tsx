@@ -42,10 +42,10 @@ const recursosMegaMenu = [
   {
     title: "Participa",
     items: [
-      { name: "Eventos", href: "/eventos", icon: Calendar },
+      { name: "Eventos", href: "https://anpr.org.mx/web/eventos", icon: Calendar },
       { name: "Jornada de Capacitación", href: "/", icon: GraduationCap },
-      { name: "Mes de los Parques", href: "/mes-de-los-parques", icon: CalendarDays },
-      { name: "Premios", href: "/premios-anpr", icon: Trophy },
+      { name: "Mes de los Parques", href: "https://anpr.org.mx/web/mes-de-los-parques", icon: CalendarDays },
+      { name: "Premios", href: "https://anpr.org.mx/web/premios-anpr", icon: Trophy },
     ],
   },
   {
@@ -227,17 +227,10 @@ export default function Header() {
 
             {/* Eventos (directo) */}
             <Link
-              href="/eventos"
-              className={`relative flex items-center px-3 py-2 text-sm font-normal rounded-md transition-colors ${
-                pathname === "/eventos" || pathname === "/jornada-de-capacitacion"
-                  ? "text-[#0B3BA7]"
-                  : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
-              }`}
+              href="https://anpr.org.mx/web/eventos"
+              className="relative flex items-center px-3 py-2 text-sm font-normal rounded-md transition-colors text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
             >
               Eventos
-              {(pathname === "/eventos" || pathname === "/jornada-de-capacitacion") && (
-                <span className="absolute -bottom-[13px] left-0 right-0 h-[3px] rounded-t-full bg-[#0B3BA7]" />
-              )}
             </Link>
           </nav>
 
@@ -388,11 +381,9 @@ export default function Header() {
 
             {/* Eventos */}
             <Link
-              href="/eventos"
+              href="https://anpr.org.mx/web/eventos"
               onClick={() => setIsMenuOpen(false)}
-              className={`flex items-center gap-3 px-3 py-3 text-sm font-normal rounded-md transition-colors ${
-                pathname === "/eventos" ? "text-[#0B3BA7] bg-[#0B3BA7]/5" : "text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
-              }`}
+              className="flex items-center gap-3 px-3 py-3 text-sm font-normal rounded-md transition-colors text-gray-800 hover:text-[#0B3BA7] hover:bg-[#0B3BA7]/5"
             >
               <Calendar className="h-4 w-4" />
               Eventos
