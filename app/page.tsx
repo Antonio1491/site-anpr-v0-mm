@@ -1768,7 +1768,6 @@ export default function LandingPageV0() {
                       { time: "13:15", activity: "Cuarta Conferencia", type: "conference" },
                       { time: "14:05", activity: "Quinta Conferencia", type: "conference" },
                       { time: "14:35", activity: "Espacio de Coffee Break y Networking", type: "break" },
-                      { time: "14:55", activity: "Recorrido por Sala de Capacitación del H. Cuerpo de Bomberos", type: "tour" },
                     ].map((item, index) => (
                       <div
                         key={index}
