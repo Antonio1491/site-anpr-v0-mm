@@ -277,7 +277,7 @@ export default function Header() {
             </div>
 
             <Link
-              href="https://anpr.org.mx/web/blog/"
+              href="https://anpr.org.mx/login/"
               className="flex items-center gap-2 text-sm font-normal text-gray-800 hover:text-[#0B3BA7] transition-colors"
             >
               <MessageCircle className="h-4 w-4" />
@@ -414,7 +414,7 @@ export default function Header() {
               </form>
 
               <Link
-                href="https://anpr.org.mx/web/blog/"
+                href="https://anpr.org.mx/login/"
                 onClick={() => setIsMenuOpen(false)}
                 className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-gray-800 border border-gray-300 rounded-md hover:text-[#0B3BA7] hover:border-[#0B3BA7] transition-colors"
               >
