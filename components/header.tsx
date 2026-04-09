@@ -24,7 +24,7 @@ const recursosMegaMenu = [
   {
     title: "Capacítate",
     items: [
-      { name: "Blog", href: "https://anpr.org.mx/blog/", icon: BookOpen },
+      { name: "Blog", href: "https://anpr.org.mx/web/blog/", icon: BookOpen },
       { name: "Biblioteca Parques", href: "https://anpr.org.mx/biblioteca-parques/", icon: Library },
       { name: "Podcast", href: "https://anpr.org.mx/podcast-parques/", icon: Mic2 },
       { name: "Revista Parques", href: "https://anpr.org.mx/revista-parques/", icon: Newspaper },
