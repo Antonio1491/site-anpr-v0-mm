@@ -8,7 +8,7 @@ import {
   Building2, Users, Shield, Megaphone, UserRoundPlus,
   BookOpen, Library, FlaskConical, Mic2, Newspaper, Video,
   GraduationCap, Calendar, CalendarDays, Trophy,
-  MessageCircle, LayoutGrid, LogIn, Search,
+  MessageCircle, LayoutGrid, Search,
 } from "lucide-react"
 import LogoFlip from "./logo-flip"
 
@@ -280,8 +280,8 @@ export default function Header() {
               href="https://anpr.org.mx/login/"
               className="flex items-center gap-2 text-sm font-normal text-gray-800 hover:text-[#0B3BA7] transition-colors"
             >
-              <LogIn className="h-4 w-4" />
-              Ingresar
+              <MessageCircle className="h-4 w-4" />
+              Comunidad
             </Link>
             <Link
               href="https://anpr.org.mx/membresias-anpr/"
@@ -418,8 +418,8 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
                 className="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-gray-800 border border-gray-300 rounded-md hover:text-[#0B3BA7] hover:border-[#0B3BA7] transition-colors"
               >
-                <LogIn className="h-4 w-4" />
-                Ingresar
+                <MessageCircle className="h-4 w-4" />
+                Comunidad
               </Link>
               <Link
                 href="https://anpr.org.mx/membresias-anpr/"
