@@ -1700,7 +1700,7 @@ export default function LandingPageV0() {
                       name: "Kenia Selene Cervantes Villegas",
                       role: "Directora General de Gestión Integral de la Ciudad",
                       company: "H. XVIII Ayuntamiento de La Paz",
-                      imgStyle: { transform: "scale(2.4)", transformOrigin: "center 18%" },
+                      imgStyle: { transform: "scale(1.5)", transformOrigin: "center 15%" },
                     },
                   ].map((expert: any, index) => (
                     <div
