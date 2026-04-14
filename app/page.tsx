@@ -1700,8 +1700,9 @@ export default function LandingPageV0() {
                       name: "Kenia Selene Cervantes Villegas",
                       role: "Directora General de Gestión Integral de la Ciudad",
                       company: "H. XVIII Ayuntamiento de La Paz",
+                      imgScale: "scale-150",
                     },
-                  ].map((expert, index) => (
+                  ].map((expert: any, index) => (
                     <div
                       key={index + 3}
                       className="bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 w-full max-w-[260px] text-center transition-all duration-700 hover:-translate-y-3 hover:scale-105 font-normal group border border-gray-100"
@@ -1712,7 +1713,7 @@ export default function LandingPageV0() {
                             <img
                               src={expert.image}
                               alt={expert.name}
-                              className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110"
+                              className={`w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 ${expert.imgScale || ""}`}
                             />
                           ) : (
                             <Users className="w-16 h-16 text-gray-300" />
