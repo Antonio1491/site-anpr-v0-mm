@@ -1767,7 +1767,7 @@ export default function LandingPageV0() {
                   <div className="divide-y divide-gray-100">
                     {[
                       { time: "9:00", activity: "Registro y bienvenida", type: "registration" },
-                      { time: "9:35", activity: "Introducción por ANPR México", type: "intro" },
+                      { time: "9:35", activity: "Introducción por ANPR México", type: "intro", speaker: "Vitoria Martín · Directora, Asociación Nacional de Parques" },
                       { time: "10:10", label: "Primera Conferencia", activity: "Compensación Ambiental y Ordenamiento Forestal: Estrategias para el Equilibrio de los Espacios Públicos", type: "conference", speaker: "Lizette Rizo · Directora de Medio Ambiente, H. XVIII Ayuntamiento del Municipio de La Paz" },
                       { time: "10:55", activity: "Espacio de Coffee Break y Networking", type: "break" },
                       { time: "11:10", label: "Segunda Conferencia", activity: "Optimización de Recursos para un Sistema de Riego Eficiente", type: "conference", speaker: "Evaristo Aguilar · Area Manager Central America, Caribbean, Hunter Industries" },
@@ -1815,6 +1815,9 @@ export default function LandingPageV0() {
                             <p className="text-sm text-gray-500 mt-1">
                               {item.speaker ? `Imparte: ${item.speaker}` : "Conferencia magistral"}
                             </p>
+                          )}
+                          {item.type === "intro" && item.speaker && (
+                            <p className="text-sm text-gray-500 mt-1">Imparte: {item.speaker}</p>
                           )}
                           {item.type === "break" && <p className="text-sm text-gray-500 mt-1">Pausa para networking</p>}
                           {item.type === "tour" && <p className="text-sm text-gray-500 mt-1">Recorrido guiado</p>}
