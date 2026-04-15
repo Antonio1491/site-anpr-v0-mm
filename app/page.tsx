@@ -1768,13 +1768,13 @@ export default function LandingPageV0() {
                     {[
                       { time: "9:00", activity: "Registro y bienvenida", type: "registration" },
                       { time: "9:35", activity: "Introducción por ANPR México", type: "intro" },
-                      { time: "10:10", label: "Primera Conferencia", activity: "Compensación ambiental y ordenamiento forestal: Estrategias para el equilibrio de los espacios públicos", type: "conference", speaker: "Lizette Rizo · Directora de Medio Ambiente, H. XVIII Ayuntamiento del Municipio de La Paz" },
+                      { time: "10:10", label: "Primera Conferencia", activity: "Compensación Ambiental y Ordenamiento Forestal: Estrategias para el Equilibrio de los Espacios Públicos", type: "conference", speaker: "Lizette Rizo · Directora de Medio Ambiente, H. XVIII Ayuntamiento del Municipio de La Paz" },
                       { time: "10:55", activity: "Espacio de Coffee Break y Networking", type: "break" },
-                      { time: "11:10", label: "Segunda Conferencia", activity: "Optimización de recursos para un sistema de riego eficiente", type: "conference", speaker: "Evaristo Aguilar · Area Manager Central America, Caribbean, Hunter Industries" },
-                      { time: "12:00", label: "Tercera Conferencia", activity: "Sostenibilidad Financiera en Parques Urbanos: Del subsidio a la autosuficiencia responsable", type: "conference", speaker: "Isabel Velázquez · Directora, Parques de México" },
+                      { time: "11:10", label: "Segunda Conferencia", activity: "Optimización de Recursos para un Sistema de Riego Eficiente", type: "conference", speaker: "Evaristo Aguilar · Area Manager Central America, Caribbean, Hunter Industries" },
+                      { time: "12:00", label: "Tercera Conferencia", activity: "Sostenibilidad Financiera en Parques Urbanos: Del Subsidio a la Autosuficiencia Responsable", type: "conference", speaker: "Isabel Velázquez · Directora, Parques de México" },
                       { time: "12:45", activity: "Espacio de Coffee Break y Networking", type: "break" },
                       { time: "13:15", label: "Cuarta Conferencia", activity: "Juegos Infantiles de Calidad", type: "conference", speaker: "Manuel Plascencia · Director, Grupo Bugy" },
-                      { time: "14:05", label: "Quinta Conferencia", activity: "La Paz a través de la Rehabilitación de sus Parques", type: "conference", speaker: "Kenia Cervantes · Directora General de Gestión, H. XVIII Ayuntamiento del Municipio de La Paz" },
+                      { time: "14:05", label: "Quinta Conferencia", activity: "La Paz a Través de la Rehabilitación de sus Parques", type: "conference", speaker: "Kenia Cervantes · Directora General de Gestión, H. XVIII Ayuntamiento del Municipio de La Paz" },
                       { time: "14:35", activity: "Espacio de Coffee Break y Networking", type: "break" },
                     ].map((item: any, index) => (
                       <div
