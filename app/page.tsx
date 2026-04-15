@@ -1768,7 +1768,7 @@ export default function LandingPageV0() {
                     {[
                       { time: "9:00", activity: "Registro y bienvenida", type: "registration" },
                       { time: "9:35", activity: "Introducción por ANPR México", type: "intro" },
-                      { time: "10:10", activity: "Primera Conferencia", type: "conference" },
+                      { time: "10:10", activity: "Compensación ambiental y ordenamiento forestal: Estrategias para el equilibrio de los espacios públicos", type: "conference", speaker: "Guadalupe Lizette Rizo Vilchis · Directora de Medio Ambiente, H. XVIII Ayuntamiento del Municipio de La Paz" },
                       { time: "10:55", activity: "Espacio de Coffee Break y Networking", type: "break" },
                       { time: "11:10", activity: "Segunda Conferencia", type: "conference" },
                       { time: "12:00", activity: "Tercera Conferencia", type: "conference" },
@@ -1776,7 +1776,7 @@ export default function LandingPageV0() {
                       { time: "13:15", activity: "Cuarta Conferencia", type: "conference" },
                       { time: "14:05", activity: "Quinta Conferencia", type: "conference" },
                       { time: "14:35", activity: "Espacio de Coffee Break y Networking", type: "break" },
-                    ].map((item, index) => (
+                    ].map((item: any, index) => (
                       <div
                         key={index}
                         className="flex items-center p-6 hover:bg-gray-50 transition-all duration-300 group"
@@ -1809,7 +1809,9 @@ export default function LandingPageV0() {
                             {item.activity}
                           </h4>
                           {item.type === "conference" && (
-                            <p className="text-sm text-gray-500 mt-1">Conferencia magistral</p>
+                            <p className="text-sm text-gray-500 mt-1">
+                              {item.speaker ? `Imparte: ${item.speaker}` : "Conferencia magistral"}
+                            </p>
                           )}
                           {item.type === "break" && <p className="text-sm text-gray-500 mt-1">Pausa para networking</p>}
                           {item.type === "tour" && <p className="text-sm text-gray-500 mt-1">Recorrido guiado</p>}
