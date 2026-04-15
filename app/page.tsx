@@ -1773,7 +1773,7 @@ export default function LandingPageV0() {
                       { time: "11:10", label: "Segunda Conferencia", activity: "Optimización de recursos para un sistema de riego eficiente", type: "conference", speaker: "Evaristo Aguilar · Area Manager Central America, Caribbean, Hunter Industries" },
                       { time: "12:00", label: "Tercera Conferencia", activity: "Sostenibilidad Financiera en Parques Urbanos: Del subsidio a la autosuficiencia responsable", type: "conference", speaker: "Isabel Velázquez · Directora, Parques de México" },
                       { time: "12:45", activity: "Espacio de Coffee Break y Networking", type: "break" },
-                      { time: "13:15", activity: "Cuarta Conferencia", type: "conference" },
+                      { time: "13:15", label: "Cuarta Conferencia", activity: "Juegos Infantiles de Calidad", type: "conference", speaker: "Manuel Plascencia · Director, Grupo Bugy" },
                       { time: "14:05", activity: "Quinta Conferencia", type: "conference" },
                       { time: "14:35", activity: "Espacio de Coffee Break y Networking", type: "break" },
                     ].map((item: any, index) => (
