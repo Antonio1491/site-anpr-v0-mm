@@ -1768,7 +1768,7 @@ export default function LandingPageV0() {
                     {[
                       { time: "9:00", activity: "Registro y bienvenida", type: "registration" },
                       { time: "9:35", activity: "Introducción por ANPR México", type: "intro" },
-                      { time: "10:10", activity: "Compensación ambiental y ordenamiento forestal: Estrategias para el equilibrio de los espacios públicos", type: "conference", speaker: "Lizette Rizo · Directora de Medio Ambiente, H. XVIII Ayuntamiento del Municipio de La Paz" },
+                      { time: "10:10", label: "Primera Conferencia", activity: "Compensación ambiental y ordenamiento forestal: Estrategias para el equilibrio de los espacios públicos", type: "conference", speaker: "Lizette Rizo · Directora de Medio Ambiente, H. XVIII Ayuntamiento del Municipio de La Paz" },
                       { time: "10:55", activity: "Espacio de Coffee Break y Networking", type: "break" },
                       { time: "11:10", activity: "Segunda Conferencia", type: "conference" },
                       { time: "12:00", activity: "Tercera Conferencia", type: "conference" },
@@ -1805,6 +1805,9 @@ export default function LandingPageV0() {
                           )}
                         </div>
                         <div className="flex-1 ml-6">
+                          {item.label && (
+                            <p className="text-xs text-gray-400 font-medium mb-0.5">{item.label}</p>
+                          )}
                           <h4 className="text-lg font-semibold text-gray-900 group-hover:text-[#012787] transition-colors duration-300">
                             {item.activity}
                           </h4>
