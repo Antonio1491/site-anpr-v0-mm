@@ -350,7 +350,7 @@ export default function LandingPageV0() {
                   </div>
                   <div className="flex items-center gap-2 text-gray-600 text-sm">
                     <Building2 className="w-4 h-4 text-[#012787] flex-shrink-0" />
-                    <span>Sala de Capacitación del H. Cuerpo de Bomberos</span>
+                    <span>Centro Deportivo Municipal "El piojillo"</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-700">
                     <CalendarDays className="w-5 h-5 text-[#012787] flex-shrink-0" />
@@ -1285,7 +1285,7 @@ export default function LandingPageV0() {
                     {
                       icon: MapPin,
                       title: "Ubicación",
-                      content: "Sala de Capacitación del H. Cuerpo de Bomberos,\nLa Paz, Baja California Sur",
+                      content: "Centro Deportivo Municipal \"El piojillo\",\nLa Paz, Baja California Sur",
                       iconColor: "#d5df00",
                     },
                     {
@@ -1760,7 +1760,7 @@ export default function LandingPageV0() {
                   {/* Header */}
                   <div className="bg-[#012787] text-white p-6 text-center">
                     <h3 className="text-2xl font-bold mb-2 font-['Montserrat',sans-serif]">Jueves 30 de abril, 2026</h3>
-                    <p className="text-[#d2dd0a] font-semibold">Sala de Capacitación del H. Cuerpo de Bomberos, La Paz, Baja California Sur</p>
+                    <p className="text-[#d2dd0a] font-semibold">Centro Deportivo Municipal "El piojillo", La Paz, Baja California Sur</p>
                   </div>
 
                   {/* Schedule Items */}
