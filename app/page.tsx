@@ -1690,10 +1690,11 @@ export default function LandingPageV0() {
                       company: "Hunter Industries",
                     },
                     {
-                      image: null,
+                      image: "/images/experts/guadalupe-lizette.jpeg",
                       name: "Guadalupe Lizette Rizo Vilchis",
                       role: "Directora de Medio Ambiente",
                       company: "H. XVIII Ayuntamiento del Municipio de La Paz",
+                      imgStyle: { transform: "scale(1.3)", transformOrigin: "center 20%" },
                     },
                     {
                       image: "/images/experts/kenia-cervantes.jpeg",
