@@ -1771,7 +1771,7 @@ export default function LandingPageV0() {
                       { time: "10:10", label: "Primera Conferencia", activity: "Compensación ambiental y ordenamiento forestal: Estrategias para el equilibrio de los espacios públicos", type: "conference", speaker: "Lizette Rizo · Directora de Medio Ambiente, H. XVIII Ayuntamiento del Municipio de La Paz" },
                       { time: "10:55", activity: "Espacio de Coffee Break y Networking", type: "break" },
                       { time: "11:10", label: "Segunda Conferencia", activity: "Optimización de recursos para un sistema de riego eficiente", type: "conference", speaker: "Evaristo Aguilar · Area Manager Central America, Caribbean, Hunter Industries" },
-                      { time: "12:00", activity: "Tercera Conferencia", type: "conference" },
+                      { time: "12:00", label: "Tercera Conferencia", activity: "Sostenibilidad Financiera en Parques Urbanos: Del subsidio a la autosuficiencia responsable", type: "conference", speaker: "Isabel Velázquez · Directora, Parques de México" },
                       { time: "12:45", activity: "Espacio de Coffee Break y Networking", type: "break" },
                       { time: "13:15", activity: "Cuarta Conferencia", type: "conference" },
                       { time: "14:05", activity: "Quinta Conferencia", type: "conference" },
