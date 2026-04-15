@@ -1774,7 +1774,7 @@ export default function LandingPageV0() {
                       { time: "12:00", label: "Tercera Conferencia", activity: "Sostenibilidad Financiera en Parques Urbanos: Del subsidio a la autosuficiencia responsable", type: "conference", speaker: "Isabel Velázquez · Directora, Parques de México" },
                       { time: "12:45", activity: "Espacio de Coffee Break y Networking", type: "break" },
                       { time: "13:15", label: "Cuarta Conferencia", activity: "Juegos Infantiles de Calidad", type: "conference", speaker: "Manuel Plascencia · Director, Grupo Bugy" },
-                      { time: "14:05", activity: "Quinta Conferencia", type: "conference" },
+                      { time: "14:05", label: "Quinta Conferencia", activity: "La Paz a través de la Rehabilitación de sus Parques", type: "conference", speaker: "Kenia Cervantes · Directora General de Gestión, H. XVIII Ayuntamiento del Municipio de La Paz" },
                       { time: "14:35", activity: "Espacio de Coffee Break y Networking", type: "break" },
                     ].map((item: any, index) => (
                       <div
