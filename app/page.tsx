@@ -291,16 +291,12 @@ export default function LandingPageV0() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="https://anpr.org.mx/register/5-jornada-de-capacitacion-guadalajara-jalisco/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <div
                     onClick={(e) => e.stopPropagation()}
-                    className="flex-1 inline-flex items-center justify-center gap-2 bg-[#57d476] hover:bg-[#45c264] text-white font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 hover:scale-105 text-sm"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-gray-300 text-gray-500 font-bold py-3 px-6 rounded-lg text-sm cursor-not-allowed select-none"
                   >
-                    Regístrate gratis
-                    <ChevronRight className="w-4 h-4" />
-                  </a>
+                    Registro cerrado
+                  </div>
                   <button
                     onClick={(e) => {
                       e.stopPropagation()
